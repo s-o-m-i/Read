@@ -54,7 +54,7 @@ export default function Page() {
 
         {/* TOOL — FULL WIDTH, NOT CONSTRAINED */}
         <section aria-label="Tasbih Counter Tool" className="mt-6">
-          <TasbihCounter />
+          <TasbihCounter counterName="tasbih" title="Tasbih Counter" />
         </section>
 
         {/* CONTENT SECTION */}

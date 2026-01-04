@@ -15,6 +15,7 @@ import { useState, useEffect, useCallback } from 'react';
  * - localStorage syncs counter and target on every change
  * - Hydration-safe: reads from localStorage only after mount
  * - Falls back gracefully if localStorage unavailable
+ * - Each counter type has its own storage key for independent state
  */
 
 interface TasbihState {
@@ -22,16 +23,28 @@ interface TasbihState {
   target: number | null;
 }
 
-const STORAGE_KEY = 'tasbih_counter_state';
+interface TasbihCounterProps {
+  counterName?: string;
+  title?: string;
+  arabicText?: string;
+}
+
 const PRESET_TARGETS = [33, 99, 100];
 
-export default function TasbihCounter() {
+export default function TasbihCounter({ 
+  counterName = 'default',
+  title = 'Tasbih Counter',
+  arabicText
+}: TasbihCounterProps) {
+  const STORAGE_KEY = `tasbih_counter_${counterName}`;
+  
   // State management
   const [count, setCount] = useState<number>(0);
   const [target, setTarget] = useState<number | null>(null);
   const [customTarget, setCustomTarget] = useState<string>('');
   const [showResetConfirm, setShowResetConfirm] = useState<boolean>(false);
   const [isClient, setIsClient] = useState<boolean>(false);
+  const [isBlinking, setIsBlinking] = useState<boolean>(false);
 
   // Hydration fix: only render dynamic content after mount
   useEffect(() => {
@@ -73,7 +86,13 @@ export default function TasbihCounter() {
   const handleIncrement = useCallback(() => {
     setCount(prev => prev + 1);
     vibrate(10);
-  }, [vibrate]);
+    
+    // Trigger blink animation
+    if (arabicText) {
+      setIsBlinking(true);
+      setTimeout(() => setIsBlinking(false), 300);
+    }
+  }, [vibrate, arabicText]);
 
   // Reset with confirmation
   const handleResetClick = useCallback(() => {
@@ -125,7 +144,7 @@ export default function TasbihCounter() {
           {/* Counter Display */}
           <div className="text-center space-y-2">
             <h1 className="text-2xl font-semibold text-gray-700 dark:text-gray-300">
-              Tasbih Counter
+              {title}
             </h1>
             
             {/* Main Count - Fixed height to prevent CLS */}
