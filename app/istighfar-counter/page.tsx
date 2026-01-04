@@ -71,7 +71,11 @@ export default function IstighfarPage() {
 
         {/* TOOL — FULL WIDTH */}
         <section aria-label="Istighfar Counter Tool" className="mt-6">
-          <TasbihCounter counterName="istighfar" title="Istighfar Counter" />
+          <TasbihCounter 
+            counterName="istighfar" 
+            title="Istighfar Counter"
+            arabicText="أَسْتَغْفِرُ اللَّهَ"
+          />
         </section>
 
         {/* CONTENT SECTION */}

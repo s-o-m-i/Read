@@ -147,6 +147,22 @@ export default function TasbihCounter({
               {title}
             </h1>
             
+            {/* Arabic Text Display */}
+            {arabicText && (
+              <div className="py-4">
+                <p 
+                  className={`text-4xl md:text-5xl font-bold text-emerald-600 dark:text-emerald-400 transition-all duration-300 ${
+                    isBlinking ? 'scale-110 opacity-100' : 'scale-100 opacity-90'
+                  }`}
+                  style={{ fontFamily: 'Arial, sans-serif' }}
+                  dir="rtl"
+                  lang="ar"
+                >
+                  {arabicText}
+                </p>
+              </div>
+            )}
+            
             {/* Main Count - Fixed height to prevent CLS */}
             <div className="h-32 flex items-center justify-center">
               <span 
