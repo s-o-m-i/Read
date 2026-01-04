@@ -63,8 +63,8 @@ export default function IstighfarPage() {
 
       <main className="bg-white dark:bg-gray-900">
         {/* H1 — VERY IMPORTANT FOR SEO */}
-        <section className="max-w-3xl mx-auto px-4 pt-8 text-center">
-          <h1 className="text-3xl font-bold">
+        <section className="max-w-5xl mx-auto px-4 pt-8 text-center">
+          <h1 className="text-3xl font-bold dark:text-gray-300">
             Free Online Istighfar Counter – Digital Zikr Tool
           </h1>
         </section>
@@ -79,7 +79,7 @@ export default function IstighfarPage() {
         </section>
 
         {/* CONTENT SECTION */}
-        <section className="max-w-3xl mx-auto px-4 py-12 space-y-10">
+        <section className="max-w-5xl mx-auto px-4 py-12 space-y-10">
           {/* INTRO */}
           <div className="space-y-4 text-gray-700 dark:text-gray-300">
             <p>

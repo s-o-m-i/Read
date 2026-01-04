@@ -11,7 +11,7 @@ export default function HomePage() {
     <main className="bg-white dark:bg-gray-900">
       {/* HERO */}
       <section className="max-w-5xl mx-auto px-4 py-12 text-center space-y-4">
-        <h1 className="text-4xl font-bold">
+        <h1 className="text-4xl font-bold dark:text-gray-300">
           Free Online Tasbih & Zikr Counters
         </h1>
         <p className="text-gray-700 dark:text-gray-300">

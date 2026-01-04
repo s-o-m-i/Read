@@ -20,7 +20,7 @@ export default function TermsOfService() {
 
 
       <main className="max-w-3xl mx-auto px-4 py-12 text-gray-700 dark:text-gray-300 space-y-6">
-        <h1 className="text-3xl font-bold mb-4">Terms of Service</h1>
+        <h1 className="text-3xl font-bold dark:text-gray-300 mb-4">Terms of Service</h1>
 
         {/* Add your content here */}
        <section className="space-y-6 text-gray-700 dark:text-gray-300">
