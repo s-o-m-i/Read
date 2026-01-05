@@ -35,7 +35,7 @@ export default function BlogIndexPage() {
             <li
               key={blog.slug}
               className="rounded-xl border border-gray-200 dark:border-gray-700
-                         p-5 hover:bg-gray-50 dark:hover:bg-gray-800
+                         overflow-hidden hover:bg-gray-50 dark:hover:bg-gray-800
                          transition"
             >
               <Link
@@ -43,12 +43,26 @@ export default function BlogIndexPage() {
                 className="block focus:outline-none focus:ring-2
                            focus:ring-emerald-400 rounded-lg"
               >
-                <h2 className="text-xl font-medium mb-2">
-                  {blog.title}
-                </h2>
-                <p className="text-gray-600 dark:text-gray-400 text-sm">
-                  {blog.description}
-                </p>
+                <div className="flex flex-col sm:flex-row gap-4">
+                  {/* Featured Image */}
+                  <div className="sm:w-64 h-48 sm:h-auto flex-shrink-0">
+                    <img
+                      src={blog.image}
+                      alt={blog.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  
+                  {/* Content */}
+                  <div className="p-5 flex-1">
+                    <h2 className="text-xl font-medium mb-2">
+                      {blog.title}
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-400 text-sm">
+                      {blog.description}
+                    </p>
+                  </div>
+                </div>
               </Link>
             </li>
           ))}

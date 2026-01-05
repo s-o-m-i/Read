@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useTheme } from "./ThemeProvider";
 
 export default function Navbar() {
@@ -9,8 +10,15 @@ export default function Navbar() {
   return (
     <nav className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-emerald-600 font-bold text-lg">
-          Tasbih Hub
+        <Link href="/" className="flex items-center gap-2">
+          <Image 
+            src="/images/logo/logo.png" 
+            alt="Tasbih Hub Logo" 
+            width={40} 
+            height={40}
+            className="rounded-lg"
+          />
+          <span className="text-emerald-600 font-bold text-lg">Tasbih Hub</span>
         </Link>
 
         <ul className="hidden md:flex space-x-6 text-gray-700 dark:text-gray-300 font-medium items-center">

@@ -62,7 +62,7 @@ export default function Page() {
       <main className="bg-white dark:bg-gray-900">
         {/* H1 — VERY IMPORTANT FOR SEO */}
         <section className="max-w-5xl mx-auto px-4 pt-8 text-center">
-          <h1 className="text-3xl font-bold dark:text-gray-300">
+          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-300">
             Free Online Tasbeeh Counter – Digital Tasbih Tool
           </h1>
         </section>
