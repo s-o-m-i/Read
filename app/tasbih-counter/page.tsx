@@ -4,55 +4,55 @@ import TasbihCounter from "@/components/TasbihCounter";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Online Tasbeeh Counter – Free Digital Tasbih Tool",
+  title: "Online Tasbih Counter – Free Digital Tasbih Tool",
   description:
-    "Free online tasbeeh counter to track your daily zikr and dhikr. Simple, mobile-friendly digital tasbih counter with saved progress.",
+    "Free online tasbih counter to track your daily zikr and dhikr. Simple, mobile-friendly digital tasbih counter with saved progress.",
   openGraph: {
-    title: "Online Tasbeeh Counter – Tasbih Hub",
+    title: "Online Tasbih Counter – Tasbih Hub",
     description:
-      "Track your daily zikr and tasbeeh with this free online digital counter. Mobile-friendly, fast, and saves your progress automatically.",
-    url: "https://tasbihhub.com/tasbeeh-counter",
+      "Track your daily zikr and tasbih with this free online digital counter. Mobile-friendly, fast, and saves your progress automatically.",
+    url: "https://tasbihhub.com/tasbih-counter",
     type: "website",
     siteName: "Tasbih Hub",
     images: [
       {
         url: "https://tasbihhub.com/og-image.jpg",
-        alt: "Online Tasbeeh Counter – Tasbih Hub",
+        alt: "Online Tasbih Counter – Tasbih Hub",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Online Tasbeeh Counter – Tasbih Hub",
+    title: "Online Tasbih Counter – Tasbih Hub",
     description:
-      "Track your daily zikr and tasbeeh with this free online digital counter. Mobile-friendly and easy to use.",
+      "Track your daily zikr and tasbih with this free online digital counter. Mobile-friendly and easy to use.",
     images: ["https://tasbihhub.com/og-image.jpg"],
   },
   alternates: {
-    canonical: "https://tasbihhub.com/tasbeeh-counter",
+    canonical: "https://tasbihhub.com/tasbih-counter",
   },
 };
 
 const faqs: FAQItem[] = [
   {
-    question: "What is an online tasbeeh counter?",
+    question: "What is an online tasbih counter?",
     answer:
-      "An online tasbeeh counter is a digital tool that helps you count zikr and dhikr recitations easily without using a physical tasbih.",
+      "An online tasbih counter is a digital tool that helps you count zikr and dhikr recitations easily without using a physical tasbih.",
   },
   {
-    question: "Does this tasbeeh counter save my progress?",
+    question: "Does this tasbih counter save my progress?",
     answer:
-      "Yes, your tasbeeh count is saved automatically in your browser so you can continue later without losing progress.",
+      "Yes, your tasbih count is saved automatically in your browser so you can continue later without losing progress.",
   },
   {
-    question: "Can I use this digital tasbeeh counter on mobile?",
+    question: "Can I use this digital tasbih counter on mobile?",
     answer:
-      "Yes, the online tasbeeh counter is fully mobile-friendly and works smoothly on all devices.",
+      "Yes, the online tasbih counter is fully mobile-friendly and works smoothly on all devices.",
   },
   {
-    question: "Is this tasbeeh counter free to use?",
+    question: "Is this tasbih counter free to use?",
     answer:
-      "Yes, this digital tasbeeh counter is completely free and does not require any registration.",
+      "Yes, this digital tasbih counter is completely free and does not require any registration.",
   },
 ];
 
@@ -63,16 +63,15 @@ export default function Page() {
         {/* H1 — VERY IMPORTANT FOR SEO */}
         <section className="max-w-5xl mx-auto px-4 pt-8 text-center">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-300">
-            Free Online Tasbeeh Counter – Digital Tasbih Tool
+            Free Online Tasbih Counter – Digital Tasbih Tool
           </h1>
         </section>
 
         {/* TOOL — FULL WIDTH */}
-        <section aria-label="Tasbeeh Counter Tool" className="mt-6">
+        <section aria-label="Tasbih Counter Tool" className="mt-6">
           <TasbihCounter
-            counterName="tasbeeh"
-            title="Tasbeeh Counter"
-            arabicText="سُبْحَانَ ٱللَّٰهِ"
+            counterName="tasbih"
+            title="Tasbih Counter"
           />
         </section>
 
@@ -81,14 +80,14 @@ export default function Page() {
           {/* INTRO */}
           <div className="space-y-4 text-gray-700 dark:text-gray-300">
             <p>
-              This free online tasbeeh counter helps you track your daily
+              This free online tasbih counter helps you track your daily
               zikr and dhikr with ease. It works like a digital tasbih and
               allows you to count recitations such as SubhanAllah (سُبْحَانَ ٱللَّٰهِ),
               Alhamdulillah (ٱلْحَمْدُ لِلَّٰهِ), and Allahu Akbar (ٱللَّٰهُ أَكْبَرُ).
             </p>
 
             <p>
-              Our online tasbeeh counter is fast, lightweight, and
+              Our online tasbih counter is fast, lightweight, and
               mobile-friendly. Your progress is saved automatically, so you
               can continue your zikr anytime without losing your count.
             </p>
@@ -97,29 +96,29 @@ export default function Page() {
           {/* SEO BLOCK */}
           <div className="space-y-6 text-gray-700 dark:text-gray-300">
             <h2 className="text-2xl font-semibold">
-              Why Use an Online Tasbeeh Counter?
+              Why Use an Online Tasbih Counter?
             </h2>
 
             <p>
-              A digital tasbeeh counter is useful for Muslims who want an
+              A digital tasbih counter is useful for Muslims who want an
               easy and reliable way to keep track of zikr without carrying
               a physical tasbih. This tool works directly in your browser and
               does not require any app installation.
             </p>
 
             <p>
-              Whether you are doing daily tasbeeh after salah or completing a
+              Whether you are doing daily tasbih after salah or completing a
               zikr target of 33, 99, or 100 counts, this counter helps you stay
               focused and consistent in your dhikr routine.
             </p>
 
             <h2 className="text-2xl font-semibold">
-              Features of This Digital Tasbeeh Counter
+              Features of This Digital Tasbih Counter
             </h2>
 
             <ul className="list-disc pl-6 space-y-2">
-              <li>Free and easy-to-use online tasbeeh counter</li>
-              <li>Automatically saves your tasbeeh count</li>
+              <li>Free and easy-to-use online tasbih counter</li>
+              <li>Automatically saves your tasbih count</li>
               <li>Mobile-friendly and works on all devices</li>
               <li>No login or registration required</li>
               <li>Works offline once loaded</li>

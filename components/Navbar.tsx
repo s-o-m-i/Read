@@ -17,7 +17,7 @@ export default function Navbar() {
 
         <ul className="hidden md:flex space-x-6 text-gray-700 dark:text-gray-300 font-medium items-center">
           <li>
-            <Link href="/online-tasbih-counter">Tasbih</Link>
+            <Link href="/tasbih-counter">Tasbih</Link>
           </li>
           <li>
             <Link href="/istighfar-counter">Istighfar</Link>
