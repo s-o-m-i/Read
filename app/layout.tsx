@@ -4,7 +4,7 @@ import "./globals.css";
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
 import { ThemeProvider } from "@/components/ThemeProvider";
-
+import { GoogleAnalytics } from "@next/third-parties/google";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -34,6 +34,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
+        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
         <ThemeProvider>
           <Navbar/>
           <main className="flex-1">

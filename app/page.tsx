@@ -21,30 +21,36 @@ export default function HomePage() {
       </section>
 
       {/* TOOLS GRID */}
-      <section className="max-w-5xl mx-auto px-4 py-10 grid grid-cols-1 sm:grid-cols-2 gap-6">
-        <ToolCard
-          title="Tasbih Counter"
-          description="Count tasbeeh, zikr, and dhikr easily with our digital tasbih counter."
-          href="/online-tasbih-counter"
-        />
+      <section className="max-w-5xl mx-auto px-4 py-10 space-y-6">
+        <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-300 text-center">
+          Our Digital Tasbih Tools
+        </h2>
+        
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <ToolCard
+            title="Tasbih Counter"
+            description="Count tasbeeh, zikr, and dhikr easily with our digital tasbih counter."
+            href="/online-tasbih-counter"
+          />
 
-        <ToolCard
-          title="Istighfar Counter"
-          description="Track istighfar recitations and stay consistent in daily zikr."
-          href="/istighfar-counter"
-        />
+          <ToolCard
+            title="Istighfar Counter"
+            description="Track istighfar recitations and stay consistent in daily zikr."
+            href="/istighfar-counter"
+          />
 
-        <ToolCard
-          title="Dhikr Counter"
-          description="A simple digital dhikr counter for all types of remembrance."
-          href="/dhikr-counter"
-        />
+          <ToolCard
+            title="Dhikr Counter"
+            description="A simple digital dhikr counter for all types of remembrance."
+            href="/dhikr-counter"
+          />
 
-        <ToolCard
-          title="Durood Counter"
-          description="Count durood sharif recitations easily online."
-          href="/durood-counter"
-        />
+          <ToolCard
+            title="Durood Counter"
+            description="Count durood sharif recitations easily online."
+            href="/durood-counter"
+          />
+        </div>
       </section>
 
       {/* SEO CONTENT */}
