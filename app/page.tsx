@@ -30,7 +30,7 @@ export default function HomePage() {
           <ToolCard
             title="Tasbih Counter"
             description="Count tasbeeh, zikr, and dhikr easily with our digital tasbih counter."
-            href="/online-tasbih-counter"
+            href="/tasbih-counter"
           />
 
           <ToolCard
