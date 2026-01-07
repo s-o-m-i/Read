@@ -33,12 +33,12 @@ export default function FAQ({ title = "Frequently Asked Questions", faqs }: FAQP
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <h2 className="text-2xl font-semibold dark:text-gray-300">{title}</h2>
+      <h2 className="text-2xl text-gray-900 font-semibold dark:text-gray-300">{title}</h2>
 
       <div className="space-y-3">
         {faqs.map((faq, index) => (
           <div key={index}>
-            <h3 className="font-semibold dark:text-gray-300">{faq.question}</h3>
+            <h3 className="font-semibold text-gray-900 dark:text-gray-300">{faq.question}</h3>
             <p className="text-gray-700 dark:text-gray-300">
               {faq.answer}
             </p>

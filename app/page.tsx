@@ -18,6 +18,15 @@ export default function HomePage() {
           Simple and free digital tasbih tools to help you track zikr, dhikr,
           istighfar, and durood online. No registration required.
         </p>
+
+        {/* AI FEATURE ANNOUNCEMENT */}
+        <div className="mt-6 inline-block">
+          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 border border-emerald-200 dark:border-emerald-700 rounded-lg px-6 py-4 shadow-sm">
+            <p className="text-emerald-800 dark:text-emerald-300 font-medium text-sm sm:text-base">
+            <span className="font-semibold">Coming Soon:</span> AI-Powered Zikr Suggestions – Get personalized Islamic remembrance recommendations tailored to your spiritual journey
+            </p>
+          </div>
+        </div>
       </section>
 
       {/* TOOLS GRID */}
