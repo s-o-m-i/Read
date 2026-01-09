@@ -30,6 +30,10 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: "https://tasbihhub.com/tasbih-counter",
+    languages: {
+      "en": "https://tasbihhub.com/tasbih-counter",
+      "id": "https://tasbihhub.com/id/tasbih-counter"
+    }
   },
 };
 
@@ -60,8 +64,16 @@ export default function Page() {
   return (
     <>
       <main className="bg-white dark:bg-gray-900">
+        {/* Language Switcher */}
+        <div className="max-w-5xl mx-auto px-4 pt-4 text-right">
+          <div className="lang-switcher text-sm">
+            <a href="/tasbih-counter" className="text-emerald-600 hover:underline font-semibold">EN</a> |{" "}
+            <a href="/id/tasbih-counter" className="text-emerald-600 hover:underline">ID</a>
+          </div>
+        </div>
+
         {/* H1 — VERY IMPORTANT FOR SEO */}
-        <section className="max-w-5xl mx-auto px-4 pt-8 text-center">
+        <section className="max-w-5xl mx-auto px-4 pt-4 text-center">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-300">
             Free Online Tasbih Counter – Digital Tasbih Tool
           </h1>
