@@ -1,3 +1,4 @@
+import TasbihCounter from "@/components/TasbihCounter";
 import Link from "next/link";
 
 export const metadata = {
@@ -12,18 +13,21 @@ export default function HomePage() {
       {/* HERO */}
       <section className="max-w-5xl mx-auto px-4 py-12 text-center space-y-4">
         <h1 className="text-4xl text-[#364153] font-bold dark:text-gray-300">
-          Free Online Tasbih & Zikr Counters
+          How to Use the Online Tasbih Counter
         </h1>
         <p className="text-gray-700 dark:text-gray-300">
-          Simple and free digital tasbih tools to help you track zikr, dhikr,
-          istighfar, and durood online. No registration required.
+          Tap the button to increase your count. The counter saves your progress
+          automatically in your browser so you can continue anytime.
         </p>
 
+        <TasbihCounter />
         {/* AI FEATURE ANNOUNCEMENT */}
         <div className="mt-6 inline-block">
           <div className="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 border border-emerald-200 dark:border-emerald-700 rounded-lg px-6 py-4 shadow-sm">
             <p className="text-emerald-800 dark:text-emerald-300 font-medium text-sm sm:text-base">
-            <span className="font-semibold">Coming Soon:</span> AI-Powered Zikr Suggestions – Get personalized Islamic remembrance recommendations tailored to your spiritual journey
+              <span className="font-semibold">Coming Soon:</span> AI-Powered
+              Zikr Suggestions – Get personalized Islamic remembrance
+              recommendations tailored to your spiritual journey
             </p>
           </div>
         </div>
@@ -32,9 +36,12 @@ export default function HomePage() {
       {/* TOOLS GRID */}
       <section className="max-w-5xl mx-auto px-4 py-10 space-y-6">
         <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-300 text-center">
-          Our Digital Tasbih Tools
+          Free Online Tasbih & Zikr Counters
         </h2>
-        
+        <p className="text-gray-700 dark:text-gray-300">
+          Simple and free digital tasbih tools to help you track zikr, dhikr,
+          istighfar, and durood online. No registration required.
+        </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
           <ToolCard
             title="Tasbih Counter"
