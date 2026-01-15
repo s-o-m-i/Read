@@ -4,11 +4,11 @@ import TasbihCounter from "@/components/TasbihCounter";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Online Istighfar Counter – Free Digital Zikr Tool",
+  title: "Istighfar Counter – Count Astaghfirullah Online (Free & Saved)",
   description:
-    "Free online Istighfar counter to track your daily zikr, dhikr, and Istighfar. Simple, mobile-friendly digital counter with saved progress.",
+    "Use this free istighfar counter to count Astaghfirullah easily. Digital tasbih that saves progress automatically. No login required.",
   openGraph: {
-    title: "Online Istighfar Counter – Tasbih Hub",
+    title: "Istighfar Counter – Tasbih Hub",
     description:
       "Track your daily Istighfar and zikr with this free online digital counter. Mobile-friendly, fast, and saves your progress automatically.",
     url: "https://tasbihhub.com/istighfar-counter",

@@ -31,9 +31,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://tasbihhub.com/id/tasbih-counter",
     languages: {
-      "id": "https://tasbihhub.com/id/tasbih-counter",
-      "en": "https://tasbihhub.com/tasbih-counter"
-    }
+      id: "https://tasbihhub.com/id/tasbih-counter",
+      en: "https://tasbihhub.com/tasbih-counter",
+      "x-default": "https://tasbihhub.com/tasbih-counter",
+    },
   },
 };
 
@@ -67,8 +68,19 @@ export default function Page() {
         {/* Language Switcher */}
         <div className="max-w-5xl mx-auto px-4 pt-4 text-right">
           <div className="lang-switcher text-sm">
-            <Link href="/tasbih-counter" className="text-emerald-600 hover:underline">EN</Link> |{" "}
-            <Link href="/id/tasbih-counter" className="text-emerald-600 hover:underline font-semibold">ID</Link>
+            <Link
+              href="/tasbih-counter"
+              className="text-emerald-600 hover:underline"
+            >
+              EN
+            </Link>{" "}
+            |{" "}
+            <Link
+              href="/id/tasbih-counter"
+              className="text-emerald-600 hover:underline font-semibold"
+            >
+              ID
+            </Link>
           </div>
         </div>
 
@@ -84,10 +96,7 @@ export default function Page() {
 
         {/* TOOL — FULL WIDTH */}
         <section aria-label="Alat Tasbih Counter" className="mt-6">
-          <TasbihCounter
-            counterName="tasbih"
-            title="Tasbih Counter"
-          />
+          <TasbihCounter counterName="tasbih" title="Tasbih Counter" />
         </section>
 
         {/* CONTENT SECTION */}
@@ -96,13 +105,14 @@ export default function Page() {
           <div className="space-y-4 text-gray-700 dark:text-gray-300">
             <p>
               Tasbih counter online gratis ini membantu Anda menghitung dzikir
-              dan zikir harian dengan mudah. Alat ini bekerja seperti tasbih digital
-              dan memungkinkan Anda menghitung bacaan seperti SubhanAllah (سُبْحَانَ ٱللَّٰهِ),
-              Alhamdulillah (ٱلْحَمْدُ لِلَّٰهِ), dan Allahu Akbar (ٱللَّٰهُ أَكْبَرُ).
+              dan zikir harian dengan mudah. Alat ini bekerja seperti tasbih
+              digital dan memungkinkan Anda menghitung bacaan seperti
+              SubhanAllah (سُبْحَانَ ٱللَّٰهِ), Alhamdulillah (ٱلْحَمْدُ
+              لِلَّٰهِ), dan Allahu Akbar (ٱللَّٰهُ أَكْبَرُ).
             </p>
 
             <p>
-              Tasbih counter online kami cepat, ringan, dan ramah mobile. 
+              Tasbih counter online kami cepat, ringan, dan ramah mobile.
               Progres Anda disimpan secara otomatis, sehingga Anda dapat
               melanjutkan dzikir kapan saja tanpa kehilangan hitungan.
             </p>
@@ -117,14 +127,15 @@ export default function Page() {
             <p>
               Tasbih counter digital berguna bagi umat Muslim yang menginginkan
               cara mudah dan terpercaya untuk melacak dzikir tanpa membawa
-              tasbih fisik. Alat ini bekerja langsung di browser Anda dan
-              tidak memerlukan instalasi aplikasi apapun.
+              tasbih fisik. Alat ini bekerja langsung di browser Anda dan tidak
+              memerlukan instalasi aplikasi apapun.
             </p>
 
             <p>
-              Baik Anda melakukan tasbih harian setelah shalat atau menyelesaikan
-              target dzikir 33, 99, atau 100 hitungan, counter ini membantu Anda tetap
-              fokus dan konsisten dalam rutinitas dzikir Anda.
+              Baik Anda melakukan tasbih harian setelah shalat atau
+              menyelesaikan target dzikir 33, 99, atau 100 hitungan, counter ini
+              membantu Anda tetap fokus dan konsisten dalam rutinitas dzikir
+              Anda.
             </p>
 
             <h2 className="text-2xl font-semibold">
@@ -150,14 +161,6 @@ export default function Page() {
             </h2>
 
             <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/id/tasbih-counter"
-                  className="text-emerald-600 font-semibold"
-                >
-                  Tasbih Counter
-                </Link>
-              </li>
               <li>
                 <Link
                   href="/id/durood-counter"

@@ -4,7 +4,7 @@ import TasbihCounter from "@/components/TasbihCounter";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Online Dhikr Counter – Free Digital Zikr Tracker",
+  title: "Dhikr Counter Online – Track Daily Dhikr & Zikr (Free Tool)",
   description:
     "Free online dhikr counter to track your daily zikr and remembrance of Allah. Simple, mobile-friendly digital dhikr tool with saved progress.",
   openGraph: {
@@ -63,8 +63,10 @@ export default function Page() {
         {/* H1 — VERY IMPORTANT FOR SEO */}
         <section className="max-w-5xl mx-auto px-4 pt-8 text-center">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-300">
-            Free Online Dhikr Counter – Digital Zikr Tracker
+            Dhikr Zähler Online
           </h1>
+          <p className="space-y-4 text-gray-700 dark:text-gray-300">Dieser Dhikr Zähler hilft Ihnen, Dhikr online zu zählen – kostenlos und ohne Anmeldung.
+</p>
         </section>
 
         {/* TOOL — FULL WIDTH */}

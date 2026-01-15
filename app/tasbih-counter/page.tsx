@@ -32,7 +32,9 @@ export const metadata: Metadata = {
     canonical: "https://tasbihhub.com/tasbih-counter",
     languages: {
       "en": "https://tasbihhub.com/tasbih-counter",
-      "id": "https://tasbihhub.com/id/tasbih-counter"
+      "id": "https://tasbihhub.com/id/tasbih-counter",
+          "x-default": "https://tasbihhub.com/tasbih-counter",
+
     }
   },
 };
@@ -147,14 +149,7 @@ export default function Page() {
             </h2>
 
             <ul className="space-y-2">
-              <li>
-                <Link
-                  href="/online-tasbih-counter"
-                  className="text-emerald-600 font-semibold"
-                >
-                  Tasbih Counter
-                </Link>
-              </li>
+
               <li>
                 <Link
                   href="/durood-counter"

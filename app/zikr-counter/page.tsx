@@ -68,7 +68,7 @@ export default function Page() {
         </section>
 
         {/* TOOL — FULL WIDTH */}
-        <section aria-label="Zikr Counter Tool" className="mt-6">
+        <section aria-label="Zikr Counter Tool" className="mt-6 max-w-md">
           <TasbihCounter
             counterName="zikr"
             title="Zikr Counter"
