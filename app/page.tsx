@@ -2,7 +2,7 @@ import TasbihCounter from "@/components/TasbihCounter";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Free Online Tasbih & Zikr Counters – Digital Islamic Tools",
+  title: "Free Online Tasbih Counter | Digital Zikr, Dhikr & Istighfar Tools",
   description:
     "Free online tasbih, istighfar, dhikr, and durood counters. Simple, mobile-friendly Islamic tools to track your daily zikr.",
 };
@@ -12,15 +12,18 @@ export default function HomePage() {
     <main className="bg-white dark:bg-gray-900">
       {/* HERO */}
       <section className="max-w-5xl mx-auto px-4 py-12 text-center space-y-4">
+        <TasbihCounter />
         <h1 className="text-4xl text-[#364153] font-bold dark:text-gray-300">
-          How to Use the Online Tasbih Counter
+          Free Online Tasbih Counter & Digital Zikr Tools
         </h1>
         <p className="text-gray-700 dark:text-gray-300">
-          Tap the button to increase your count. The counter saves your progress
-          automatically in your browser so you can continue anytime.
+          <p className="max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
+            TasbihHub provides free online tasbih counters and digital zikr
+            tools for Muslims who want a simple way to track daily dhikr,
+            istighfar, durood, and tasbeeh without using a physical tasbih.
+          </p>
         </p>
 
-        <TasbihCounter />
         {/* AI FEATURE ANNOUNCEMENT */}
         <div className="mt-6 inline-block">
           <div className="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 border border-emerald-200 dark:border-emerald-700 rounded-lg px-6 py-4 shadow-sm">
