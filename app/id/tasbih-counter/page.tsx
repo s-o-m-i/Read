@@ -4,28 +4,28 @@ import TasbihCounter from "@/components/TasbihCounter";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Tasbih Digital Online Gratis | TasbihHub",
+  title: "Tasbih Digital Online Gratis – Counter Dzikir Tanpa Aplikasi",
   description:
-    "Gunakan tasbih digital online gratis untuk menghitung dzikir harian dengan mudah. Tasbih counter ramah mobile dengan penyimpanan otomatis.",
+    "Tasbih digital online gratis untuk dzikir harian. Tanpa aplikasi, tanpa login, tanpa gangguan. Gunakan langsung dan fokus pada dzikir.",
   openGraph: {
-    title: "Tasbih Digital Online Gratis – Tasbih Hub",
+    title: "Tasbih Digital Online Gratis – Counter Dzikir Sederhana",
     description:
-      "Hitung dzikir dan tasbih harian Anda dengan mudah menggunakan counter digital gratis ini. Ramah mobile, cepat, dan menyimpan progres secara otomatis.",
+      "Gunakan tasbih digital online gratis untuk menghitung dzikir dengan tenang dan fokus. Tidak perlu aplikasi, tidak perlu daftar.",
     url: "https://tasbihhub.com/id/tasbih-counter",
     type: "website",
-    siteName: "Tasbih Hub",
+    siteName: "TasbihHub",
     images: [
       {
         url: "https://tasbihhub.com/og-image.jpg",
-        alt: "Tasbih Digital Online Gratis – Tasbih Hub",
+        alt: "Tasbih Digital Online Gratis untuk Dzikir",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tasbih Digital Online Gratis – Tasbih Hub",
+    title: "Tasbih Digital Online Gratis – Dzikir Tanpa Aplikasi",
     description:
-      "Hitung dzikir dan tasbih harian Anda dengan mudah menggunakan counter digital gratis ini. Ramah mobile dan mudah digunakan.",
+      "Counter tasbih digital online gratis. Sederhana, cepat, dan membantu Anda konsisten dalam dzikir.",
     images: ["https://tasbihhub.com/og-image.jpg"],
   },
   alternates: {
@@ -38,12 +38,13 @@ export const metadata: Metadata = {
   },
 };
 
+
 const faqs: FAQItem[] = [
-  {
-    question: "Apa itu tasbih counter online?",
-    answer:
-      "Tasbih counter online adalah alat digital yang membantu Anda menghitung dzikir dan zikir dengan mudah tanpa menggunakan tasbih fisik.",
-  },
+ {
+  question: "Apa itu tasbih digital online?",
+  answer:
+    "Tasbih digital online adalah alat berbasis web yang membantu menghitung dzikir tanpa menggunakan tasbih fisik atau aplikasi tambahan.",
+},
   {
     question: "Apakah tasbih counter ini menyimpan progres saya?",
     answer:
@@ -59,6 +60,12 @@ const faqs: FAQItem[] = [
     answer:
       "Ya, tasbih counter digital ini sepenuhnya gratis dan tidak memerlukan pendaftaran apapun.",
   },
+  {
+  question: "Apakah aman menggunakan tasbih digital ini?",
+  answer:
+    "Ya. Tasbih digital ini berjalan langsung di browser Anda dan tidak mengumpulkan data pribadi atau akun pengguna."
+}
+
 ];
 
 export default function Page() {
@@ -87,10 +94,12 @@ export default function Page() {
         {/* H1 — VERY IMPORTANT FOR SEO */}
         <section className="max-w-5xl mx-auto px-4 pt-4 text-center">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-300">
-            Tasbih Digital Online Gratis
+              Tasbih Digital Online Gratis
           </h1>
           <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-            Gunakan tasbih digital untuk menghitung dzikir harian dengan mudah.
+            Counter dzikir sederhana untuk membantu Anda berdzikir dengan fokus.
+  Tanpa aplikasi. Tanpa login. Langsung digunakan.
+
           </p>
         </section>
 
@@ -100,22 +109,42 @@ export default function Page() {
         </section>
 
         {/* CONTENT SECTION */}
-        <section className="max-w-5xl mx-auto px-4 py-12 space-y-10">
+        <section className="max-w-5xl mx-auto px-4 py-12 space-y-10 text-gray-700 dark:text-gray-300">
+          <h2 className="text-2xl font-semibold">
+  Apakah Tasbih Digital Diperbolehkan?
+</h2>
+
+<p>
+  Banyak ulama membolehkan penggunaan alat bantu untuk menghitung dzikir
+  selama niatnya ikhlas dan bukan untuk pamer. Menggunakan jari memang
+  lebih utama, namun tasbih fisik maupun digital dibolehkan sebagai sarana
+  membantu fokus dan konsistensi.
+</p>
+
+<p>
+  Allah menilai niat dan kehadiran hati, bukan alat yang digunakan.
+</p>
+
           {/* INTRO */}
           <div className="space-y-4 text-gray-700 dark:text-gray-300">
-            <p>
-              Tasbih counter online gratis ini membantu Anda menghitung dzikir
-              dan zikir harian dengan mudah. Alat ini bekerja seperti tasbih
-              digital dan memungkinkan Anda menghitung bacaan seperti
-              SubhanAllah (سُبْحَانَ ٱللَّٰهِ), Alhamdulillah (ٱلْحَمْدُ
-              لِلَّٰهِ), dan Allahu Akbar (ٱللَّٰهُ أَكْبَرُ).
-            </p>
+         <p>
+  Tasbih digital online gratis ini dapat digunakan sebagai counter dzikir online tanpa aplikasi, langsung melalui browser Anda.
+</p>
 
-            <p>
-              Tasbih counter online kami cepat, ringan, dan ramah mobile.
-              Progres Anda disimpan secara otomatis, sehingga Anda dapat
-              melanjutkan dzikir kapan saja tanpa kehilangan hitungan.
-            </p>
+<p>
+  Tasbih digital online gratis ini membantu Anda menghitung dzikir harian
+  seperti Subḥānallāh, Alḥamdulillāh, dan Allāhu Akbar tanpa harus membawa
+  tasbih fisik atau menginstal aplikasi tambahan.
+  
+</p>
+
+<p>
+  Alat ini dibuat untuk kesederhanaan dan ketenangan. Tidak ada akun,
+  tidak ada iklan mengganggu, dan tidak ada unsur pamer. Hitungan Anda
+  tersimpan otomatis di perangkat Anda, sehingga Anda bisa melanjutkan
+  dzikir kapan saja.
+</p>
+
           </div>
 
           {/* SEO BLOCK */}
@@ -138,17 +167,14 @@ export default function Page() {
               Anda.
             </p>
 
-            <h2 className="text-2xl font-semibold">
-              Fitur Tasbih Counter Digital Ini
-            </h2>
+<ul className="list-disc pl-6 space-y-2">
+  <li>Gratis dan langsung digunakan di browser</li>
+  <li>Tidak perlu aplikasi atau pendaftaran</li>
+  <li>Menyimpan hitungan dzikir secara otomatis</li>
+  <li>Ramah mobile dan ringan</li>
+  <li>Membantu fokus tanpa distraksi</li>
+</ul>
 
-            <ul className="list-disc pl-6 space-y-2">
-              <li>Tasbih counter online gratis dan mudah digunakan</li>
-              <li>Menyimpan hitungan tasbih Anda secara otomatis</li>
-              <li>Ramah mobile dan berfungsi di semua perangkat</li>
-              <li>Tidak perlu login atau pendaftaran</li>
-              <li>Berfungsi offline setelah dimuat</li>
-            </ul>
           </div>
 
           {/* FAQ */}

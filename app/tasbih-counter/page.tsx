@@ -94,49 +94,134 @@ export default function Page() {
           {/* INTRO */}
           <div className="space-y-4 text-gray-700 dark:text-gray-300">
             <p>
-              This free online tasbih counter helps you track your daily
-              zikr and dhikr with ease. It works like a digital tasbih and
-              allows you to count recitations such as SubhanAllah (سُبْحَانَ ٱللَّٰهِ),
-              Alhamdulillah (ٱلْحَمْدُ لِلَّٰهِ), and Allahu Akbar (ٱللَّٰهُ أَكْبَرُ).
+              The online tasbih counter on Tasbih Hub is a free digital tasbih designed to help you track your daily zikr and dhikr easily. Whether you are reciting SubhanAllah, Alhamdulillah, Allahu Akbar, or any other zikr, this tool allows you to count accurately without using a physical tasbih.
             </p>
 
             <p>
-              Our online tasbih counter is fast, lightweight, and
-              mobile-friendly. Your progress is saved automatically, so you
-              can continue your zikr anytime without losing your count.
+              This tasbih digital online free tool works directly in your browser. There is no app to install, no account required, and no distractions. Simply open the page and start your zikr.
             </p>
           </div>
 
           {/* SEO BLOCK */}
           <div className="space-y-6 text-gray-700 dark:text-gray-300">
             <h2 className="text-2xl font-semibold">
+              What Is a Digital Tasbih Counter?
+            </h2>
+
+            <p>
+              A digital tasbih counter is an online version of a traditional tasbih (misbaha). Instead of beads, you tap the screen to increase your count. This makes it ideal for people who prefer a simple, lightweight, and modern tasbih counter online.
+            </p>
+
+            <p>
+              Many Muslims use an online tasbih counter for:
+            </p>
+
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Daily zikr after salah</li>
+              <li>Completing 33, 99, or 100 tasbih counts</li>
+              <li>Tracking long dhikr sessions</li>
+              <li>Zikr while traveling or at work</li>
+            </ul>
+
+            <h2 className="text-2xl font-semibold">
               Why Use an Online Tasbih Counter?
             </h2>
 
             <p>
-              A digital tasbih counter is useful for Muslims who want an
-              easy and reliable way to keep track of zikr without carrying
-              a physical tasbih. This tool works directly in your browser and
-              does not require any app installation.
+              Using an online tasbih counter has several advantages over a physical tasbih:
             </p>
 
+            <ul className="list-disc pl-6 space-y-2">
+              <li>You don't need to carry beads everywhere</li>
+              <li>Your tasbih count is saved automatically</li>
+              <li>You can continue later without losing progress</li>
+              <li>Works on mobile, tablet, and desktop</li>
+              <li>No cost — completely free</li>
+            </ul>
+
             <p>
-              Whether you are doing daily tasbih after salah or completing a
-              zikr target of 33, 99, or 100 counts, this counter helps you stay
-              focused and consistent in your dhikr routine.
+              This makes a tasbih counter online free especially helpful for people who want consistency in their zikr without extra effort.
             </p>
 
             <h2 className="text-2xl font-semibold">
-              Features of This Digital Tasbih Counter
+              Key Features of Tasbih Hub's Digital Tasbih
             </h2>
 
+            <p>
+              Our online tasbih counter is built to be simple and reliable:
+            </p>
+
             <ul className="list-disc pl-6 space-y-2">
-              <li>Free and easy-to-use online tasbih counter</li>
-              <li>Automatically saves your tasbih count</li>
-              <li>Mobile-friendly and works on all devices</li>
+              <li>Free digital tasbih with unlimited use</li>
+              <li>Automatically saves your zikr count</li>
+              <li>Mobile-friendly and fast</li>
               <li>No login or registration required</li>
-              <li>Works offline once loaded</li>
+              <li>Works offline once the page is loaded</li>
             </ul>
+
+            <p>
+              Unlike many apps, this tasbih digital online free tool focuses only on zikr — no ads, no distractions, and no unnecessary features.
+            </p>
+
+            <h2 className="text-2xl font-semibold">
+              How to Use the Online Tasbih Counter
+            </h2>
+
+            <p>
+              Using the digital tasbih counter is very simple:
+            </p>
+
+            <ol className="list-decimal pl-6 space-y-2">
+              <li>Open the tasbih counter page</li>
+              <li>Choose your zikr (optional)</li>
+              <li>Tap the counter each time you recite</li>
+              <li>Your count increases automatically</li>
+              <li>Close and return anytime — your progress is saved</li>
+            </ol>
+
+            <p>
+              This makes it ideal for both short and long dhikr sessions.
+            </p>
+
+            <h2 className="text-2xl font-semibold">
+              Who Is This Tasbih Counter For?
+            </h2>
+
+            <p>
+              This online tasbih counter is useful for:
+            </p>
+
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Muslims doing daily zikr</li>
+              <li>Students learning tasbih habits</li>
+              <li>Elderly users who want a large, simple counter</li>
+              <li>Anyone looking for a tasbih digital online free alternative</li>
+            </ul>
+
+            <p>
+              Whether you are new to zikr or already consistent, this tool helps you stay focused.
+            </p>
+
+            <h2 className="text-2xl font-semibold">
+              Online Tasbih vs Physical Tasbih
+            </h2>
+
+            <p>
+              Both are valid and beneficial. A physical tasbih offers a traditional feel, while a digital tasbih counter online offers convenience.
+            </p>
+
+            <p>
+              Many people use:
+            </p>
+
+            <ul className="list-disc pl-6 space-y-2">
+              <li>Physical tasbih at home or masjid</li>
+              <li>Online tasbih counter when traveling or working</li>
+            </ul>
+
+            <p>
+              This tool is meant to support your ibadah, not replace intention or sincerity.
+            </p>
           </div>
 
           {/* FAQ */}
