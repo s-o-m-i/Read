@@ -87,7 +87,7 @@ export default function HomePage() {
         <p>
           Whether you are counting tasbeeh after salah or completing daily
           istighfar and durood, our digital zikr counters help you stay focused
-          without distractions.
+          without distractions. To deepen your spiritual practice, <Link href="/blog/benefits-of-istighfar" className="text-emerald-600 hover:underline">explore the Islamic benefits of zikr</Link> in our comprehensive guides.
         </p>
       </section>
     </main>

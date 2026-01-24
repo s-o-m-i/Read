@@ -84,7 +84,7 @@ export default function Page() {
               This free online zikr counter is designed specifically for Muslims
               who want to deepen their Islamic practice through regular remembrance of Allah.
               Zikr is one of the most rewarding acts in Islam, and this simple tool helps you
-              maintain consistency and track your spiritual progress effortlessly.
+              maintain consistency and track your spiritual progress effortlessly. For more specific practices like tasbeeh or istighfar, explore our <Link href="/tasbih-counter" className="text-emerald-600 hover:underline">tasbih counter</Link> or <Link href="/istighfar-counter" className="text-emerald-600 hover:underline">istighfar counter</Link>.
             </p>
 
             <p>

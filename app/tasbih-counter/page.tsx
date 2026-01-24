@@ -163,6 +163,10 @@ export default function Page() {
               Unlike many apps, this tasbih digital online free tool focuses only on zikr — no ads, no distractions, and no unnecessary features.
             </p>
 
+            <div className="p-4 bg-emerald-50 dark:bg-emerald-900/20 rounded-lg border border-emerald-200 dark:border-emerald-700 my-6">
+              <p className="text-gray-700 dark:text-gray-300"><strong>Expand Your Practice:</strong> Our tasbih counter works perfectly with other forms of remembrance. Try our <Link href="/istighfar-counter" className="text-emerald-600 hover:underline font-semibold">istighfar counter</Link> for seeking forgiveness, or the <Link href="/durood-counter" className="text-emerald-600 hover:underline font-semibold">Durood Counter</Link> for sending blessings upon the Prophet (ﷺ).</p>
+            </div>
+
             <h2 className="text-2xl font-semibold">
               How to Use the Online Tasbih Counter
             </h2>
@@ -199,7 +203,7 @@ export default function Page() {
             </ul>
 
             <p>
-              Whether you are new to zikr or already consistent, this tool helps you stay focused.
+              Whether you are new to zikr or already consistent, this tool helps you stay focused. To learn more about the spiritual benefits of zikr and how it transforms your life, <Link href="/blog/benefits-of-istighfar" className="text-emerald-600 hover:underline">explore our articles on Islamic remembrance</Link>.
             </p>
 
             <h2 className="text-2xl font-semibold">
@@ -238,7 +242,7 @@ export default function Page() {
               <li>
                 <Link
                   href="/durood-counter"
-                  className="text-emerald-600 font-semibold"
+                  className="text-emerald-600 hover:underline font-semibold"
                 >
                   Durood Counter
                 </Link>
@@ -246,7 +250,7 @@ export default function Page() {
               <li>
                 <Link
                   href="/istighfar-counter"
-                  className="text-emerald-600 font-semibold"
+                  className="text-emerald-600 hover:underline font-semibold"
                 >
                   Istighfar Counter
                 </Link>
@@ -254,9 +258,17 @@ export default function Page() {
               <li>
                 <Link
                   href="/dhikr-counter"
-                  className="text-emerald-600 font-semibold"
+                  className="text-emerald-600 hover:underline font-semibold"
                 >
                   Dhikr Counter
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/zikr-counter"
+                  className="text-emerald-600 hover:underline font-semibold"
+                >
+                  Zikr Counter
                 </Link>
               </li>
             </ul>

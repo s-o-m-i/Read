@@ -27,6 +27,9 @@ export default function BlogIndexPage() {
           <p className="text-gray-600 dark:text-gray-400">
             Articles on tasbih, dhikr, istighfar, and mindful remembrance.
           </p>
+          <p className="text-gray-600 dark:text-gray-400 mt-4">
+            Each article pairs Islamic knowledge with our free digital tools—explore our <Link href="/tasbih-counter" className="text-emerald-600 hover:underline">tasbih counter</Link>, <Link href="/istighfar-counter" className="text-emerald-600 hover:underline">istighfar counter</Link>, and <Link href="/durood-counter" className="text-emerald-600 hover:underline">durood counter</Link> to practice what you learn.
+          </p>
         </header>
 
         {/* Blog List */}

@@ -101,6 +101,13 @@ export default function AboutPage() {
           <li>Simple, distraction-free design</li>
         </ul>
 
+        <h2 className="text-2xl font-semibold">Learn & Practice Together</h2>
+        <p>
+          Beyond our tools, we create educational content on Islamic remembrance.{" "}
+          <Link href="/blog" className="text-emerald-600 hover:underline">Read our blog articles</Link> to deepen your understanding of zikr, istighfar, and Durood Sharif,{" "}
+          then use our digital counters to practice consistently.
+        </p>
+
         <h2 className="text-2xl font-semibold">Connect With Us</h2>
         <p>
           We are committed to improving your online zikr experience. For

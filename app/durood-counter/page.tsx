@@ -104,7 +104,7 @@ export default function DuroodPage() {
               A digital Durood Sharif counter is useful for Muslims who want an
               easy and reliable way to keep track of Durood without carrying
               a physical tasbih. This tool works directly in your browser and
-              does not require any app installation.
+              does not require any app installation. <Link href="/blog/benefits-of-durood-sharif" className="text-emerald-600 hover:underline">Discover the profound spiritual benefits of Durood Sharif</Link> and how this beautiful practice transforms your Islamic journey.
             </p>
 
             <p>
@@ -137,9 +137,10 @@ export default function DuroodPage() {
 
             <ul className="space-y-2">
               <li>
+              <li>
                 <Link
-                  href="/online-tasbih-counter"
-                  className="text-emerald-600 font-semibold"
+                  href="/tasbih-counter"
+                  className="text-emerald-600 hover:underline font-semibold"
                 >
                   Tasbih Counter
                 </Link>
@@ -147,7 +148,7 @@ export default function DuroodPage() {
               <li>
                 <Link
                   href="/istighfar-counter"
-                  className="text-emerald-600 font-semibold"
+                  className="text-emerald-600 hover:underline font-semibold"
                 >
                   Istighfar Counter
                 </Link>
@@ -155,12 +156,16 @@ export default function DuroodPage() {
               <li>
                 <Link
                   href="/dhikr-counter"
-                  className="text-emerald-600 font-semibold"
+                  className="text-emerald-600 hover:underline font-semibold"
                 >
                   Dhikr Counter
                 </Link>
               </li>
             </ul>
+
+            <p className="pt-4 text-emerald-700 dark:text-emerald-300 text-sm italic">
+              Many Muslims combine Durood with other remembrance practices. Try our tasbih counter for daily tasbeeh or the istighfar counter for seeking forgiveness.
+            </p>
           </div>
         </section>
       </main>

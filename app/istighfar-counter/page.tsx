@@ -105,7 +105,7 @@ export default function IstighfarPage() {
               A digital Istighfar counter is useful for Muslims who want an easy
               and reliable way to track their Istighfar without using a physical
               tasbih. This counter works directly in your browser and requires
-              no app installation.
+              no app installation. <Link href="/blog/benefits-of-istighfar" className="text-emerald-600 hover:underline">Learn more about how istighfar transforms your spiritual practice</Link> and why consistency is key.
             </p>
 
             <p>
@@ -126,6 +126,16 @@ export default function IstighfarPage() {
               <li>No login or registration required</li>
               <li>Works offline once loaded</li>
             </ul>
+          </div>
+
+          {/* RELATED TOOLS */}
+          <div className="border-t pt-8">
+            <h2 className="text-xl font-semibold mb-4">
+              Other Digital Zikr Counters
+            </h2>
+            <p className="text-gray-700 dark:text-gray-300 mb-4">
+              Combine istighfar with other forms of remembrance. Try our <Link href="/tasbih-counter" className="text-emerald-600 hover:underline font-semibold">tasbih counter</Link> for general zikr or the <Link href="/durood-counter" className="text-emerald-600 hover:underline font-semibold">Durood Counter</Link> for sending blessings upon the Prophet (ﷺ).
+            </p>
           </div>
 
           {/* FAQ */}

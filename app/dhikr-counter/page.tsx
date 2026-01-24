@@ -86,7 +86,7 @@ export default function Page() {
               This free online dhikr counter helps you track your daily
               remembrance of Allah with ease. It works like a digital tasbih and
               allows you to count recitations such as Alhamdulillah (ٱلْحَمْدُ لِلَّٰهِ),
-              SubhanAllah (سُبْحَانَ ٱللَّٰهِ), Allahu Akbar (ٱللَّٰهُ أَكْبَرُ), and other dhikr.
+              SubhanAllah (سُبْحَانَ ٱللَّٰهِ), Allahu Akbar (ٱللَّٰهُ أَكْبَرُ), and other dhikr. For specific practices like tasbeeh, you might also explore our <Link href="/tasbih-counter" className="text-emerald-600 hover:underline">tasbih counter</Link> or our <Link href="/zikr-counter" className="text-emerald-600 hover:underline">general zikr counter</Link>.
             </p>
 
             <p>
