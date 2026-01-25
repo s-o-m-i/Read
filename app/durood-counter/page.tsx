@@ -137,7 +137,6 @@ export default function DuroodPage() {
 
             <ul className="space-y-2">
               <li>
-              <li>
                 <Link
                   href="/tasbih-counter"
                   className="text-emerald-600 hover:underline font-semibold"

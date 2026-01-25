@@ -1,6 +1,9 @@
-# Allow all search engines to crawl the site
+# *
 User-agent: *
-Disallow:
+Allow: /
 
-# Link to your sitemap
-Sitemap: https://www.tasbihhub.com/sitemap.xml
+# Host
+Host: https://tasbihhub.com
+
+# Sitemaps
+Sitemap: https://tasbihhub.com/sitemap.xml
