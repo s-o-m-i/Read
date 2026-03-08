@@ -1,6 +1,6 @@
 import Link from "next/link";
 import FAQ, { FAQItem } from "@/components/FAQ";
-import TasbihCounter from "@/components/TasbihCounter";
+import TasbihCounterCompact from "@/components/TasbihCounterCompact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -69,13 +69,15 @@ export default function IstighfarPage() {
           </h1>
         </section>
 
-        {/* TOOL — FULL WIDTH */}
-        <section aria-label="Istighfar Counter Tool" className="mt-6">
-          <TasbihCounter 
-            counterName="istighfar" 
-            title="Istighfar Counter"
-            arabicText="أَسْتَغْفِرُ اللَّهَ"
-          />
+        {/* TOOL — CENTERED & ELEGANT */}
+        <section aria-label="Istighfar Counter Tool" className="py-8">
+          <div className="max-w-md mx-auto px-4">
+            <TasbihCounterCompact 
+              counterName="istighfar" 
+              title="Istighfar Counter"
+              arabicText="أَسْتَغْفِرُ اللَّهَ"
+            />
+          </div>
         </section>
 
         {/* CONTENT SECTION */}

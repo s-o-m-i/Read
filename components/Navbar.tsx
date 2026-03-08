@@ -31,6 +31,9 @@ export default function Navbar() {
             <Link href="/durood-counter">Durood</Link>
           </li>
           <li>
+            <Link href="/asmaul-husna">Asmaul Husna</Link>
+          </li>
+          <li>
             <Link href="/blog">Blog</Link>
           </li>
           <li>
@@ -169,6 +172,15 @@ export default function Navbar() {
                 onClick={() => setMobileMenuOpen(false)}
               >
                 Durood
+              </Link>
+            </li>
+            <li>
+              <Link
+                href="/asmaul-husna"
+                className="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Asmaul Husna
               </Link>
             </li>
             <li>

@@ -1,6 +1,6 @@
 import Link from "next/link";
 import FAQ, { FAQItem } from "@/components/FAQ";
-import TasbihCounter from "@/components/TasbihCounter";
+import TasbihCounterCompact from "@/components/TasbihCounterCompact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -67,13 +67,15 @@ export default function DuroodPage() {
           </h1>
         </section>
 
-        {/* TOOL — FULL WIDTH */}
-        <section aria-label="Durood Counter Tool" className="mt-6">
-          <TasbihCounter
-            counterName="durood"
-            title="Durood Counter"
-            arabicText="اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ"
-          />
+        {/* TOOL — CENTERED & ELEGANT */}
+        <section aria-label="Durood Counter Tool" className="py-8">
+          <div className="max-w-md mx-auto px-4">
+            <TasbihCounterCompact
+              counterName="durood"
+              title="Durood Counter"
+              arabicText="اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ"
+            />
+          </div>
         </section>
 
         {/* CONTENT SECTION */}
