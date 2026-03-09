@@ -33,7 +33,9 @@ export const metadata: Metadata = {
     "max-image-preview": "large",
     "max-video-preview": -1,
   },
-  canonical: "https://tasbih.vercel.app/blog/1000-istighfar-ramadan",
+  alternates: {
+    canonical: "/blog/1000-istighfar-ramadan",
+  },
 };
 
 export default function BlogPost1000Istighfar() {

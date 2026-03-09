@@ -160,7 +160,18 @@ export default function HomePage() {
                         <span className="text-sm">📿</span>
                       </h3>
                       <p className="text-emerald-700 dark:text-emerald-400 text-sm font-medium">
-          TRUST & AUTHORITY SECTION */}
+                        99 Beautiful Names of Allah with interactive counters
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* TRUST & AUTHORITY SECTION */}
       <section className="max-w-5xl mx-auto px-4 py-6">
         <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 border-2 border-emerald-200 dark:border-emerald-800 shadow-lg">
           <h2 className="text-2xl font-bold text-center text-emerald-800 dark:text-emerald-300 mb-4 flex items-center justify-center gap-2">
@@ -191,21 +202,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
-      {/*               99 Beautiful Names of Allah with interactive counters
-                      </p>
-                    </div>
-                  </div>
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ABOUT SECTION - ISLAMIC THEMED */}
-      <section className="max-w-5xl mx-auto px-4 py-6 relative">
-        <div className="bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 dark:from-emerald-950/30 dark:via-teal-950/30 dark:to-cyan-950/30 rounded-3xl p-6 border border-emerald-200 dark:border-emerald-800 shadow-lg relative overflow-hidden">
 
       {/* FAQ SECTION - SEO CRITICAL */}
       <section className="max-w-4xl mx-auto px-4 py-6">
@@ -241,42 +237,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* INTERNAL SEO SUMMARY */}
-      <section className="max-w-5xl mx-auto px-4 py-6">
-        <div className="bg-gray-50 dark:bg-gray-800 rounded-2xl p-6 text-center">
-          <p className="text-gray-700 dark:text-gray-300 leading-relaxed">
-            <strong>TasbihHub</strong> is a free online platform offering <strong>digital tasbih counters</strong>, <strong>zikr tools</strong>, and Islamic remembrance utilities for Muslims worldwide. 
-            Our comprehensive suite includes specialized counters for tasbih, istighfar, dhikr, durood sharif, and the 99 Beautiful Names of Allah (Asmaul Husna). 
-            Whether you're maintaining daily adhkar, counting SubhanAllah, Alhamdulillah, or Allahu Akbar, our <strong>online tasbih counter</strong> provides 
-            a simple, privacy-focused solution that works seamlessly across all devices without requiring registration or installation.
-          </p>
-        </div>
-      </section>
-    </main>
-  );
-}
-
-/* FAQ Item Component */
-function FAQItem({ question, answer }: { question: string; answer: string }) {
-  return (
-    <div
-      className="bg-white dark:bg-gray-800 rounded-xl p-5 shadow-sm border border-gray-200 dark:border-gray-700"
-      itemScope
-      itemType="https://schema.org/Question"
-    >
-      <h3
-        className="text-lg font-semibold text-gray-900 dark:text-gray-100 mb-2 flex items-start gap-2"
-        itemProp="name"
-      >
-        <span className="text-emerald-600 dark:text-emerald-400 mt-1">•</span>
-        {question}
-      </h3>
-      <div itemScope itemType="https://schema.org/Answer" itemProp="acceptedAnswer">
-        <p className="text-gray-700 dark:text-gray-300 text-sm leading-relaxed" itemProp="text">
-          {answer}
-        </p>
-      </div>
-    </div{/* Decorative Elements */}
+      {/* ABOUT SECTION */}
+      <section className="max-w-5xl mx-auto px-4 py-6 relative">
+        <div className="bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 dark:from-emerald-950/30 dark:via-teal-950/30 dark:to-cyan-950/30 rounded-3xl p-6 border border-emerald-200 dark:border-emerald-800 shadow-lg relative overflow-hidden">
+          {/* Decorative Elements */}
           <div className="absolute top-2 right-2 text-2xl opacity-20 animate-spin-slow">✨</div>
           <div className="absolute bottom-2 left-2 text-2xl opacity-20 animate-pulse">🌙</div>
           
@@ -374,3 +338,22 @@ function IslamicToolCard({
     </Link>
   );
 }
+
+/* FAQ Item Component */
+function FAQItem({
+  question,
+  answer,
+}: {
+  question: string;
+  answer: string;
+}) {
+  return (
+    <div className="p-4 bg-gray-50 dark:bg-gray-800 rounded-lg border border-gray-200 dark:border-gray-700">
+      <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+        {question}
+      </h3>
+      <p className="text-gray-700 dark:text-gray-300 text-sm">{answer}</p>
+    </div>
+  );
+}
+

@@ -34,7 +34,9 @@ export const metadata: Metadata = {
     "max-image-preview": "large",
     "max-video-preview": -1,
   },
-  canonical: "https://tasbih.vercel.app/ramadan-dhikr-guide",
+  alternates: {
+    canonical: "/ramadan-dhikr-guide",
+  },
 };
 
 export default function RamadanDhikrGuide() {

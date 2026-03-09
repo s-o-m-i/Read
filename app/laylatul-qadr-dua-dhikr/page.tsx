@@ -35,7 +35,9 @@ export const metadata: Metadata = {
     "max-image-preview": "large",
     "max-video-preview": -1,
   },
-  canonical: "https://tasbih.vercel.app/laylatul-qadr-dua-dhikr",
+  alternates: {
+    canonical: "/laylatul-qadr-dua-dhikr",
+  },
 };
 
 export default function LaylatulQadrDuaDhikr() {

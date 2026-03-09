@@ -89,7 +89,7 @@ export default async function BlogPage({ params }: PageProps) {
                      dark:prose-a:text-emerald-500
                      prose-img:rounded-xl prose-img:shadow-lg prose-img:my-8
                      prose-img:w-full prose-img:h-auto"
-          dangerouslySetInnerHTML={{ __html: blog.content }}
+          dangerouslySetInnerHTML={{ __html: blog.content || "" }}
         />
       </article>
     </div>
