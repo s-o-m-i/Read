@@ -1648,4 +1648,304 @@ export const blogs = [
       <p class="italic border-t-2 border-emerald-600 pt-4 mt-8 text-center"><em>O Allah, grant us the ability to witness Laylatul Qadr with sincere hearts and focused minds. Forgive our past, protect our future, and make us among those who find this blessed night and benefit from its incomparable mercy. May the angels greet us during our worship. May our duas reach Your throne. May our tears of repentance become rivers of forgiveness. And may You draw us closer to You with every prayer, every dua, every moment of remembrance during this sacred month. Ameen, ameen, ameen.</em></p>
     `,
   },
+  {
+    slug: 'eid-ul-adha-comprehensive-guide',
+    title: 'Eid ul-Adha 2024: Complete Guide to the Festival of Sacrifice - Celebrations Across Muslim Countries',
+    description: 'Discover Eid ul-Adha traditions, Islamic significance, Quranic verses, Hadith, and how Muslims celebrate this sacred festival across Saudi Arabia, UAE, Pakistan, Egypt, Indonesia, Malaysia, Turkey, and more.',
+    image: '/images/blog/eid-ul-adha.jpg',
+    datePublished: '2026-03-25',
+    dateModified: '2026-03-25',
+    content: `
+      <p><strong>Eid ul-Adha</strong>, also known as <strong>Eid al-Adha</strong>, <strong>Bakri Eid</strong>, or the <strong>Festival of Sacrifice</strong>, is one of the two most important Islamic holidays celebrated by Muslims worldwide. The word "Adha" means sacrifice in Arabic, making this festival a profound commemoration of Prophet Ibrahim's (Abraham's) unwavering faith and obedience to Allah. Every year, over 1.8 billion Muslims across the globe—from Saudi Arabia to Indonesia, Pakistan to Egypt, Turkey to Malaysia—unite in celebrating this sacred occasion with joy, devotion, and community spirit.</p>
+
+      <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold leading-snug mt-8 mb-4">What is Eid ul-Adha? The Foundation of Faith</h2>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">The Islamic Meaning and Significance</h3>
+
+      <p><strong>Eid ul-Adha</strong> marks the culmination of the Hajj pilgrimage to Mecca and commemorates Prophet Ibrahim's (Peace be upon him) sacrifice of his son Ismail as an act of obedience to Allah. According to Islamic tradition, Prophet Ibrahim saw in a dream that Allah commanded him to sacrifice his beloved son. Both father and son submitted to Allah's will without hesitation, demonstrating the ultimate level of faith and trust.</p>
+
+      <p>The festival typically falls on the 10th day of Dhul-Hijjah, the twelfth and final month of the Islamic lunar calendar. This date is significant because it marks the successful completion of the Hajj pilgrimage, when millions of pilgrims gather in Mecca to perform this sacred ritual.</p>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Quranic Revelations About Eid ul-Adha</h3>
+
+      <p>The Quran explicitly mentions the story of Prophet Ibrahim and the sacrifice in Surah As-Saffat (Chapter 37):</p>
+
+      <p><em>"And We ransomed him with a great sacrifice. And We left [a sign of him] for later generations: 'Peace upon Ibrahim.' Indeed, We thus reward the doers of good. Indeed, he was of Our believing servants."</em> - Quran 37:107-111</p>
+
+      <p>This verse highlights how Allah replaced Ismail with a ram, transforming the test into a symbol of Allah's mercy and compassion. Another crucial reference appears in Surah Al-Haj (Chapter 22):</p>
+
+      <p><em>"The sacrificial camels and cattle We have made for you as among the symbols from Allah: in them is (much) good for you: then pronounce the name of Allah over them as they line up (for sacrifice): when they are down on their sides, (after slaughter), eat ye thereof, and feed such as (beg not but) live in contentment, and such as beg with due humility: thus have We made animals subject to you, that ye may be grateful."</em> - Quran 22:36</p>
+
+      <p>This verse establishes the religious obligation and the proper procedure for animal sacrifice during Eid ul-Adha.</p>
+
+      <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold leading-snug mt-8 mb-4">Why Do Muslims Celebrate Eid ul-Adha?</h2>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Religious Obligations and Spiritual Significance</h3>
+
+      <p>Muslims celebrate Eid ul-Adha for several profound reasons:</p>
+
+      <p><strong>1. Obedience to Allah's Command:</strong> The primary reason is to commemorate Prophet Ibrahim's exemplary obedience to Allah. His willingness to sacrifice what was most precious to him demonstrates unconditional submission to Allah's will—a principle that lies at the heart of Islamic faith.</p>
+
+      <p><strong>2. Sacrifice as Spiritual Purification:</strong> The act of sacrifice (Qurbani) in Eid ul-Adha represents spiritual purification and the willingness to give up worldly possessions for the sake of Allah. As mentioned in the Quran:</p>
+
+      <p><em>"Their meat will not reach Allah, nor will their blood, but what reaches Him is piety from you."</em> - Quran 22:37</p>
+
+      <p><strong>3. Community and Charity:</strong> Eid ul-Adha emphasizes social bonds, family togetherness, and charity. The sacrificed meat is divided into three parts: one for the family, one for relatives and friends, and one for the poor—reflecting Islam's commitment to social justice and caring for underprivileged members of society.</p>
+
+      <p><strong>4. Celebration of Hajj:</strong> The festival celebrates the successful completion of Hajj, the fifth pillar of Islam and one of the most important religious duties. Millions of pilgrims return from Mecca with spiritual rejuvenation, making this occasion a global Islamic celebration.</p>
+
+      <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold leading-snug mt-8 mb-4">What Do Muslims Do During Eid ul-Adha? Complete Rituals and Traditions</h2>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Pre-Eid Preparations</h3>
+
+      <p><strong>Ritual Bathing (Ghusl):</strong> Muslims prepare for Eid ul-Adha by taking a ritual bath early in the morning, following the Sunnah (practice) of Prophet Muhammad (Peace be upon him). This physical and spiritual cleansing symbolizes purification before worshipping Allah.</p>
+
+      <p><strong>New Clothing:</strong> Many Muslims wear new or traditional clothing, often featuring cultural attire specific to their regions. Men typically wear traditional dress such as Thobes in the Gulf countries, Kurtas in South Asia, and Thawbs in the Levantine region.</p>
+
+      <p><strong>Perfume Application:</strong> Following the Sunnah, Muslims apply perfume or fragrance as mentioned in Hadith collections by Imam Bukhari and Muslim.</p>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Eid Prayer (Salat ul-Eid)</h3>
+
+      <p>The Eid prayer, performed in the early morning after sunrise, is a cornerstone of Eid ul-Adha celebrations:</p>
+
+      <p><strong>Timing and Structure:</strong></p>
+      <ul>
+        <li>Conducted before the sermon (Khutbah)</li>
+        <li>Consists of two units (Rakat) with special takbir (glorification of Allah)</li>
+        <li>Performed in congregation at mosques, prayer grounds, or open fields</li>
+        <li>Women, children, and elderly people are encouraged to attend</li>
+      </ul>
+
+      <p><strong>Takbir recitation:</strong> Muslims recite "Allahu Akbar, Allahu Akbar, La ilaha illallah, Allahu Akbar, Allahu Akbar, Wa Lillahil hamd" (Allah is Greatest, Allah is Greatest, there is no god but Allah, Allah is Greatest, Allah is Greatest, and to Allah belongs all praise) throughout the morning.</p>
+
+      <p><strong>Hadith on Eid Prayer:</strong> Prophet Muhammad (Peace be upon him) said: <em>"Whoever prays with us on this day and fasts with us in the month of Ramadan, Allah will pardon him."</em> - Sahih Bukhari</p>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Animal Sacrifice (Qurbani)</h3>
+
+      <p>The ritual sacrifice during Eid ul-Adha is a central practice that distinguishes this festival:</p>
+
+      <p><strong>Eligible Animals:</strong></p>
+      <ul>
+        <li>Goat (minimum 1 year old)</li>
+        <li>Sheep (minimum 1 year old)</li>
+        <li>Cow/Buffalo (minimum 2 years old)</li>
+        <li>Camel (minimum 5 years old)</li>
+      </ul>
+
+      <p><strong>Quranic Guidance:</strong> <em>"The sacrificial camels and cattle We have made for you as among the symbols from Allah: in them is (much) good for you."</em> - Quran 22:36</p>
+
+      <p><strong>Distribution of Meat:</strong> The meat is divided into three equal parts:</p>
+      <ol>
+        <li><strong>Family Share:</strong> For personal and household consumption</li>
+        <li><strong>Gift Share:</strong> Given to relatives and friends</li>
+        <li><strong>Charity Share:</strong> Distributed to the poor and needy (Wajib - obligatory)</li>
+      </ol>
+
+      <p><strong>Hadith References:</strong> Prophet Muhammad (Peace be upon him) said: <em>"The best of your charity is that which you give when you are in need."</em> - Tirmidhi</p>
+
+      <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold leading-snug mt-8 mb-4">How Different Muslim Countries Celebrate Eid ul-Adha</h2>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Saudi Arabia and Gulf Countries (Eid ul-Adha Saudi Arabia, Eid ul-Adha UAE)</h3>
+
+      <p>In Saudi Arabia, Eid ul-Adha coincides with the final days of Hajj pilgrimage. The celebration spans multiple days:</p>
+
+      <p><strong>Traditions:</strong></p>
+      <ul>
+        <li>Pilgrims and locals perform the Eid prayer at the Grand Mosque in Mecca</li>
+        <li>The entire country receives a 4-5 day public holiday</li>
+        <li>Families gather for elaborate feasts featuring grilled lamb and traditional Saudi dishes</li>
+        <li>The traditional Ghutra (headscarf) and Thobe are worn by men</li>
+        <li>Women wear Abayas and Hijabs in traditional styles</li>
+        <li>Fireworks illuminate cities like Riyadh, Jeddah, and Dubai on Eid ul-Adha night</li>
+        <li>Gift-giving and visiting relatives are central to the celebration</li>
+        <li>Public decorations with lights and traditional Islamic patterns adorn streets and malls</li>
+      </ul>
+
+      <p><strong>UAE Celebration:</strong> In the United Arab Emirates, Eid ul-Adha holidays extend to allow citizens and residents quality family time. Shopping malls, restaurants, and hotels organize special Eid festivals. The famous Eid Bazaars in Dubai and Abu Dhabi attract thousands of shoppers purchasing traditional clothing, jewelry, and gifts.</p>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Pakistan (Bakri Eid, Eid ul-Adha Pakistan)</h3>
+
+      <p>Pakistan's celebration of Bakri Eid is vibrant and deeply rooted in Islamic traditions:</p>
+
+      <p><strong>Traditions:</strong></p>
+      <ul>
+        <li>Markets overflow with sacrificial animals weeks before Eid</li>
+        <li>The famous Jilani (Badshahi Mosque) Eid prayers attract millions in Lahore</li>
+        <li>Families purchase goats, sheep, and cows from livestock markets</li>
+        <li>The sacrifice ritual is performed following Islamic guidelines</li>
+        <li>Meat distribution among family, friends, and the poor is prioritized</li>
+        <li>Traditional Pakistani dishes like Nihari, Karahi, and Pulao are prepared</li>
+        <li>Women engage in Mehendi (henna) application and wear traditional Dupattas</li>
+        <li>Extended families gather for 2-3 days of festive celebrations</li>
+        <li>Gift-giving includes gold jewelry, especially for younger family members</li>
+        <li>Eid bazaars in Lahore, Karachi, and Islamabad are bustling with shoppers</li>
+      </ul>
+
+      <p><strong>Religious Significance:</strong> Pakistan, an Islamic Republic, observes Eid ul-Adha as a public holiday with special prayers at major mosques including the Faisal Mosque in Islamabad.</p>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Egypt (Eid al-Adha Egypt)</h3>
+
+      <p>In Egypt, Eid ul-Adha holds special significance in Islamic heritage:</p>
+
+      <p><strong>Traditions:</strong></p>
+      <ul>
+        <li>The Al-Azhar Mosque hosts grand Eid celebrations with thousands of worshippers</li>
+        <li>Traditional Egyptian music and celebrations fill the streets of Cairo</li>
+        <li>The Cairene tradition of wearing new clothes and visiting the citadel persists</li>
+        <li>Families prepare traditional Egyptian-Islamic dishes: Koshari, Falafel, and lamb-based Kofta</li>
+        <li>The Nile River areas see festive gatherings and family picnics</li>
+        <li>Children receive Eid money (similar to Eidi or Eid gift)</li>
+        <li>Bazaars in Khan El-Khalili market overflow with shoppers purchasing traditional clothing</li>
+        <li>Traditional Islamic geometric decorations adorn homes and public spaces</li>
+        <li>The celebration emphasizes family bonding and community service</li>
+      </ul>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Indonesia (Hari Raya Idul Adha, Eid ul-Adha Indonesia)</h3>
+
+      <p>Indonesia, the world's largest Muslim-majority country, celebrates Eid ul-Adha with unique cultural blends:</p>
+
+      <p><strong>Traditions:</strong></p>
+      <ul>
+        <li>National holiday allowing Mudik (homecoming) tradition where millions return to their hometowns</li>
+        <li>Special prayers at mosques and prayer grounds across Java, Sumatra, and other islands</li>
+        <li>Unique traditional dishes blend Islamic practice with Indonesian cuisine: Rendang, Soto Ayam, Satay</li>
+        <li>The sacrifice ritual is performed following Islamic guidelines while respecting local customs</li>
+        <li>Families prepare special Ketupat (rice cake) and Opor Ayam (chicken curry)</li>
+        <li>Forgiveness and visiting relatives is a central tradition</li>
+        <li>Street decorations with lanterns and traditional Islamic patterns</li>
+        <li>Special concerts and cultural performances in major cities</li>
+        <li>Children enjoy Eid shopping and gift-receiving traditions</li>
+      </ul>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Malaysia (Hari Raya Haji, Eid ul-Adha Malaysia)</h3>
+
+      <p>Malaysia celebrates Eid ul-Adha as Hari Raya Haji with national significance:</p>
+
+      <p><strong>Traditions:</strong></p>
+      <ul>
+        <li>Federal territory receives 2-3 days public holiday</li>
+        <li>Special prayers at Masjid Negara (National Mosque) in Kuala Lumpur</li>
+        <li>Traditional Malaysian-Islamic dishes: Rendang, Kuah Lontong, Satay</li>
+        <li>The famous Pasar Malam (night market) transforms into Eid bazaars</li>
+        <li>Families engage in open-house traditions, welcoming neighbors and friends</li>
+        <li>Special decorations with Islamic calligraphy and traditional patterns</li>
+        <li>Traditional Baju Melayu (Malay dress) worn by men and families</li>
+        <li>Gift-giving and money gifts for children are common</li>
+        <li>Shopping malls organize Raya bazaars with traditional crafts and clothing</li>
+      </ul>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Turkey (Kurban Bayramı, Eid ul-Adha Turkey)</h3>
+
+      <p>Turkey celebrates Eid ul-Adha as Kurban Bayramı with secular and Islamic elements:</p>
+
+      <p><strong>Traditions:</strong></p>
+      <ul>
+        <li>4-5 day national holiday connecting weekends</li>
+        <li>Special prayers at famous mosques like the Blue Mosque and Suleymaniye Mosque</li>
+        <li>The sacrifice ritual is performed following Islamic guidelines</li>
+        <li>Traditional Turkish dishes: Kebab, Meze, and Lamb-based specialties</li>
+        <li>Family gatherings in Istanbul, Ankara, Izmir, and other cities</li>
+        <li>Traditional Ottoman-style celebrations with historical significance</li>
+        <li>Street decorations and public festivities</li>
+        <li>Gift-giving and visiting relatives</li>
+        <li>Special cultural performances and concerts</li>
+      </ul>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Other Muslim Countries</h3>
+
+      <p><strong>Bangladesh (Eid ul-Adha Bangladesh):</strong></p>
+      <ul>
+        <li>Eid prayers at major mosques like Baitul Mukarram</li>
+        <li>Sacrificial animals from local markets</li>
+        <li>Traditional Bengali-Islamic dishes with meat specialties</li>
+        <li>Extensive family gathering and celebration</li>
+      </ul>
+
+      <p><strong>Jordan (Eid al-Adha Jordan):</strong></p>
+      <ul>
+        <li>Community prayers at Amman's Grand Mosque</li>
+        <li>Traditional Jordanian lamb-based dishes</li>
+        <li>Family reunions and celebrations</li>
+        <li>Gift-giving traditions</li>
+      </ul>
+
+      <p><strong>Morocco (Eid al-Adha Morocco):</strong></p>
+      <ul>
+        <li>Celebration at famous mosques including Hassan II Mosque</li>
+        <li>Traditional Moroccan Tajine with sacrificial meat</li>
+        <li>Family gatherings and gift-giving</li>
+        <li>Street celebrations in Marrakech, Fes, and Casablanca</li>
+      </ul>
+
+      <p><strong>Nigeria (Sallah Festival, Eid ul-Adha Nigeria):</strong></p>
+      <ul>
+        <li>Grand Durbar Festival in Kano and Katsina</li>
+        <li>Traditional horse parades and celebrations</li>
+        <li>Community prayers and feasting</li>
+        <li>Cultural performances specific to Northern Nigerian Muslim traditions</li>
+      </ul>
+
+      <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold leading-snug mt-8 mb-4">The Spiritual Teachings of Eid ul-Adha</h2>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Lessons from Prophet Ibrahim's Sacrifice</h3>
+
+      <p>Prophet Ibrahim's willingness to sacrifice Ismail teaches Muslims profound spiritual lessons:</p>
+
+      <p><strong>1. Absolute Trust in Allah (Tawakkul):</strong> The story demonstrates placing complete trust in Allah's wisdom and plan. Even when facing the greatest test, Prophet Ibrahim didn't hesitate.</p>
+
+      <p><strong>2. Obedience Over Emotion:</strong> Both father and son chose obedience to Allah over personal attachment, showing that faith supersedes worldly desires.</p>
+
+      <p><strong>3. Divine Mercy and Compassion:</strong> Allah's replacement of Ismail with a ram demonstrates His mercy. Similarly, Allah provides alternatives when we submit to His will.</p>
+
+      <p><strong>Hadith Validation:</strong> Prophet Muhammad (Peace be upon him) said: <em>"None of you truly believes until he loves for his brother what he loves for himself."</em> - Sahih Bukhari</p>
+
+      <p>This applies to Eid ul-Adha's emphasis on sharing, charity, and communal joy.</p>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">The Concept of Sacrifice in Islam</h3>
+
+      <p>In Islamic theology, sacrifice (Qurbani) represents:</p>
+
+      <ol>
+        <li><strong>Spiritual Submission:</strong> Willingness to give up what is dear for Allah's sake</li>
+        <li><strong>Gratitude:</strong> Thanks for blessings and divine provision</li>
+        <li><strong>Social Justice:</strong> Ensuring the poor and needy share in celebration</li>
+        <li><strong>Communal Bond:</strong> Uniting rich and poor in shared ritual</li>
+        <li><strong>Remembrance:</strong> Honoring Prophet Ibrahim and Prophet Muhammad's teachings</li>
+      </ol>
+
+      <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold leading-snug mt-8 mb-4">Frequently Asked Questions About Eid ul-Adha</h2>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Q1: What is the exact date of Eid ul-Adha 2024?</h3>
+
+      <p><strong>A:</strong> Eid ul-Adha 2024 is expected on June 16, 2024 (10th Dhul-Hijjah 1445 AH), depending on lunar moon sighting confirmation by Islamic authorities.</p>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Q2: Is Eid ul-Adha sacrifice mandatory for all Muslims?</h3>
+
+      <p><strong>A:</strong> The sacrifice (Qurbani) is Wajib (obligatory) for Muslims who have the financial means. Those without financial capability are exempt.</p>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Q3: Can we celebrate Eid ul-Adha without animal sacrifice?</h3>
+
+      <p><strong>A:</strong> Yes. The Eid prayer and celebrating with family and community are the core elements. Sacrifice is encouraged but not obligatory for all.</p>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Q4: How long is the Eid ul-Adha holiday in different countries?</h3>
+
+      <p><strong>A:</strong> It varies by country—typically 2-5 days as a public holiday in Muslim-majority nations.</p>
+
+      <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Q5: Can women attend Eid prayers?</h3>
+
+      <p><strong>A:</strong> Yes, women are encouraged to attend Eid prayers, though not obligatory as it is for men.</p>
+
+      <h2 class="text-2xl md:text-3xl lg:text-3xl font-bold leading-snug mt-8 mb-4">Conclusion: The Universal Message of Eid ul-Adha</h2>
+
+      <p>Eid ul-Adha represents more than a religious celebration—it embodies Islamic principles of faith, obedience, charity, and community. From the bustling streets of Jakarta to the serene mosques of Cairo, from the vibrant celebrations in Lahore to the ornate festivities in Istanbul, Muslims worldwide unite in honoring Prophet Ibrahim's sacrifice and Prophet Muhammad's teachings.</p>
+
+      <p>The festival's emphasis on sharing sacrificial meat with the poor, strengthening family bonds, and expressing gratitude to Allah makes it a beacon of Islamic values. The Quranic verses and Hadith collections validate these practices, providing spiritual depth to the celebrations.</p>
+
+      <p>Whether celebrating as Eid ul-Adha, Eid al-Adha, Bakri Eid, Hari Raya Idul Adha, Hari Raya Haji, Kurban Bayramı, or Sallah Festival, the essence remains unchanged: devotion to Allah, compassion for humanity, and celebration of faith.</p>
+
+      <p>As we observe Eid ul-Adha each year, we join millions of Muslims across Saudi Arabia, UAE, Pakistan, Egypt, Indonesia, Malaysia, Turkey, Nigeria, Bangladesh, Jordan, Morocco, and countless other nations in this sacred commemoration. May Allah accept from all of us and bless our celebrations.</p>
+
+      <p class="italic border-t-2 border-emerald-600 pt-4 mt-8 text-center"><em>May Allah grant us understanding of His Quran, acceptance of our worship, and the ability to live by the principles exemplified by Prophet Ibrahim. May He bless our families, purify our intentions, and draw us all closer to Him. Ameen, ameen, ameen.</em></p>
+    `,
+  },
 ];
