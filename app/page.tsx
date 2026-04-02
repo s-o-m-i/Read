@@ -10,21 +10,6 @@ export const metadata = {
 export default function HomePage() {
   return (
     <main className="bg-white dark:bg-gray-900">
-      {/* RAMADAN BANNER */}
-      <section className="bg-gradient-to-r from-emerald-600 to-teal-600 dark:from-emerald-700 dark:to-teal-700 py-6 px-4">
-        <div className="max-w-5xl mx-auto text-center space-y-4">
-          <h2 className="text-2xl sm:text-3xl font-bold text-white flex items-center justify-center gap-2">
-            🌙 Ramadan Special: Daily Dhikr & Asmaul Husna Guide for Ramadan 2026
-          </h2>
-          <Link
-            href="/ramadan-dhikr-guide"
-            className="inline-block bg-white text-emerald-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
-          >
-            View Ramadan Dhikr Guide
-          </Link>
-        </div>
-      </section>
-
       {/* HERO */}
       <section className="max-w-5xl mx-auto px-4 py-12 text-center space-y-4">
         <TasbihCounter />

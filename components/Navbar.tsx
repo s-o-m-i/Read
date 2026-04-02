@@ -13,7 +13,9 @@ export default function Navbar() {
     <nav className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
       <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
-         
+         <div className="bg-white rounded-full p-4 w-[80px] h-[80px] flex items-center justify-center shadow-md">
+       <img src={'/images/tasbih.png'}/>
+         </div>
           <span className="text-emerald-600 font-bold text-lg">Tasbih Hub</span>
         </Link>
 
