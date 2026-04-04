@@ -4,7 +4,7 @@ import TasbihCounterCompact from "@/components/TasbihCounterCompact";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Istighfar Counter – Count Astaghfirullah Online (Free & Saved)",
+  title: "Istighfar Counter Online (Astaghfirullah Dhikr Tool + Benefits Guide)",
   description:
     "Use this free istighfar counter to count Astaghfirullah easily. Digital tasbih that saves progress automatically. No login required.",
   openGraph: {
@@ -63,14 +63,32 @@ export default function IstighfarPage() {
 
       <main className="bg-white dark:bg-gray-900">
         {/* H1 — VERY IMPORTANT FOR SEO */}
-        <section className="max-w-5xl mx-auto px-4 pt-8 text-center">
+        {/* <section className="max-w-5xl mx-auto px-4 pt-8 text-center">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-300">
             Free Online Istighfar Counter – Digital Zikr Tool
           </h1>
+        </section> */}
+
+        {/* CTA SECTION */}
+        <section aria-label="Call to Action" className="py-8 bg-gradient-to-b from-emerald-50 to-transparent dark:from-emerald-900/20">
+          <div className="max-w-md mx-auto px-4 text-center">
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+              Start Your Istighfar Now
+            </h1>
+            <p className="text-gray-600 dark:text-gray-400 mb-6">
+Track your daily Astaghfirullah and build a consistent habit of seeking forgiveness.            </p>
+            <button 
+              className="inline-flex items-center gap-2 px-3 text-sm py-2  text-white font-medium bg-green-500 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
+            >
+               Start Counting
+            </button>
+          </div>
         </section>
 
+     
+
         {/* TOOL — CENTERED & ELEGANT */}
-        <section aria-label="Istighfar Counter Tool" className="py-8">
+        <section aria-label="Istighfar Counter Tool" className="pb-8">
           <div className="max-w-md mx-auto px-4">
             <TasbihCounterCompact 
               counterName="istighfar" 
@@ -79,10 +97,357 @@ export default function IstighfarPage() {
             />
           </div>
         </section>
+           {/* HADITH SECTION */}
+        <section aria-label="Hadith Inspiration" className="py-8  border-y border-amber-200 dark:border-amber-800/30">
+          <div className="max-w-5xl mx-auto px-4">
+            <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md border-l-4 border-green-500">
+              <p className="text-gray-600 dark:text-gray-400 text-sm uppercase tracking-wide font-semibold mb-3">
+                📖 Hadith
+              </p>
+              
+              <blockquote className="mb-4">
+                <p className="text-xl text-gray-900 dark:text-white font-semibold leading-relaxed">
+                  "Glad tidings to the one who finds a lot of Istighfar in his record."
+                </p>
+                <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                  — Sunan Ibn Majah
+                </p>
+              </blockquote>
+
+              <div className="border-t border-gray-200 dark:border-gray-700 pt-4 mt-4">
+                <p className="text-gray-700 dark:text-gray-300 text-sm">
+                  👉 That's why many people, after hearing this hadith, just start repeating:
+                </p>
+                <p className="text-center mt-3 text-emerald-600 dark:text-emerald-400 font-semibold text-lg">
+                  Astaghfirullah… Astaghfirullah… Astaghfirullah
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* THIS IMPROVES SECTION */}
+        <section aria-label="Benefits of Istighfar" className="py-8  bg-white dark:bg-gray-900">
+          <div className="max-w-5xl mx-auto px-4">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+               This improves:
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              {/* Inner Peace */}
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-3">
+                  <div className="text-2xl">☮️</div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                      Inner Peace
+                    </h3>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      Astaghfirullah calms the mind and brings tranquility to the soul through constant remembrance.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Spiritual Connection */}
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-3">
+                  <div className="text-2xl">🕌</div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                      Spiritual Connection
+                    </h3>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      Strengthen your bond with Allah through seeking His forgiveness and mercy daily.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Emotional Healing */}
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-3">
+                  <div className="text-2xl">💚</div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                      Emotional Healing
+                    </h3>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      Release guilt and anxiety by acknowledging mistakes and seeking Allah's unlimited forgiveness.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Habit Building */}
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-3">
+                  <div className="text-2xl">🎯</div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                      Habit Building
+                    </h3>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      Track your daily Astaghfirullah and build consistency in your spiritual practice.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Mindfulness */}
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-3">
+                  <div className="text-2xl">🧠</div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                      Mindfulness
+                    </h3>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      Increase awareness of your actions and intentions through constant self-reflection.
+                    </p>
+                  </div>
+                </div>
+              </div>
+
+              {/* Divine Mercy */}
+              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md hover:shadow-lg transition-shadow">
+                <div className="flex items-start gap-3">
+                  <div className="text-2xl">✨</div>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white mb-2">
+                      Divine Mercy
+                    </h3>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm">
+                      Open yourself to Allah's infinite mercy and the blessings that come with sincere repentance.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* CONTENT SECTION */}
         <section className="max-w-5xl mx-auto px-4 py-12 space-y-10">
-          {/* INTRO */}
+         
+
+          {/* WHAT IS ISTIGHFAR SECTION */}
+          <div className="space-y-6 text-gray-700 dark:text-gray-300">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+              What is Istighfar in Islam?
+            </h2>
+
+            <p>
+              Istighfar, derived from the Arabic word "Ghafara" (to forgive), is
+              the act of seeking forgiveness from Allah. The most common form is
+              reciting <span className="font-semibold text-gray-900 dark:text-gray-100">"Astaghfirullah"</span> (أَسْتَغْفِرُ اللَّهَ), which means "I seek forgiveness from Allah."
+              It is one of the most powerful and essential invocations in Islam,
+              reflecting the Muslim's constant need for divine mercy and cleansing of sins.
+            </p>
+
+            <p>
+              <span className="font-semibold text-gray-900 dark:text-gray-100">The Importance of Istighfar:</span> Seeking forgiveness is not just about
+              cleansing past mistakes—it's about acknowledging Allah's supremacy,
+              seeking His guidance for the future, and maintaining a pure heart.
+              The Prophet Muhammad ﷺ encouraged Muslims to seek forgiveness
+              regularly, emphasizing that even without obvious sins, Istighfar
+              keeps the soul connected to Allah's mercy.
+            </p>
+
+            <p>
+              Istighfar is mentioned throughout the Quran and Hadith as a means
+              of gaining blessings, protection, and spiritual purification. It's
+              a practice that transcends age, status, and circumstance—something
+              every Muslim can do anytime, anywhere.
+            </p>
+          </div>
+
+          {/* BENEFITS OF ISTIGHFAR SECTION */}
+          <div className="space-y-6 text-gray-700 dark:text-gray-300">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+              Benefits of Istighfar
+            </h2>
+
+            <div className="space-y-4">
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                  🔄 Forgiveness and Redemption
+                </h3>
+                <p>
+                  The primary benefit of Istighfar is seeking Allah's forgiveness
+                  for sins and mistakes. Through sincere repentance and Istighfar,
+                  Muslims believe that Allah erases their transgressions and grants
+                  them a fresh spiritual slate.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                  💚 Peace of Heart
+                </h3>
+                <p>
+                  Istighfar brings profound inner peace by alleviating guilt,
+                  anxiety, and spiritual heaviness. When you seek Allah's forgiveness,
+                  the heart finds relief from the burden of wrongdoing and reconnects
+                  with divine compassion. This emotional and spiritual lightness
+                  improves mental well-being and life satisfaction.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                  🌟 Increased Blessings and Rizq
+                </h3>
+                <p>
+                  In Islamic teachings, seeking forgiveness is linked to Allah's
+                  blessings (rizq). The Quran mentions that Istighfar opens doors
+                  to provision, sustenance, and good fortune. Many Islamic scholars
+                  emphasize that sincere repentance and regular Istighfar invite
+                  Allah's mercy, which manifests in various blessings in life.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                  🛡️ Spiritual Protection
+                </h3>
+                <p>
+                  Regular Istighfar acts as a spiritual shield, protecting the
+                  soul from the darkness of sin and negative consequences. It
+                  strengthens the connection with Allah and helps maintain a
+                  state of Taqwa (God-consciousness) throughout daily life.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-2">
+                  🌱 Personal Growth and Self-Awareness
+                </h3>
+                <p>
+                  Through Istighfar, Muslims develop greater self-awareness about
+                  their actions, intentions, and impact on others. This leads to
+                  continuous self-improvement and spiritual maturity, fostering
+                  positive personal growth.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* HOW MANY TIMES SECTION */}
+          <div className="space-y-6 text-gray-700 dark:text-gray-300">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+              How Many Times Should You Recite Istighfar?
+            </h2>
+
+            <p>
+              There is no fixed minimum number for Istighfar—you can seek
+              forgiveness as many times as you wish throughout the day. However,
+              many Muslims follow specific practices based on Islamic traditions.
+            </p>
+
+            <p>
+              <span className="font-semibold text-gray-900 dark:text-gray-100">Daily Practice:</span> Many
+              Muslims recite Istighfar 100 times daily, based on authentic
+              narrations of the Prophet ﷺ seeking forgiveness regularly. This
+              practice, known as "Maa'iytah" in Islamic literature, has been
+              embraced across Muslim cultures for centuries.
+            </p>
+
+            <p>
+              <span className="font-semibold text-gray-900 dark:text-gray-100">Flexibility:</span> Some Muslims
+              incorporate Istighfar into specific times—after prayers, during
+              difficult moments, when seeking clarity, or as part of their daily
+              remembrance. The key is consistency and sincerity rather than a
+              specific number.
+            </p>
+
+            <p>
+              <span className="font-semibold text-gray-900 dark:text-gray-100">Quality Over Quantity:</span> While
+              counting Istighfar helps maintain focus and consistency, Islamic
+              scholars emphasize that sincere and heartfelt Istighfar—even if
+              recited fewer times—holds greater spiritual value than rushing
+              through numerous recitations mindlessly.
+            </p>
+
+            <p>
+              This counter helps you track your daily Istighfar and build a
+              sustainable habit of seeking Allah's forgiveness, making it easier
+              to maintain consistency in your spiritual practice.
+            </p>
+          </div>
+
+          {/* RELATED ISLAMIC PRACTICES SECTION */}
+          <div className="border-y border-gray-200 dark:border-gray-700 py-8">
+            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white mb-6">
+              🔹 Related Islamic Practices
+            </h2>
+
+            <p className="text-gray-700 dark:text-gray-300 mb-6">
+              Istighfar works best as part of a comprehensive dhikr and spiritual
+              practice. Explore these related Islamic remembrances to deepen your
+              connection with Allah:
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+              <Link
+                href="/dhikr-in-islam"
+                className="group p-4 bg-gradient-to-br from-blue-50 to-blue-100 dark:from-blue-900/30 dark:to-blue-800/30 rounded-lg hover:shadow-md transition-all duration-200 hover:scale-105"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">📿</span>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-blue-400">
+                      Dhikr in Islam
+                    </h3>
+                    <p className="text-sm text-gray-700 dark:text-gray-400 mt-1">
+                      Learn comprehensive dhikr practices and remembrance techniques.
+                    </p>
+                  </div>
+                </div>
+              </Link>
+
+              <Link
+                href="/asmaul-husna"
+                className="group p-4 bg-gradient-to-br from-purple-50 to-purple-100 dark:from-purple-900/30 dark:to-purple-800/30 rounded-lg hover:shadow-md transition-all duration-200 hover:scale-105"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">✨</span>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-purple-600 dark:group-hover:text-purple-400">
+                      Asmaul Husna
+                    </h3>
+                    <p className="text-sm text-gray-700 dark:text-gray-400 mt-1">
+                      Explore Allah's 99 beautiful names and their spiritual meanings.
+                    </p>
+                  </div>
+                </div>
+              </Link>
+
+              <Link
+                href="/tasbih-counter"
+                className="group p-4 bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/30 dark:to-emerald-800/30 rounded-lg hover:shadow-md transition-all duration-200 hover:scale-105"
+              >
+                <div className="flex items-start gap-3">
+                  <span className="text-2xl">✋</span>
+                  <div>
+                    <h3 className="font-semibold text-gray-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400">
+                      Tasbih Counter
+                    </h3>
+                    <p className="text-sm text-gray-700 dark:text-gray-400 mt-1">
+                      Use our tasbih counter for general zikr and remembrance.
+                    </p>
+                  </div>
+                </div>
+              </Link>
+            </div>
+
+            <p className="text-gray-700 dark:text-gray-300 mt-6 text-sm">
+              These interconnected practices work together to strengthen your
+              spiritual foundation, increase mindfulness, and deepen your
+              relationship with Allah. Combining Istighfar with other forms of
+              dhikr creates a holistic approach to daily remembrance.
+            </p>
+          </div>
+ {/* INTRO */}
           <div className="space-y-4 text-gray-700 dark:text-gray-300">
             <p>
               This free online Istighfar counter helps you track your daily
@@ -129,10 +494,9 @@ export default function IstighfarPage() {
               <li>Works offline once loaded</li>
             </ul>
           </div>
-
           {/* RELATED TOOLS */}
           <div className="border-t pt-8">
-            <h2 className="text-xl font-semibold mb-4">
+            <h2 className="text-xl font-semibold mb-4 dark:text-gray-300">
               Other Digital Zikr Counters
             </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
@@ -145,7 +509,7 @@ export default function IstighfarPage() {
 
           {/* INTERNAL LINKS */}
           <div className="border-t pt-8">
-            <h2 className="text-xl font-semibold mb-4">
+            <h2 className="text-xl font-semibold mb-4 dark:text-gray-300">
               Related Zikr Counters
             </h2>
 

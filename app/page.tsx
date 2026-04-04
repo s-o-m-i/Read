@@ -10,8 +10,32 @@ export const metadata = {
 export default function HomePage() {
   return (
     <main className="bg-white dark:bg-gray-900">
+      {/* QURANIC VERSE SECTION */}
+      <section aria-label="Quranic Inspiration" className="py-5 bg-gradient-to-r from-green-50 via-green-50 to-green-50 dark:from-green-900/20 dark:via-green-900/20 dark:to-green-900/20 border-y border-green-200 dark:border-green-800/30">
+        <div className="max-w-3xl mx-auto px-4">
+          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md ">
+          
+            <div className="">
+              <p className="text-center text-green-600 dark:text-green-400 font-semibold text-2xl" dir="rtl" lang="ar">
+                فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ
+              </p>
+            </div>
+            <blockquote className="mb-4">
+              <p className="text-lg text-gray-900 text-center mt-4 dark:text-white font-semibold leading-relaxed">
+                "So remember Me; I will remember you. And be grateful to Me and do not deny Me."
+              </p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
+                — Qur'an (Surah Al-Baqarah 2:152)
+              </p>
+            </blockquote>
+
+            
+          </div>
+        </div>
+      </section>
+
       {/* HERO */}
-      <section className="max-w-5xl mx-auto px-4 py-12 text-center space-y-4">
+      <section className="max-w-5xl mx-auto px-4 pb-12 text-center space-y-4">
         <TasbihCounter />
         <h1 className="text-4xl text-[#364153] font-bold dark:text-gray-300">
           Free Online Tasbih Counter & Digital Zikr Tools

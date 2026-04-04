@@ -180,7 +180,7 @@ export default function TasbihCounterCompact({
         {/* Target Presets */}
         <div className="border-t border-gray-200 dark:border-gray-700 pt-4">
           <p className="text-xs font-semibold text-gray-500 dark:text-gray-400 uppercase tracking-wide mb-3">
-            Set Target
+            Set Goal
           </p>
           <div className="flex gap-2">
             {PRESET_TARGETS.map((preset) => (
