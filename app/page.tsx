@@ -2,9 +2,9 @@ import TasbihCounter from "@/components/TasbihCounter";
 import Link from "next/link";
 
 export const metadata = {
-  title: "Ramadan Dhikr & Asmaul Husna Guide | TasbihHub",
+  title: "TasbihHub – Online Tasbih Counter, Dhikr, Istighfar & Durood Tools",
   description:
-    "Free online tasbih, istighfar, dhikr, and durood counters. Simple, mobile-friendly Islamic tools to track your daily zikr.",
+    "Free online tasbih, istighfar, dhikr, and durood counters. Simple, mobile-friendly Islamic zikr tools to track your daily remembrance. No login required.",
 };
 
 export default function HomePage() {
