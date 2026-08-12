@@ -1,6 +1,201 @@
 // lib/blogs.ts
 export const blogs = [
   {
+    slug: 'islamic-perspective-body-health',
+    title: 'Islamic Perspective on Taking Care of Your Body and Health',
+    description: 'Islam teaches that the body is an amanah (trust) from Allah. Learn what the Quran and Sunnah say about physical fitness, nutrition, rest, and caring for your health as an act of worship.',
+    image: '/images/blog/islamic-body-health.jpg',
+    datePublished: '2026-08-12',
+    dateModified: '2026-08-12',
+    content: `
+
+      <p>When we think about Islamic worship, prayer, fasting, and dhikr usually come to mind first. But Islam also teaches us something that is easy to overlook: your body is not just yours. It is an <strong>amanah</strong> — a trust from Allah. You did not create it, and you will leave it behind one day. Until then, you are responsible for caring for it.</p>
+
+      <p class="mt-1">That means eating well, staying active, resting when you need to, and avoiding habits that harm you are not separate from your faith. They are part of living as a Muslim. Taking care of your health can be an act of gratitude to the One who gave you this body in the first place.</p>
+
+      <p class="mt-1">This article explores what Islam says about physical health, why strength and fitness matter, and how you can build habits that honour both your body and your soul.</p>
+
+      <br>
+
+      <h2>The Body as an Amanah (Trust)</h2>
+
+      <p>Allah says in the Quran:</p>
+      <p><em>"And do not throw yourselves into destruction with your own hands." (Quran 2:195)</em></p>
+
+      <p>Scholars have interpreted this verse broadly — including the idea that Muslims should not neglect or deliberately harm their own wellbeing. Your body carries you through salah, carries you through fasting in Ramadan, and carries you through the daily remembrance of Allah. When you weaken it through neglect, you weaken your ability to worship.</p>
+
+      <p>The Prophet Muhammad (peace be upon him) also said:</p>
+      <p><em>"Your body has a right over you." (Sahih Bukhari)</em></p>
+
+      <p>That single sentence covers a lot. Your body has a right to be fed properly, to move, to rest, and to be treated with respect — not abused through excess or starvation, laziness or burnout.</p>
+
+      <br>
+
+      <h2>Physical Strength in the Sunnah</h2>
+
+      <p>Islam does not treat physical fitness as vanity. Strength, stamina, and discipline were valued by the Prophet (peace be upon him) and his companions.</p>
+
+      <p>It is reported that the Prophet (peace be upon him) said:</p>
+      <p><em>"The strong believer is better and more beloved to Allah than the weak believer, while there is good in both." (Sahih Muslim)</em></p>
+
+      <p>This hadith is often discussed in terms of spiritual strength, but classical scholars also applied it to physical capability. A believer who is healthy and strong can serve their family, their community, and their deen more effectively than one who is constantly exhausted or unwell.</p>
+
+      <p>The companions themselves engaged in physical activity. They wrestled, raced, rode horses, and trained for battle. These were not distractions from faith — they were part of being prepared, capable, and disciplined Muslims.</p>
+
+      <br>
+
+      <h3>Walking, Movement, and Daily Activity</h3>
+
+      <p>You do not need a gym membership to honour this part of the Sunnah. Walking to the masjid, taking the stairs, playing sports with your family, or doing household work all count as movement that keeps the body active.</p>
+
+      <p>Even the Prophet (peace be upon him) walked quickly with a purposeful stride — described in hadith as having a "lean and strong" gait. Movement was simply part of how he lived, not something reserved for special occasions.</p>
+
+      <br>
+
+      <h2>Eating Well: Halal, Tayyib, and in Moderation</h2>
+
+      <p>Allah commands in the Quran:</p>
+      <p><em>"O mankind, eat from whatever is on earth that is lawful and good (halal and tayyib)." (Quran 2:168)</em></p>
+
+      <p>Halal is not only about how food is slaughtered. <strong>Tayyib</strong> means wholesome, pure, and good for you. A diet built on processed junk, excessive sugar, and constant overeating fails the tayyib standard even if every ingredient is technically halal.</p>
+
+      <p>The Prophet (peace be upon him) also warned against filling the stomach completely:</p>
+      <p><em>"The son of Adam fills no vessel worse than his stomach. It is sufficient for the son of Adam to eat a few mouthfuls to keep him going. If he must fill it, then one-third for food, one-third for drink, and one-third for air." (Tirmidhi)</em></p>
+
+      <p>This is remarkably aligned with what modern nutrition science recommends: eat enough, not too much, and leave room. Moderation is not just good manners at the table — it is sunnah.</p>
+
+      <br>
+
+      <h3>Practical Tips for Eating with Intention</h3>
+
+      <ul>
+        <li><strong>Eat with gratitude:</strong> Say Bismillah before eating and Alhamdulillah after. This slows you down and reminds you that food is a blessing, not something to consume mindlessly.</li>
+        <li><strong>Choose whole foods:</strong> Fruits, vegetables, grains, and clean protein sources align with the tayyib principle better than heavily processed alternatives.</li>
+        <li><strong>Fast with purpose:</strong> Ramadan fasting teaches self-control around food. Carry that discipline into the rest of the year.</li>
+        <li><strong>Stay hydrated:</strong> The Prophet (peace be upon him) encouraged drinking water in sips rather than gulps — a small habit that supports digestion and overall health.</li>
+      </ul>
+
+      <br>
+
+      <h2>Rest, Sleep, and Balance</h2>
+
+      <p>Caring for your body also means giving it rest. Burning yourself out — whether through overwork, late-night scrolling, or skipping sleep to "be productive" — is not piety. It is neglect of the amanah.</p>
+
+      <p>The Prophet (peace be upon him) had a balanced routine. He prayed at night, but he also rested. He worked and served his community, but he took time with his family. Balance is a prophetic quality.</p>
+
+      <p>Sleep deprivation affects your focus in salah, your patience with others, and your ability to make good decisions. Protecting your sleep is protecting your worship.</p>
+
+      <br>
+
+      <h2>Spiritual Health and Physical Health Go Together</h2>
+
+      <p>There is a deep connection between the state of your body and the state of your heart. When you feel sluggish, bloated, or constantly tired, even dhikr feels harder. When you feel clear and energised, remembering Allah comes more naturally.</p>
+
+      <p>Allah says:</p>
+      <p><em>"Those who believe and whose hearts find rest in the remembrance of Allah. Verily, in the remembrance of Allah do hearts find rest." (Quran 13:28)</em></p>
+
+      <p>Dhikr brings peace to the heart — and a healthy body makes it easier to show up for that remembrance consistently. Use a <a href="/dhikr-counter" class="text-emerald-600">dhikr counter</a> or <a href="/tasbih-counter" class="text-emerald-600">tasbih counter</a> to build a daily habit of remembrance alongside your physical routines. Both disciplines — caring for the body and nourishing the soul — reinforce each other.</p>
+
+      <br>
+
+      <h2>Exercise as Part of a Balanced Muslim Life</h2>
+
+      <p>Regular exercise improves cardiovascular health, builds strength, reduces stress, and increases energy — all of which support your ability to live productively and worship fully. You do not need to train like an athlete. Even 20–30 minutes of consistent activity most days of the week makes a meaningful difference.</p>
+
+      <p>Consider these approaches that fit naturally into a Muslim lifestyle:</p>
+
+      <ul>
+        <li><strong>Walk after Fajr or Maghrib:</strong> Cooler temperatures, quieter streets, and the barakah of those times make walking a peaceful habit.</li>
+        <li><strong>Strength training twice a week:</strong> Bodyweight exercises, resistance bands, or basic weights build functional strength for daily life.</li>
+        <li><strong>Swim or cycle:</strong> Both are low-impact and enjoyable — the Prophet (peace be upon him) encouraged swimming as a beneficial activity.</li>
+        <li><strong>Train with accountability:</strong> A workout partner or trainer helps you stay consistent, much like a friend who reminds you to pray on time.</li>
+      </ul>
+
+      <p>Maintaining physical health can also be part of taking care of the body entrusted to us. Regular exercise, strength training, and an active lifestyle contribute to overall wellbeing — energy for salah, patience in daily life, and the strength to serve others. For those looking for gyms, personal trainers, and fitness facilities in Pakistan, <a href="https://fitnessadda.pk/">FitnessAdda</a> can help you discover verified fitness options in your city — from Karachi and Lahore to Islamabad and beyond.</p>
+
+      <br>
+
+      <h2>What to Avoid: Harmful Habits That Violate the Amanah</h2>
+
+      <p>Just as Islam encourages good habits, it clearly discourages self-destruction:</p>
+
+      <ul>
+        <li><strong>Smoking and vaping:</strong> Damaging the lungs contradicts the responsibility to preserve health. Numerous scholars have ruled smoking as haram or strongly discouraged (makruh tahrimi) due to its proven harm.</li>
+        <li><strong>Excessive sedentary lifestyle:</strong> Hours of sitting without movement weakens the body over time. Break up long sitting periods with short walks or stretches.</li>
+        <li><strong>Extreme diets or overtraining:</strong> Both extremes — starving the body or punishing it with excessive exercise — violate the balance Islam teaches.</li>
+        <li><strong>Neglecting mental health:</strong> Chronic stress, untreated anxiety, and isolation affect the body as much as the mind. Seeking help is not weakness; it is part of caring for the amanah.</li>
+      </ul>
+
+      <br>
+
+      <h2>Teaching the Next Generation</h2>
+
+      <p>If you have children, one of the most valuable things you can pass on is the habit of caring for their bodies. Encourage outdoor play. Limit screen time. Cook meals together. Let them see you exercising and eating well. Children learn more from what you do than from what you say.</p>
+
+      <p>The Prophet (peace be upon him) said:</p>
+      <p><em>"Each of you is a shepherd, and each of you is responsible for his flock." (Sahih Bukhari)</em></p>
+
+      <p>Part of that responsibility is raising children who understand that their bodies are trusts from Allah — not objects to be neglected or obsessed over, but gifts to be cared for with balance and gratitude.</p>
+
+      <br>
+
+      <h2>Building a Simple Health Routine You Can Start Today</h2>
+
+      <p>You do not need a perfect plan. Start small and stay consistent:</p>
+
+      <ol>
+        <li><strong>Morning:</strong> Drink water, pray Fajr, and take a 10-minute walk if possible.</li>
+        <li><strong>Meals:</strong> Eat mindfully, choose tayyib foods, and stop before you are completely full.</li>
+        <li><strong>Afternoon:</strong> Move your body — even a short workout or active chore counts.</li>
+        <li><strong>Evening:</strong> Pray Isha, do your adhkar with a <a href="/istighfar-counter" class="text-emerald-600">istighfar counter</a> if it helps you stay consistent, and sleep at a reasonable hour.</li>
+        <li><strong>Weekly:</strong> Review your habits honestly. Did you move enough? Eat well? Rest properly? Adjust without guilt — just keep going.</li>
+      </ol>
+
+      <p>Small, consistent actions compound over months and years. That is true for dhikr, and it is equally true for physical health.</p>
+
+      <br>
+
+      <h2 class="mb-2">Frequently Asked Questions</h2>
+
+      <h3 class="font-semibold">Does Islam encourage exercise and fitness?</h3>
+      <p>Yes. While Islam does not prescribe a specific workout programme, the Quran and Sunnah clearly value strength, moderation in eating, and avoiding self-harm. The companions were physically active, and scholars have long understood physical capability as part of a capable, productive Muslim life.</p>
+
+      <br>
+
+      <h3 class="font-semibold">Is taking care of my body considered worship?</h3>
+      <p>It can be. When you care for your body with the intention of preserving Allah's trust so you can worship better, serve your family, and fulfil your responsibilities, it becomes an act of ibadah. Intention transforms ordinary habits into worship.</p>
+
+      <br>
+
+      <h3 class="font-semibold">What does halal and tayyib mean for my diet?</h3>
+      <p>Halal means permissible according to Islamic law. Tayyib means wholesome and good quality. Together, they encourage Muslims to eat food that is not only permissible but also nutritious and beneficial — not harmful or excessively processed.</p>
+
+      <br>
+
+      <h3 class="font-semibold">How do I balance spiritual and physical health?</h3>
+      <p>Do not treat them as competing priorities. Pray on time, maintain your dhikr, and build physical habits that give you energy rather than drain it. Even 20 minutes of daily movement alongside your spiritual routines creates a balanced, sustainable lifestyle.</p>
+
+      <br>
+
+      <h3 class="font-semibold">Can I go to the gym as a Muslim?</h3>
+      <p>Absolutely. Training at a gym — with appropriate dress, modesty, and intention — is a practical way to build strength and stay healthy. Many Muslims find that structured exercise helps them maintain discipline in other areas of life as well.</p>
+
+      <br>
+
+      <h2>Conclusion: Honour the Trust</h2>
+
+      <p>Your body will carry you through every rakah, every fast, every moment of istighfar, and every chapter of your life. Islam asks you not to worship your body — but not to neglect it either. Feed it well, move it regularly, rest it properly, and treat it as the amanah it is.</p>
+
+      <p>When you stand in salah with energy instead of exhaustion, when you serve your family with strength instead of fatigue, when you fast with resilience instead of struggle — you are living the Islamic vision of health. Not as an obsession with appearance, but as gratitude for the gift of life and the ability to worship the One who gave it.</p>
+
+      <p class="italic border-t-2 border-emerald-600 pt-4 mt-8 text-center"><em>O Allah, grant us healthy bodies, sound hearts, and the wisdom to care for the trusts You have given us. Help us eat halal and tayyib, move with purpose, rest with balance, and worship You with energy and sincerity. Ameen.</em></p>
+
+      <br>
+
+      <p><strong>About the Author:</strong> Suleman Altaf writes about Islamic spirituality, daily worship, and living faith in the modern world. He is the creator of Tasbih Hub, a free platform for tasbih, dhikr, istighfar, and durood counters.</p>
+    `,
+  },
+  {
     slug: '1000-istighfar-ramadan',
     title: '1000 Istighfar in Ramadan | Why 1000 Repetitions & Benefits',
     description: 'Discover why many Muslims practice 1000 istighfar daily in Ramadan. Learn the spiritual benefits, how to practice, and the transformative power of intensive forgiveness.',
