@@ -1,6 +1,6 @@
 import Link from "next/link";
 import FAQ, { FAQItem } from "@/components/FAQ";
-import TasbihCounterCompact from "@/components/TasbihCounterCompact";
+import DhikrCounter from "@/components/dhikr/DhikrCounter";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -70,11 +70,7 @@ export default function Page() {
         {/* TOOL — CENTERED & ELEGANT */}
         <section aria-label="Zikr Counter Tool" className="py-8">
           <div className="max-w-md mx-auto px-4">
-            <TasbihCounterCompact
-              counterName="zikr"
-              title="Zikr Counter"
-              // arabicText="سُبْحَانَ ٱللَّٰهِ"
-            />
+            <DhikrCounter storageKey="zikr" initialDhikrId="subhanallah" title="Zikr Counter" />
           </div>
         </section>
 

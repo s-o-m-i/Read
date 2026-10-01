@@ -1,97 +1,98 @@
-// app/blog/[slug]/page.tsx
-import { notFound } from 'next/navigation';
-import React from 'react';
-import { blogs } from '../../../lib/blogs';
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { blogs } from "@/lib/blogs";
+import { blogCardMeta, blogExtra, headingLinks, withHeadingIds } from "@/lib/blog/meta";
+import Breadcrumbs from "@/components/layout/Breadcrumbs";
+import { SITE_URL } from "@/lib/i18n/locales";
 
-/**
- * Blog page (static for now)
- * -------------------------
- * - Blog data is imported from /libs/blogs
- * - Later this can be replaced with a WordPress API
- *   without changing routes or slugs
- */
-
-interface PageProps {
-  params: Promise<{
-    slug: string;
-  }>;
+export function generateStaticParams() {
+  return blogs.map((blog) => ({ slug: blog.slug }));
 }
 
-export async function generateStaticParams() {
-  return blogs.map((blog) => ({
-    slug: blog.slug,
-  }));
-}
-
-export default async function BlogPage({ params }: PageProps) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const blog = blogs.find((b) => b.slug === slug);
+  const blog = blogs.find((item) => item.slug === slug);
+  if (!blog) return {};
+  return {
+    title: `${blog.title} | Tasbih Hub`,
+    description: blog.description,
+    alternates: { canonical: `${SITE_URL}/blog/${slug}` },
+    openGraph: {
+      title: blog.title,
+      description: blog.description,
+      type: "article",
+      url: `${SITE_URL}/blog/${slug}`,
+    },
+  };
+}
 
-  if (!blog) {
-    notFound();
-  }
+export default async function BlogArticlePage({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
+  const blog = blogs.find((item) => item.slug === slug);
+  if (!blog) notFound();
+
+  const meta = blogCardMeta(blog);
+  const extra = blogExtra(blog.slug);
+  const toc = headingLinks(blog.content || "");
+  const html = withHeadingIds(blog.content || "");
+  const related = extra.related
+    .map((relatedSlug) => blogs.find((item) => item.slug === relatedSlug))
+    .filter((item): item is NonNullable<typeof item> => Boolean(item));
 
   const blogSchema = {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "headline": blog.title,
-    "description": blog.description,
-    "image": `https://tasbihhub.com${blog.image}`,
-    "datePublished": blog.datePublished,
-    "dateModified": blog.dateModified,
-    "url": `https://tasbihhub.com/blog/${blog.slug}`,
-    "author": {
-      "@type": "Organization",
-      "name": "Tasbih Hub",
-      "url": "https://tasbihhub.com"
-    },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Tasbih Hub",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://tasbihhub.com/logo.png"
-      }
-    },
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": `https://tasbihhub.com/blog/${blog.slug}`
-    }
+    headline: blog.title,
+    description: blog.description,
+    datePublished: blog.datePublished,
+    dateModified: blog.dateModified,
+    url: `${SITE_URL}/blog/${blog.slug}`,
+    author: { "@type": "Organization", name: "Tasbih Hub", url: SITE_URL },
+    publisher: { "@type": "Organization", name: "Tasbih Hub", url: SITE_URL },
+    mainEntityOfPage: `${SITE_URL}/blog/${blog.slug}`,
   };
 
   return (
-    <div className="bg-white dark:bg-gray-900 min-h-screen">
-       <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(blogSchema),
-        }}
-      />
-      <article
-        className="mx-auto max-w-4xl px-4 py-12
-                   text-gray-900 dark:text-gray-100"
-      >
-        {/* Blog Content */}
-        <h1 className='text-4xl mb-2'>{blog.title}</h1>
+    <div className="mx-auto max-w-3xl px-4 py-10">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(blogSchema) }} />
+      <Breadcrumbs items={[{ name: "Home", href: "/" }, { name: "Blog", href: "/blog" }, { name: blog.title }]} />
+      <article className="mt-6">
+        <p className="text-xs uppercase tracking-wide text-[var(--gold)]">{meta.category}</p>
+        <h1 className="font-display mt-2 text-4xl leading-tight">{blog.title}</h1>
+        <p className="mt-3 text-sm text-[var(--muted)]">
+          Published by Tasbih Hub · {blog.datePublished}
+          {blog.dateModified !== blog.datePublished ? ` · Updated ${blog.dateModified}` : ""} · {meta.readingTime} min read
+        </p>
+        {toc.length > 2 && (
+          <nav aria-label="Table of contents" className="mt-6 rounded-2xl border border-[var(--line)] p-4">
+            <p className="text-sm font-semibold">On this page</p>
+            <ol className="mt-2 list-decimal space-y-1 pl-5 text-sm">
+              {toc.map((item) => (
+                <li key={item.id}><a href={`#${item.id}`}>{item.text}</a></li>
+              ))}
+            </ol>
+          </nav>
+        )}
         <div
-          className="prose prose-lg prose-gray max-w-none
-                     dark:prose-invert
-                     prose-headings:font-semibold
-                     prose-h1:text-4xl prose-h1:mb-6 prose-h1:mt-0
-                     prose-h2:text-2xl prose-h2:mt-12 prose-h2:mb-4
-                     prose-h3:text-xl prose-h3:mt-8 prose-h3:mb-3
-                     prose-p:text-base prose-p:leading-relaxed prose-p:mb-4
-                     prose-strong:text-gray-900 dark:prose-strong:text-gray-100
-                     prose-em:text-gray-700 dark:prose-em:text-gray-300
-                     prose-ul:my-6 prose-ul:space-y-2
-                     prose-li:text-base prose-li:leading-relaxed
-                     prose-a:text-emerald-600 prose-a:no-underline hover:prose-a:underline
-                     dark:prose-a:text-emerald-500
-                     prose-img:rounded-xl prose-img:shadow-lg prose-img:my-8
-                     prose-img:w-full prose-img:h-auto"
-          dangerouslySetInnerHTML={{ __html: blog.content || "" }}
+          className="prose prose-lg mt-8 max-w-none dark:prose-invert prose-a:text-emerald-700 prose-headings:font-semibold"
+          dangerouslySetInnerHTML={{ __html: html }}
         />
       </article>
+      <aside className="mt-10 space-y-4 border-t border-[var(--line)] pt-6">
+        <p>
+          Practice this with the <Link href={meta.tool} className="underline">related tool</Link>.
+        </p>
+        {related.length > 0 && (
+          <div>
+            <h2 className="font-display text-2xl">Related articles</h2>
+            <ul className="mt-2 space-y-2">
+              {related.map((item) => (
+                <li key={item.slug}><Link href={`/blog/${item.slug}`}>{item.title}</Link></li>
+              ))}
+            </ul>
+          </div>
+        )}
+      </aside>
     </div>
   );
 }

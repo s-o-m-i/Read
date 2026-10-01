@@ -1,76 +1,26 @@
-// app/blog/page.tsx
-import Link from 'next/link';
-import React from 'react';
-import { blogs } from '../../lib/blogs';
+import BlogIndex from "@/components/blog/BlogIndex";
+import { blogs } from "@/lib/blogs";
+import { blogCardMeta } from "@/lib/blog/meta";
 
-/**
- * Blogs Index Page
- * ----------------
- * - Static, fast, SEO-friendly
- * - Lists all blogs from /libs/blogs
- * - Future-proof: can be replaced with WP API later
- */
+export const metadata = {
+  title: "Blog – Dhikr, Adhkar and Remembrance | Tasbih Hub",
+  description: "Articles on dhikr, morning and evening adhkar, istighfar, durood, Ramadan, and the 99 Names, each linked to a free counter.",
+  alternates: { canonical: "https://tasbihhub.com/blog" },
+};
 
-export default function BlogIndexPage() {
-  return (
-    <div className="bg-white dark:bg-gray-900 min-h-screen">
-      <section
-        className="mx-auto max-w-4xl px-4 py-10
-                   text-gray-900 dark:text-gray-100"
-        aria-label="Blog listing"
-      >
-        {/* Page Header */}
-        <header className="mb-10">
-          <h1 className="text-3xl font-semibold mb-2">
-            Blog
-          </h1>
-          <p className="text-gray-600 dark:text-gray-400">
-            Articles on tasbih, dhikr, istighfar, and mindful remembrance.
-          </p>
-          <p className="text-gray-600 dark:text-gray-400 mt-4">
-            Each article pairs Islamic knowledge with our free digital tools—explore our <Link href="/tasbih-counter" className="text-emerald-600 hover:underline">tasbih counter</Link>, <Link href="/istighfar-counter" className="text-emerald-600 hover:underline">istighfar counter</Link>, and <Link href="/durood-counter" className="text-emerald-600 hover:underline">durood counter</Link> to practice what you learn.
-          </p>
-        </header>
+export default function BlogPage() {
+  const cards = blogs.map((blog) => {
+    const meta = blogCardMeta(blog);
+    return {
+      slug: blog.slug,
+      title: blog.title,
+      description: blog.description,
+      image: blog.image,
+      datePublished: blog.datePublished,
+      category: meta.category,
+      readingTime: meta.readingTime,
+    };
+  });
 
-        {/* Blog List */}
-        <ul className="space-y-6">
-          {blogs.map((blog) => (
-            <li
-              key={blog.slug}
-              className="rounded-xl border border-gray-200 dark:border-gray-700
-                         overflow-hidden hover:bg-gray-50 dark:hover:bg-gray-800
-                         transition"
-            >
-              <Link
-                href={`/blog/${blog.slug}`}
-                className="block focus:outline-none focus:ring-2
-                           focus:ring-emerald-400 rounded-lg"
-              >
-                <div className="flex flex-col sm:flex-row gap-4">
-                  {/* Featured Image */}
-                  <div className="sm:w-64 h-48 sm:h-auto flex-shrink-0">
-                    <img
-                      src={blog.image}
-                      alt={blog.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                  
-                  {/* Content */}
-                  <div className="p-5 flex-1">
-                    <h2 className="text-xl font-medium mb-2">
-                      {blog.title}
-                    </h2>
-                    <p className="text-gray-600 dark:text-gray-400 text-sm">
-                      {blog.description}
-                    </p>
-                  </div>
-                </div>
-              </Link>
-            </li>
-          ))}
-        </ul>
-      </section>
-    </div>
-  );
+  return <BlogIndex cards={cards} />;
 }

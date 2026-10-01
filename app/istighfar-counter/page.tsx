@@ -1,6 +1,7 @@
 import Link from "next/link";
 import FAQ, { FAQItem } from "@/components/FAQ";
-import TasbihCounterCompact from "@/components/TasbihCounterCompact";
+import DhikrCounter from "@/components/dhikr/DhikrCounter";
+import RoutinePlayer from "@/components/dhikr/RoutinePlayer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -90,12 +91,13 @@ Track your daily Astaghfirullah and build a consistent habit of seeking forgiven
         {/* TOOL — CENTERED & ELEGANT */}
         <section aria-label="Istighfar Counter Tool" className="pb-8">
           <div className="max-w-md mx-auto px-4">
-            <TasbihCounterCompact 
-              counterName="istighfar" 
-              title="Istighfar Counter"
-              arabicText="أَسْتَغْفِرُ اللَّهَ"
-            />
+            <DhikrCounter storageKey="istighfar" initialDhikrId="astaghfirullah" title="Istighfar Counter" />
           </div>
+        </section>
+        <section className="mx-auto max-w-3xl px-4 pb-8" aria-label="Istighfar routine">
+          <h2 className="mb-4 text-center text-2xl font-semibold text-gray-900 dark:text-gray-100">Istighfar routine</h2>
+          <p className="mb-4 text-center text-sm text-gray-600 dark:text-gray-300">One hundred short istighfar, then Sayyid al-Istighfar once. Read the wording on <a className="text-emerald-700 underline" href="/dhikr/astaghfirullah">Astaghfirullah</a> and <a className="text-emerald-700 underline" href="/dhikr/sayyid-al-istighfar">Sayyid al-Istighfar</a>.</p>
+          <RoutinePlayer routineId="istighfar" />
         </section>
            {/* HADITH SECTION */}
         <section aria-label="Hadith Inspiration" className="py-8  border-y border-amber-200 dark:border-amber-800/30">

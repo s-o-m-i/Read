@@ -1,12 +1,12 @@
 import Link from "next/link";
 import FAQ, { FAQItem } from "@/components/FAQ";
-import TasbihCounterCompact from "@/components/TasbihCounterCompact";
+import DhikrCounter from "@/components/dhikr/DhikrCounter";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Online Tasbih Counter – Free Digital Tasbih Tool",
+  title: "Online Tasbih Counter – Free Digital Tasbeeh | Tasbih Hub",
   description:
-    "Free online tasbih counter to track your daily zikr and dhikr. Simple, mobile-friendly digital tasbih counter with saved progress.",
+    "Use a free online tasbih counter to count SubhanAllah, Alhamdulillah, Allahu Akbar and other dhikr. Mobile-friendly, private and easy to use.",
   openGraph: {
     title: "Online Tasbih Counter – Tasbih Hub",
     description:
@@ -84,10 +84,7 @@ export default function Page() {
         {/* TOOL — CENTERED & ELEGANT */}
         <section aria-label="Tasbih Counter Tool" className="py-8">
           <div className="max-w-md mx-auto px-4">
-            <TasbihCounterCompact
-              counterName="tasbih"
-              title="Tasbih Counter"
-            />
+            <DhikrCounter storageKey="tasbih" initialDhikrId="subhanallah" title="Tasbih Counter" />
           </div>
         </section>
 

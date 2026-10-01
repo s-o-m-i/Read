@@ -1,6 +1,6 @@
 import Link from "next/link";
 import FAQ, { FAQItem } from "@/components/FAQ";
-import TasbihCounter from "@/components/TasbihCounter";
+import DhikrCounter from "@/components/dhikr/DhikrCounter";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -101,11 +101,20 @@ export default function Page() {
   Tanpa aplikasi. Tanpa login. Langsung digunakan.
 
           </p>
+          <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+            <Link href="/id/dzikir-pagi" className="underline">Dzikir pagi</Link>
+            {" · "}
+            <Link href="/id/dzikir-pagi-sesuai-sunnah" className="underline">Dzikir pagi sesuai sunnah</Link>
+            {" · "}
+            <Link href="/id/dzikir-petang" className="underline">Dzikir petang</Link>
+            {" · "}
+            <Link href="/id/zikir-subuh" className="underline">Zikir Subuh</Link>
+          </p>
         </section>
 
         {/* TOOL — FULL WIDTH */}
         <section aria-label="Alat Tasbih Counter" className="mt-6">
-          <TasbihCounter counterName="tasbih" title="Tasbih Counter" />
+          <DhikrCounter storageKey="tasbih" initialDhikrId="subhanallah" title="Tasbih Digital" />
         </section>
 
         {/* CONTENT SECTION */}

@@ -1,140 +1,166 @@
-import TasbihCounter from "@/components/TasbihCounter";
 import Link from "next/link";
+import { Suspense } from "react";
+import DhikrCounter from "@/components/dhikr/DhikrCounter";
+import DailyDashboard from "@/components/dhikr/DailyDashboard";
+import FaqList from "@/components/content/FaqList";
+import JsonLd from "@/components/seo/JsonLd";
+import { pageMetadata } from "@/lib/seo/keywordMap";
+import { SITE_URL } from "@/lib/i18n/locales";
+import { ROUTINES } from "@/lib/dhikr/routines";
+import { blogs } from "@/lib/blogs";
+import { blogCardMeta } from "@/lib/blog/meta";
 
-export const metadata = {
-  title: "TasbihHub – Online Tasbih Counter, Dhikr, Istighfar & Durood Tools",
-  description:
-    "Free online tasbih, istighfar, dhikr, and durood counters. Simple, mobile-friendly Islamic zikr tools to track your daily remembrance. No login required.",
-};
+export const metadata = pageMetadata("/");
+
+const popular = [
+  { href: "/dhikr/subhanallah", arabic: "سُبْحَانَ اللَّهِ", name: "SubhanAllah" },
+  { href: "/dhikr/alhamdulillah", arabic: "الْحَمْدُ لِلَّهِ", name: "Alhamdulillah" },
+  { href: "/dhikr/allahu-akbar", arabic: "اللَّهُ أَكْبَرُ", name: "Allahu Akbar" },
+  { href: "/dhikr/la-ilaha-illallah", arabic: "لَا إِلَٰهَ إِلَّا اللَّهُ", name: "La ilaha illallah" },
+  { href: "/dhikr/astaghfirullah", arabic: "أَسْتَغْفِرُ اللَّهَ", name: "Astaghfirullah" },
+  { href: "/dhikr/salawat", arabic: "اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ", name: "Salawat" },
+];
+
+const quick = ROUTINES.filter((routine) =>
+  ["after-salah", "morning-adhkar", "evening-adhkar", "before-sleep"].includes(routine.id),
+);
 
 export default function HomePage() {
+  const latest = blogs.slice(0, 3).map((blog) => ({ ...blog, ...blogCardMeta(blog) }));
+
   return (
-    <main className="bg-white dark:bg-gray-900">
-      {/* QURANIC VERSE SECTION */}
-      <section aria-label="Quranic Inspiration" className="py-5 bg-gradient-to-r from-green-50 via-green-50 to-green-50 dark:from-green-900/20 dark:via-green-900/20 dark:to-green-900/20 border-y border-green-200 dark:border-green-800/30">
-        <div className="max-w-3xl mx-auto px-4">
-          <div className="bg-white dark:bg-gray-800 rounded-lg p-6 shadow-md ">
-          
-            <div className="">
-              <p className="text-center text-green-600 dark:text-green-400 font-semibold text-2xl" dir="rtl" lang="ar">
-                فَاذْكُرُونِي أَذْكُرْكُمْ وَاشْكُرُوا لِي وَلَا تَكْفُرُونِ
-              </p>
-            </div>
-            <blockquote className="mb-4">
-              <p className="text-lg text-gray-900 text-center mt-4 dark:text-white font-semibold leading-relaxed">
-                "So remember Me; I will remember you. And be grateful to Me and do not deny Me."
-              </p>
-              <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-                — Qur'an (Surah Al-Baqarah 2:152)
-              </p>
-            </blockquote>
-
-            
-          </div>
+    <div className="pb-16">
+      <JsonLd
+        data={{
+          "@context": "https://schema.org",
+          "@type": "WebApplication",
+          name: "Tasbih Hub",
+          url: SITE_URL,
+          applicationCategory: "LifestyleApplication",
+          operatingSystem: "Web",
+          offers: { "@type": "Offer", price: "0", priceCurrency: "USD" },
+          description: "Free online tasbih and dhikr counter. Progress stays on your device.",
+        }}
+      />
+      <section className="mx-auto max-w-5xl px-4 pt-8 text-center">
+        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--gold)]">Digital dhikr companion</p>
+        <h1 className="font-display mx-auto mt-3 max-w-3xl text-4xl leading-tight sm:text-6xl">Free Online Tasbih Counter & Digital Dhikr</h1>
+        <p className="mx-auto mt-4 max-w-2xl text-[var(--muted)]">
+          Count tasbih, istighfar, and durood in the browser. No account, no install, and no claim that your count leaves this device.
+        </p>
+      </section>
+      <section className="mx-auto mt-8 max-w-5xl px-4" aria-label="Tasbih counter">
+        <Suspense fallback={<div className="mx-auto h-[560px] max-w-xl rounded-[28px] bg-[var(--bg-elevated)]" />}>
+          <DhikrCounter storageKey="home" initialDhikrId="subhanallah" title="Tasbih Counter" />
+        </Suspense>
+      </section>
+      <section className="mx-auto mt-14 max-w-5xl px-4">
+        <h2 className="font-display text-3xl">Popular dhikr</h2>
+        <ul className="mt-5 grid grid-cols-2 gap-3 md:grid-cols-3">
+          {popular.map((item) => (
+            <li key={item.href}>
+              <Link href={item.href} className="block rounded-2xl border border-[var(--line)] bg-[var(--bg-elevated)] p-4 hover:border-[var(--gold)]">
+                <span className="font-arabic block text-2xl text-[var(--green)] dark:text-[var(--gold)]" dir="rtl" lang="ar">{item.arabic}</span>
+                <span className="mt-2 block text-sm">{item.name}</span>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section className="mx-auto mt-14 max-w-5xl px-4">
+        <h2 className="font-display text-3xl">Quick start routines</h2>
+        <ul className="mt-5 grid gap-3 sm:grid-cols-2">
+          {quick.map((routine) => (
+            <li key={routine.id}>
+              <Link href={routine.href} className="block rounded-2xl border border-[var(--line)] bg-[var(--bg-elevated)] p-5">
+                <h3 className="font-display text-2xl">{routine.name}</h3>
+                <p className="mt-2 text-sm text-[var(--muted)]">{routine.description}</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section className="mx-auto mt-14 max-w-5xl px-4">
+        <DailyDashboard />
+      </section>
+      <section className="mx-auto mt-14 max-w-5xl px-4">
+        <h2 className="font-display text-3xl">Why Tasbih Hub</h2>
+        <ul className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+          {[
+            ["Free", "The counters and routines cost nothing."],
+            ["No login", "Open a page and start. There is no account to create."],
+            ["Private", "Counts, streaks, and finished routines stay in this browser."],
+            ["Mobile", "The main button is sized for one thumb."],
+            ["Works after loading", "Once the page is open, counting uses this device, including when the connection drops."],
+            ["Guided", "After salah, morning, and evening each have their own routine."],
+          ].map(([title, copy]) => (
+            <li key={title} className="rounded-2xl border border-[var(--line)] p-4">
+              <h3 className="font-semibold">{title}</h3>
+              <p className="mt-1 text-sm text-[var(--muted)]">{copy}</p>
+            </li>
+          ))}
+        </ul>
+      </section>
+      <section className="mx-auto mt-14 grid max-w-5xl gap-4 px-4 md:grid-cols-3">
+        <Link href="/dhikr" className="rounded-3xl bg-[var(--green)] p-6 text-[#f7f3ea]">
+          <h2 className="font-display text-3xl">Dhikr library</h2>
+          <p className="mt-2 text-sm text-[#f7f3ea]/80">Search phrases by time of day, with Arabic, meaning, and a count.</p>
+        </Link>
+        <Link href="/morning-adhkar" className="rounded-3xl border border-[var(--line)] bg-[var(--bg-elevated)] p-6">
+          <h2 className="font-display text-3xl">Morning and evening</h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">Separate pages for the morning set and the evening set, including the phrases that are not shared.</p>
+        </Link>
+        <Link href="/dhikr-after-salah" className="rounded-3xl border border-[var(--line)] bg-[var(--bg-elevated)] p-6">
+          <h2 className="font-display text-3xl">After salah</h2>
+          <p className="mt-2 text-sm text-[var(--muted)]">Istighfar, then the 33, 33, and 34, with the sources named.</p>
+        </Link>
+      </section>
+      <section className="mx-auto mt-14 max-w-5xl px-4">
+        <div className="flex items-end justify-between gap-4">
+          <h2 className="font-display text-3xl">99 Names of Allah</h2>
+          <Link href="/asmaul-husna" className="text-sm text-[var(--green-2)]">Open the list</Link>
         </div>
+        <p className="mt-3 max-w-2xl text-[var(--muted)]">Arabic, transliteration, and English meaning for each name, with a page you can read before you recite.</p>
       </section>
-
-      {/* HERO */}
-      <section className="max-w-5xl mx-auto px-4 pb-12 text-center space-y-4">
-        <TasbihCounter />
-        <h1 className="text-4xl text-[#364153] font-bold dark:text-gray-300">
-          Free Online Tasbih Counter & Digital Zikr Tools
-        </h1>
-        <p className="text-gray-700 dark:text-gray-300">
-          <p className="max-w-3xl mx-auto text-gray-700 dark:text-gray-300">
-            TasbihHub provides free online tasbih counters and digital zikr
-            tools for Muslims who want a simple way to track daily dhikr,
-            istighfar, durood, and tasbeeh without using a physical tasbih.
-          </p>
-        </p>
-
-        {/* AI FEATURE ANNOUNCEMENT */}
-        <div className="mt-6 inline-block">
-          <div className="bg-gradient-to-r from-emerald-50 to-teal-50 dark:from-emerald-900/20 dark:to-teal-900/20 border border-emerald-200 dark:border-emerald-700 rounded-lg px-6 py-4 shadow-sm">
-            <p className="text-emerald-800 dark:text-emerald-300 font-medium text-sm sm:text-base">
-              <span className="font-semibold">Coming Soon:</span> AI-Powered
-              Zikr Suggestions – Get personalized Islamic remembrance
-              recommendations tailored to your spiritual journey
-            </p>
-          </div>
+      <section className="mx-auto mt-14 max-w-5xl px-4">
+        <div className="flex items-end justify-between gap-4">
+          <h2 className="font-display text-3xl">Latest guides</h2>
+          <Link href="/blog" className="text-sm text-[var(--green-2)]">All articles</Link>
         </div>
+        <ul className="mt-5 grid gap-3 md:grid-cols-3">
+          {latest.map((blog) => (
+            <li key={blog.slug}>
+              <Link href={`/blog/${blog.slug}`} className="block h-full rounded-2xl border border-[var(--line)] p-4">
+                <p className="text-xs uppercase tracking-wide text-[var(--gold)]">{blog.category}</p>
+                <h3 className="mt-2 font-semibold">{blog.title}</h3>
+                <p className="mt-2 text-sm text-[var(--muted)]">{blog.readingTime} min read</p>
+              </Link>
+            </li>
+          ))}
+        </ul>
       </section>
-
-      {/* TOOLS GRID */}
-      <section className="max-w-5xl mx-auto px-4 py-10 space-y-6">
-        <h2 className="text-2xl font-semibold text-gray-900 dark:text-gray-300 text-center">
-          Free Online Tasbih & Zikr Counters
-        </h2>
-        <p className="text-gray-700 dark:text-gray-300">
-          Simple and free digital tasbih tools to help you track zikr, dhikr,
-          istighfar, and durood online. No registration required.
-        </p>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-          <ToolCard
-            title="Tasbih Counter"
-            description="Count tasbeeh, zikr, and dhikr easily with our digital tasbih counter."
-            href="/tasbih-counter"
-          />
-
-          <ToolCard
-            title="Istighfar Counter"
-            description="Track istighfar recitations and stay consistent in daily zikr."
-            href="/istighfar-counter"
-          />
-
-          <ToolCard
-            title="Dhikr Counter"
-            description="A simple digital dhikr counter for all types of remembrance."
-            href="/dhikr-counter"
-          />
-
-          <ToolCard
-            title="Durood Counter"
-            description="Count durood sharif recitations easily online."
-            href="/durood-counter"
-          />
-        </div>
+      <section className="mx-auto mt-14 max-w-3xl px-4">
+        <FaqList
+          items={[
+            {
+              question: "Is Tasbih Hub free?",
+              answer: "Yes. The counters, routines, and reading pages are free to use in the browser.",
+            },
+            {
+              question: "Do I need an account?",
+              answer: "No. Your count, settings, and finished routines are stored locally on this device.",
+            },
+            {
+              question: "Does my progress sync to my phone and laptop?",
+              answer: "No. There is no cross-device sync. A count on one browser stays on that browser.",
+            },
+            {
+              question: "What is the difference between dhikr and zikr?",
+              answer: "They are two spellings of the same Arabic word. The dhikr counter and the zikr counter are the same kind of tool.",
+            },
+          ]}
+        />
       </section>
-
-      {/* SEO CONTENT */}
-      <section className="max-w-5xl mx-auto px-4 py-12 space-y-6 text-gray-700 dark:text-gray-300">
-        <h2 className="text-2xl font-semibold">
-          Why Use Our Digital Tasbih Tools?
-        </h2>
-
-        <p>
-          Our free online tasbih and zikr counters are designed for Muslims who
-          want a simple and reliable way to track daily remembrance. These tools
-          work directly in your browser and save your progress automatically.
-        </p>
-
-        <p>
-          Whether you are counting tasbeeh after salah or completing daily
-          istighfar and durood, our digital zikr counters help you stay focused
-          without distractions. To deepen your spiritual practice, <Link href="/blog/benefits-of-istighfar" className="text-emerald-600 hover:underline">explore the Islamic benefits of zikr</Link> in our comprehensive guides.
-        </p>
-      </section>
-    </main>
-  );
-}
-
-/* Reusable Tool Card */
-function ToolCard({
-  title,
-  description,
-  href,
-}: {
-  title: string;
-  description: string;
-  href: string;
-}) {
-  return (
-    <Link
-      href={href}
-      className="block p-6 rounded-2xl bg-gray-50 dark:bg-gray-800 shadow hover:shadow-md transition"
-    >
-      <h3 className="text-xl font-semibold text-emerald-600 mb-2">{title}</h3>
-      <p className="text-gray-700 dark:text-gray-300 text-sm">{description}</p>
-    </Link>
+    </div>
   );
 }

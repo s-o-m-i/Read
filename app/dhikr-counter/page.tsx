@@ -1,6 +1,7 @@
 import Link from "next/link";
 import FAQ, { FAQItem } from "@/components/FAQ";
-import TasbihCounterCompact from "@/components/TasbihCounterCompact";
+import { Suspense } from "react";
+import CounterSlot from "@/components/dhikr/CounterSlot";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -63,7 +64,7 @@ export default function Page() {
         {/* H1 — VERY IMPORTANT FOR SEO */}
         <section className="max-w-5xl mx-auto px-4 pt-8 text-center">
           <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-300">
-            Dhikr Zähler Online
+            Online Dhikr Counter
           </h1>
           <p className="space-y-4 text-gray-700 dark:text-gray-300">Dieser Dhikr Zähler hilft Ihnen, Dhikr online zu zählen – kostenlos und ohne Anmeldung.
 </p>
@@ -72,11 +73,9 @@ export default function Page() {
         {/* TOOL — CENTERED & ELEGANT */}
         <section aria-label="Dhikr Counter Tool" className="py-8">
           <div className="max-w-md mx-auto px-4">
-            <TasbihCounterCompact
-              counterName="dhikr"
-              title="Dhikr Counter"
-              // arabicText="ٱلْحَمْدُ لِلَّٰهِ"
-            />
+            <Suspense fallback={<div className="h-[560px] rounded-[28px] bg-[var(--bg-elevated)]" />}>
+              <CounterSlot storageKey="dhikr" initialDhikrId="subhanallah" title="Dhikr Counter" />
+            </Suspense>
           </div>
         </section>
 

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import FAQ, { FAQItem } from "@/components/FAQ";
-import TasbihCounterCompact from "@/components/TasbihCounterCompact";
+import DhikrCounter from "@/components/dhikr/DhikrCounter";
+import RoutinePlayer from "@/components/dhikr/RoutinePlayer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -70,12 +71,13 @@ export default function DuroodPage() {
         {/* TOOL — CENTERED & ELEGANT */}
         <section aria-label="Durood Counter Tool" className="py-8">
           <div className="max-w-md mx-auto px-4">
-            <TasbihCounterCompact
-              counterName="durood"
-              title="Durood Counter"
-              arabicText="اللَّهُمَّ صَلِّ عَلَىٰ مُحَمَّدٍ"
-            />
+            <DhikrCounter storageKey="durood" initialDhikrId="salawat" title="Durood Counter" />
           </div>
+        </section>
+        <section className="mx-auto max-w-3xl px-4 pb-8" aria-label="Salawat routine">
+          <h2 className="mb-4 text-center text-2xl font-semibold text-gray-900 dark:text-gray-100">Salawat routine</h2>
+          <p className="mb-4 text-center text-sm text-gray-600 dark:text-gray-300">One hundred blessings on the short form. The meaning is on the <a className="text-emerald-700 underline" href="/dhikr/salawat">salawat page</a>.</p>
+          <RoutinePlayer routineId="salawat" />
         </section>
 
         {/* CONTENT SECTION */}

@@ -7,8 +7,29 @@
   --color-primary-dark: #3b82f6;
 }
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #f4efe4;
+  --foreground: #14241c;
+  --bg: #f4efe4;
+  --bg-elevated: #fffdf8;
+  --ink: #14241c;
+  --muted: #5c6b62;
+  --green: #0e3b2e;
+  --green-2: #1d6a4f;
+  --gold: #a68445;
+  --line: #e4d8c4;
+}
+
+.dark {
+  --background: #0c1411;
+  --foreground: #f6f1e6;
+  --bg: #0c1411;
+  --bg-elevated: #16211c;
+  --ink: #f6f1e6;
+  --muted: #c5d0c8;
+  --green: #d4b36a;
+  --green-2: #8fd0b4;
+  --gold: #d4b36a;
+  --line: #2c3b34;
 }
 
 @theme inline {
@@ -18,17 +39,41 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+body {
+  background:
+    radial-gradient(circle at 8% 0%, rgba(166, 132, 69, 0.16), transparent 26%),
+    var(--bg);
+  color: var(--ink);
+  font-family: var(--font-outfit), Arial, Helvetica, sans-serif;
 }
 
-body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+.font-display {
+  font-family: var(--font-fraunces), Georgia, serif;
+}
+
+.font-arabic {
+  font-family: var(--font-arabic), "Noto Naskh Arabic", serif;
+}
+
+dialog {
+  color: inherit;
+  max-width: min(28rem, calc(100% - 2rem));
+}
+
+body[data-focus="true"] ins.adsbygoogle,
+body[data-focus="true"] iframe[src*="googlesyndication"],
+body[data-focus="true"] iframe[src*="doubleclick"] {
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dhikr-counter *,
+  .dhikr-counter *::before,
+  .dhikr-counter *::after {
+    animation: none !important;
+    transition: none !important;
+  }
 }
 
 /* Custom Islamic Animations */
