@@ -98,6 +98,14 @@ dialog {
   max-width: min(28rem, calc(100% - 2rem));
 }
 
+dialog[open] {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  margin: 0;
+  transform: translate(-50%, -50%);
+}
+
 body[data-focus="true"] ins.adsbygoogle,
 body[data-focus="true"] iframe[src*="googlesyndication"],
 body[data-focus="true"] iframe[src*="doubleclick"] {

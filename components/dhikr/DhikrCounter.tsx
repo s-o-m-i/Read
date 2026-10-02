@@ -135,6 +135,14 @@ export default function DhikrCounter({
   }, [focusMode]);
 
   useEffect(() => {
+    const onFullscreen = () => {
+      if (!document.fullscreenElement) setFocusMode(false);
+    };
+    document.addEventListener("fullscreenchange", onFullscreen);
+    return () => document.removeEventListener("fullscreenchange", onFullscreen);
+  }, []);
+
+  useEffect(() => {
     return () => {
       if (advanceTimer.current) window.clearTimeout(advanceTimer.current);
     };
@@ -267,6 +275,7 @@ export default function DhikrCounter({
         }
         return;
       }
+      if (dialogRef.current?.open) return;
       if (eventTarget && (eventTarget.tagName === "INPUT" || eventTarget.tagName === "TEXTAREA" || eventTarget.isContentEditable)) return;
       if (event.key === " " || event.key === "Enter") {
         event.preventDefault();
@@ -281,6 +290,18 @@ export default function DhikrCounter({
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, [enableKeyboard, focusMode, pickerOpen, customOpen, inspirationOpen]);
+
+  function toggleFocus() {
+    if (focusMode || document.fullscreenElement) {
+      setFocusMode(false);
+      if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
+      return;
+    }
+    setFocusMode(true);
+    const root = document.documentElement;
+    if (!root.requestFullscreen) return;
+    void root.requestFullscreen({ navigationUI: "hide" }).catch(() => root.requestFullscreen().catch(() => {}));
+  }
 
   function setMode(next: CounterMode) {
     clearAdvance();
@@ -448,7 +469,7 @@ export default function DhikrCounter({
           <IconButton label={store.settings.sound ? "Turn sound off" : "Turn sound on"} onClick={() => updateStore((draft) => { draft.settings.sound = !draft.settings.sound; })}>
             {store.settings.sound ? <Volume2 size={18} /> : <VolumeX size={18} />}
           </IconButton>
-          <IconButton label={focusMode ? "Exit focus mode" : "Focus mode"} pressed={focusMode} onClick={() => setFocusMode((open) => !open)}>
+          <IconButton label={focusMode ? "Exit focus mode" : "Focus mode"} pressed={focusMode} onClick={toggleFocus}>
             {focusMode ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
           </IconButton>
         </div>
@@ -745,7 +766,7 @@ export default function DhikrCounter({
             document.body,
           )
         : null}
-      <dialog ref={dialogRef} className="rounded-2xl bg-[var(--bg-elevated)] p-6 text-[var(--ink)] backdrop:bg-black/50">
+      <dialog ref={dialogRef} className="w-[min(28rem,calc(100%-2rem))] rounded-2xl bg-[var(--bg-elevated)] p-6 text-[var(--ink)] shadow-2xl backdrop:bg-black/50">
         <p className="font-display text-2xl">Reset this count?</p>
         <p className="mt-2 text-sm text-[var(--muted)]">This round returns to zero on this device. Your lifetime total stays.</p>
         <div className="mt-5 flex justify-end gap-3">
