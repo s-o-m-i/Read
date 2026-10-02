@@ -616,7 +616,13 @@ export default function DhikrCounter({
         </div>
 
         {sheet && (
-          <div className="absolute inset-x-3 bottom-3 z-30 max-h-[70%] overflow-auto rounded-3xl bg-[var(--scene-card)] p-4 text-[var(--scene-ink)] shadow-[0_16px_40px_rgba(40,28,10,0.18)]">
+          <div
+            role={sheet === "target" ? "dialog" : undefined}
+            aria-label={sheet === "target" ? "Count target" : undefined}
+            className={sheet === "target"
+              ? "fixed left-1/2 top-1/2 z-[80] max-h-[80dvh] w-[min(22rem,calc(100%-2rem))] -translate-x-1/2 -translate-y-1/2 overflow-auto rounded-3xl bg-[var(--scene-card)] p-4 text-[var(--scene-ink)] shadow-[0_16px_40px_rgba(40,28,10,0.18)]"
+              : "absolute inset-x-3 bottom-3 z-30 max-h-[70%] overflow-auto rounded-3xl bg-[var(--scene-card)] p-4 text-[var(--scene-ink)] shadow-[0_16px_40px_rgba(40,28,10,0.18)]"}
+          >
             {sheet === "target" && (
               <div>
                 <SheetTitle title="Count target" onClose={() => setSheet(null)} />
