@@ -1,10 +1,15 @@
 export const STORAGE_KEY = "tasbihhub.store";
 export const STORE_VERSION = 1;
 
+export type CounterMode = "free" | "sunnah" | "routine";
+
 export type CounterBucket = {
   count: number;
   target: number | null;
   dhikrId: string;
+  mode?: CounterMode;
+  cycleIndex?: number;
+  routineId?: string;
 };
 
 export type CompletedSession = {

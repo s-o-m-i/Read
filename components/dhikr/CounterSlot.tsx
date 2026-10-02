@@ -23,6 +23,8 @@ export default function CounterSlot({ storageKey, initialDhikrId, title, enableK
     updateStore((draft) => {
       ensureCounter(draft, storageKey, query, 33);
       draft.counters[storageKey].dhikrId = query;
+      draft.counters[storageKey].mode = "free";
+      draft.counters[storageKey].target = getDhikr(query)?.recommendedCount ?? 33;
     });
   }, [query, storageKey]);
 

@@ -83,7 +83,7 @@ export default function Page() {
 
         {/* TOOL — CENTERED & ELEGANT */}
         <section aria-label="Tasbih Counter Tool" className="py-8">
-          <div className="max-w-md mx-auto px-4">
+          <div className="max-w-lg mx-auto px-4">
             <DhikrCounter storageKey="tasbih" initialDhikrId="subhanallah" title="Tasbih Counter" />
           </div>
         </section>

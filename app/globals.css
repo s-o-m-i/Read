@@ -100,6 +100,51 @@ body[data-focus="true"] iframe[src*="doubleclick"] {
   pointer-events: none !important;
 }
 
+.counter-scene {
+  --scene-ink: #1c2333;
+  --scene-muted: #8d93a3;
+  --scene-gold: #c6a04a;
+  --scene-gold-deep: #a88432;
+  --scene-card: rgba(255, 252, 247, 0.9);
+  --scene-ring: #c5d0e2;
+  --scene-soft: rgba(255, 255, 255, 0.82);
+  background:
+    radial-gradient(ellipse at 50% 28%, rgba(255, 250, 240, 0.95), transparent 58%),
+    linear-gradient(180deg, #fbf6ea 0%, #f4e7cf 46%, #ead8b4 100%);
+  color: var(--scene-ink);
+}
+
+.dark .counter-scene {
+  --scene-ink: #f6f1e6;
+  --scene-muted: #c3b8a4;
+  --scene-gold: #d4b36a;
+  --scene-gold-deep: #e0c17a;
+  --scene-card: rgba(28, 24, 18, 0.78);
+  --scene-ring: #6a6256;
+  --scene-soft: rgba(255, 255, 255, 0.08);
+  background:
+    radial-gradient(ellipse at 50% 24%, rgba(90, 68, 32, 0.28), transparent 52%),
+    linear-gradient(180deg, #17140f 0%, #241c14 48%, #16130f 100%);
+}
+
+.counter-scene :is(p, li, h2, h3, h4, span) {
+  color: inherit;
+}
+
+main .counter-scene .scene-gold {
+  color: var(--scene-gold-deep);
+}
+
+main .counter-scene .scene-muted {
+  color: var(--scene-muted);
+}
+
+main .counter-scene :is(h2, h3, h4) {
+  font-family: var(--font-outfit), Arial, Helvetica, sans-serif;
+  letter-spacing: normal;
+  color: inherit;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .dhikr-counter *,
   .dhikr-counter *::before,

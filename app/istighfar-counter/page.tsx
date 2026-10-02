@@ -90,7 +90,7 @@ Track your daily Astaghfirullah and build a consistent habit of seeking forgiven
 
         {/* TOOL — CENTERED & ELEGANT */}
         <section aria-label="Istighfar Counter Tool" className="pb-8">
-          <div className="max-w-md mx-auto px-4">
+          <div className="max-w-lg mx-auto px-4">
             <DhikrCounter storageKey="istighfar" initialDhikrId="astaghfirullah" title="Istighfar Counter" />
           </div>
         </section>

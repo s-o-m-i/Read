@@ -69,7 +69,7 @@ export default function Page() {
 
         {/* TOOL — CENTERED & ELEGANT */}
         <section aria-label="Zikr Counter Tool" className="py-8">
-          <div className="max-w-md mx-auto px-4">
+          <div className="max-w-lg mx-auto px-4">
             <DhikrCounter storageKey="zikr" initialDhikrId="subhanallah" title="Zikr Counter" />
           </div>
         </section>

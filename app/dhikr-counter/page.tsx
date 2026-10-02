@@ -72,7 +72,7 @@ export default function Page() {
 
         {/* TOOL — CENTERED & ELEGANT */}
         <section aria-label="Dhikr Counter Tool" className="py-8">
-          <div className="max-w-md mx-auto px-4">
+          <div className="max-w-lg mx-auto px-4">
             <Suspense fallback={<div className="h-[560px] rounded-[28px] bg-[var(--bg-elevated)]" />}>
               <CounterSlot storageKey="dhikr" initialDhikrId="subhanallah" title="Dhikr Counter" />
             </Suspense>
