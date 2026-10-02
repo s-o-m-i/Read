@@ -34,17 +34,16 @@ export const metadata: Metadata = {
 export default function AsmaulHusnaPage() {
   return (
     <main className="min-h-screen">
-      {/* HEADER SECTION */}
-      <header className="max-w-6xl mx-auto px-4 py-12 text-center space-y-4">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100">
-          Asmaul Husna – The 99 Beautiful Names of Allah
+      <section className="max-w-6xl mx-auto px-4 pt-8 pb-4 space-y-6">
+        <h1 className="text-3xl font-semibold text-gray-900 dark:text-gray-100 text-center">
+          Complete List of the 99 Names of Allah
         </h1>
-        <p className="text-base md:text-lg text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-          Complete guide to understanding, memorizing, and practicing the divine attributes of Allah through His most beautiful names
+        <p className="text-center text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          Click on any name to explore its detailed meaning, Quranic references, spiritual benefits, and recommended dhikr practices
         </p>
-      </header>
+        <AsmaulHusnaGrid data={asmaulHusnaData} />
+      </section>
 
-      {/* COMPREHENSIVE INTRODUCTION (800+ words) */}
       <article className="max-w-4xl mx-auto px-4 py-12 space-y-8">
         {/* WHAT IS ASMAUL HUSNA SECTION */}
         <section className="space-y-4">
@@ -212,18 +211,6 @@ export default function AsmaulHusnaPage() {
           </p>
         </section>
       </article>
-
-      {/* LIST OF ASMAUL HUSNA */}
-      <section className="max-w-6xl mx-auto px-4 py-12 space-y-6">
-        <h2 className="text-3xl font-semibold text-gray-900 dark:text-gray-100 text-center">
-          Complete List of the 99 Names of Allah
-        </h2>
-        <p className="text-center text-gray-700 dark:text-gray-300 max-w-3xl mx-auto leading-relaxed">
-          Click on any name to explore its detailed meaning, Quranic references, spiritual benefits, and recommended dhikr practices
-        </p>
-
-        <AsmaulHusnaGrid data={asmaulHusnaData} />
-      </section>
 
       {/* CTA SECTION */}
       <section className="max-w-6xl mx-auto px-4 py-12 text-center space-y-6 bg-gradient-to-r from-blue-50 to-purple-50 dark:from-blue-900/20 dark:to-purple-900/20 rounded-lg">
