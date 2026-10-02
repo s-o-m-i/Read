@@ -8,9 +8,11 @@ import {
   Check,
   ChevronDown,
   Crosshair,
-  LayoutGrid,
+  Focus,
   Infinity,
+  LayoutGrid,
   Maximize2,
+  Minimize2,
   Minus,
   Moon,
   MoreHorizontal,
@@ -109,6 +111,7 @@ export default function DhikrCounter({
   const [customArabic, setCustomArabic] = useState("");
   const [speakingId, setSpeakingId] = useState("");
   const [focusMode, setFocusMode] = useState(false);
+  const [fullscreen, setFullscreen] = useState(false);
   const [editing, setEditing] = useState(false);
   const [editValue, setEditValue] = useState("");
   const [customTarget, setCustomTarget] = useState("");
@@ -138,9 +141,7 @@ export default function DhikrCounter({
   }, [focusMode]);
 
   useEffect(() => {
-    const onFullscreen = () => {
-      if (!document.fullscreenElement) setFocusMode(false);
-    };
+    const onFullscreen = () => setFullscreen(Boolean(document.fullscreenElement));
     document.addEventListener("fullscreenchange", onFullscreen);
     return () => document.removeEventListener("fullscreenchange", onFullscreen);
   }, []);
@@ -295,12 +296,14 @@ export default function DhikrCounter({
   }, [enableKeyboard, focusMode, pickerOpen, customOpen, inspirationOpen]);
 
   function toggleFocus() {
-    if (focusMode || document.fullscreenElement) {
-      setFocusMode(false);
-      if (document.fullscreenElement) void document.exitFullscreen().catch(() => {});
+    setFocusMode((open) => !open);
+  }
+
+  function toggleFullscreen() {
+    if (document.fullscreenElement) {
+      void document.exitFullscreen().catch(() => {});
       return;
     }
-    setFocusMode(true);
     const root = document.documentElement;
     if (!root.requestFullscreen) return;
     void root.requestFullscreen({ navigationUI: "hide" }).catch(() => root.requestFullscreen().catch(() => {}));
@@ -472,8 +475,11 @@ export default function DhikrCounter({
           <IconButton label={store.settings.sound ? "Turn sound off" : "Turn sound on"} onClick={() => updateStore((draft) => { draft.settings.sound = !draft.settings.sound; })}>
             {store.settings.sound ? <Volume2 size={18} /> : <VolumeX size={18} />}
           </IconButton>
-          <IconButton label="Focus mode" onClick={toggleFocus}>
-            <Maximize2 size={18} />
+          <IconButton label={focusMode ? "Exit focus mode" : "Focus mode"} pressed={focusMode} onClick={toggleFocus}>
+            <Focus size={18} />
+          </IconButton>
+          <IconButton label={fullscreen ? "Exit full screen" : "Full screen"} pressed={fullscreen} onClick={toggleFullscreen}>
+            {fullscreen ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
           </IconButton>
         </div>
 
