@@ -5,6 +5,7 @@ import { useState } from "react";
 import { useTheme } from "./ThemeProvider";
 
 const links = [
+  ["/about", "About"],
   ["/tasbih-counter", "Tasbih"],
   ["/dhikr", "Dhikr"],
   ["/adhkar", "Adhkar"],

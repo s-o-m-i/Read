@@ -51,6 +51,39 @@ body {
   font-family: var(--font-fraunces), Georgia, serif;
 }
 
+/* Older pages used Tailwind gray panels. Keep them on the same cream / deep-green surfaces. */
+main.bg-white,
+main.bg-gray-900,
+main[class*="bg-white"],
+main[class*="bg-gray-900"] {
+  background-color: transparent;
+}
+
+main :is(h1, h2, h3, h4) {
+  font-family: var(--font-fraunces), Georgia, serif;
+  color: var(--ink);
+  letter-spacing: -0.02em;
+}
+
+main :is(p, li, dd, blockquote, figcaption) {
+  color: var(--muted);
+}
+
+main :is(.bg-white, .bg-gray-50, .bg-gray-800, .bg-gray-900):not(main) {
+  background-color: var(--bg-elevated);
+  color: var(--ink);
+}
+
+main :is(.border-gray-200, .border-gray-700, .border-gray-800) {
+  border-color: var(--line);
+}
+
+main a.text-emerald-600,
+main a.text-emerald-700,
+main .text-emerald-600 {
+  color: var(--green-2);
+}
+
 .font-arabic {
   font-family: var(--font-arabic), "Noto Naskh Arabic", serif;
 }

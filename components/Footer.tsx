@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function Footer() {
   return (
     <footer className="mt-8 border-t border-[var(--line)] bg-[var(--bg-elevated)]">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-3">
+      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <h2 className="font-display text-2xl">Tasbih Hub</h2>
           <p className="mt-2 text-sm text-[var(--muted)]">A digital companion for daily dhikr. Counts stay on this device.</p>
@@ -22,13 +22,20 @@ export default function Footer() {
         <div>
           <h2 className="font-semibold">Read</h2>
           <ul className="mt-3 space-y-2 text-sm">
+            <li><Link href="/about">About</Link></li>
             <li><Link href="/dhikr">Dhikr library</Link></li>
             <li><Link href="/asmaul-husna">99 Names</Link></li>
             <li><Link href="/blog">Blog</Link></li>
-            <li><Link href="/about">About</Link></li>
-            <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-            <li><Link href="/terms-of-service">Terms of Service</Link></li>
             <li><Link href="/contact">Contact</Link></li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--gold)]">Legal</h2>
+          <ul className="mt-3 space-y-2 text-sm">
+            <li><Link href="/privacy-policy">Privacy Policy</Link></li>
+            <li><Link href="/terms-of-service">Terms</Link></li>
+            <li><Link href="/cookie-policy">Cookies</Link></li>
+            <li><Link href="/disclaimer">Disclaimer</Link></li>
           </ul>
         </div>
       </div>

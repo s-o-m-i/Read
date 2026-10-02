@@ -65,7 +65,7 @@ const faqs: FAQItem[] = [
 export default function Page() {
   return (
     <>
-      <main className="bg-white dark:bg-gray-900">
+      <main>
         {/* Language Switcher */}
         <div className="max-w-5xl mx-auto px-4 pt-4 text-right">
           <div className="lang-switcher text-sm">

@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function AsmaulHusnaPage() {
   return (
-    <main className="bg-white dark:bg-gray-900 min-h-screen">
+    <main className="min-h-screen">
       {/* HEADER SECTION */}
       <header className="max-w-6xl mx-auto px-4 py-12 text-center space-y-4">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-gray-100">
