@@ -61,15 +61,9 @@ export default function DuroodPage() {
   return (
     <>
       <main className="bg-white dark:bg-gray-900">
-        {/* H1 — VERY IMPORTANT FOR SEO */}
-        <section className="max-w-5xl mx-auto px-4 pt-8 text-center">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-300">
-            Free Online Durood Counter – Digital Durood Sharif Tool
-          </h1>
-        </section>
+        <h1 className="sr-only">Free Online Durood Counter – Digital Durood Sharif Tool</h1>
 
-        {/* TOOL — CENTERED & ELEGANT */}
-        <section aria-label="Durood Counter Tool" className="py-8">
+        <section aria-label="Durood Counter Tool" className="py-6">
           <div className="max-w-lg mx-auto px-4">
             <DhikrCounter storageKey="durood" initialDhikrId="salawat" title="Durood Counter" />
           </div>

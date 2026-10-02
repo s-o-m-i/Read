@@ -63,33 +63,9 @@ export default function IstighfarPage() {
    
 
       <main className="bg-white dark:bg-gray-900">
-        {/* H1 — VERY IMPORTANT FOR SEO */}
-        {/* <section className="max-w-5xl mx-auto px-4 pt-8 text-center">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-300">
-            Free Online Istighfar Counter – Digital Zikr Tool
-          </h1>
-        </section> */}
+        <h1 className="sr-only">Free Online Istighfar Counter – Digital Zikr Tool</h1>
 
-        {/* CTA SECTION */}
-        <section aria-label="Call to Action" className="py-8 bg-gradient-to-b from-emerald-50 to-transparent dark:from-emerald-900/20">
-          <div className="max-w-md mx-auto px-4 text-center">
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-              Start Your Istighfar Now
-            </h1>
-            <p className="text-gray-600 dark:text-gray-400 mb-6">
-Track your daily Astaghfirullah and build a consistent habit of seeking forgiveness.            </p>
-            <button 
-              className="inline-flex items-center gap-2 px-3 text-sm py-2  text-white font-medium bg-green-500 rounded-lg shadow-lg hover:shadow-xl transition-all duration-200 hover:scale-105"
-            >
-               Start Counting
-            </button>
-          </div>
-        </section>
-
-     
-
-        {/* TOOL — CENTERED & ELEGANT */}
-        <section aria-label="Istighfar Counter Tool" className="pb-8">
+        <section aria-label="Istighfar Counter Tool" className="py-6">
           <div className="max-w-lg mx-auto px-4">
             <DhikrCounter storageKey="istighfar" initialDhikrId="astaghfirullah" title="Istighfar Counter" />
           </div>

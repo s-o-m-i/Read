@@ -66,23 +66,9 @@ export default function Page() {
   return (
     <>
       <main>
-        {/* Language Switcher */}
-        <div className="max-w-5xl mx-auto px-4 pt-4 text-right">
-          <div className="lang-switcher text-sm">
-            <a href="/tasbih-counter" className="text-emerald-600 hover:underline font-semibold">EN</a> |{" "}
-            <a href="/id/tasbih-counter" className="text-emerald-600 hover:underline">ID</a>
-          </div>
-        </div>
+        <h1 className="sr-only">Free Online Tasbih Counter – Digital Tasbih Tool</h1>
 
-        {/* H1 — VERY IMPORTANT FOR SEO */}
-        <section className="max-w-5xl mx-auto px-4 pt-4 text-center">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-300">
-            Free Online Tasbih Counter – Digital Tasbih Tool
-          </h1>
-        </section>
-
-        {/* TOOL — CENTERED & ELEGANT */}
-        <section aria-label="Tasbih Counter Tool" className="py-8">
+        <section aria-label="Tasbih Counter Tool" className="py-6">
           <div className="max-w-lg mx-auto px-4">
             <DhikrCounter storageKey="tasbih" initialDhikrId="subhanallah" title="Tasbih Counter" />
           </div>
@@ -90,7 +76,10 @@ export default function Page() {
 
         {/* CONTENT SECTION */}
         <section className="max-w-5xl mx-auto px-4 py-12 space-y-10">
-          {/* INTRO */}
+          <div className="text-right text-sm">
+            <a href="/tasbih-counter" className="text-emerald-600 hover:underline font-semibold">EN</a> |{" "}
+            <a href="/id/tasbih-counter" className="text-emerald-600 hover:underline">ID</a>
+          </div>
           <div className="space-y-4 text-gray-700 dark:text-gray-300">
             <p>
               The online tasbih counter on Tasbih Hub is a free digital tasbih designed to help you track your daily zikr and dhikr easily. Whether you are reciting SubhanAllah, Alhamdulillah, Allahu Akbar, or any other zikr, this tool allows you to count accurately without using a physical tasbih.

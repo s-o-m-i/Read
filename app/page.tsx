@@ -42,14 +42,8 @@ export default function HomePage() {
           description: "Free online tasbih and dhikr counter. Progress stays on your device.",
         }}
       />
-      <section className="mx-auto max-w-5xl px-4 pt-8 text-center">
-        <p className="text-xs font-semibold uppercase tracking-[0.22em] text-[var(--gold)]">Digital dhikr companion</p>
-        <h1 className="font-display mx-auto mt-3 max-w-3xl text-4xl leading-tight sm:text-6xl">Free Online Tasbih Counter & Digital Dhikr</h1>
-        <p className="mx-auto mt-4 max-w-2xl text-[var(--muted)]">
-          Count tasbih, istighfar, and durood in the browser. No account, no install, and no claim that your count leaves this device.
-        </p>
-      </section>
-      <section className="mx-auto mt-8 max-w-5xl px-4" aria-label="Tasbih counter">
+      <h1 className="sr-only">Free Online Tasbih Counter & Digital Dhikr</h1>
+      <section className="mx-auto max-w-5xl px-4 pt-6" aria-label="Tasbih counter">
         <Suspense fallback={<div className="mx-auto h-[560px] max-w-xl rounded-[28px] bg-[var(--bg-elevated)]" />}>
           <DhikrCounter storageKey="home" initialDhikrId="subhanallah" title="Tasbih Counter" />
         </Suspense>

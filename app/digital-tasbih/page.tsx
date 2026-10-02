@@ -23,15 +23,13 @@ export default function DigitalTasbihPage() {
           description: "A digital tasbih that runs in the browser.",
         }}
       />
-      <header>
-        <h1 className="font-display text-4xl sm:text-5xl">Digital Tasbih for Daily Dhikr</h1>
-        <p className="mt-4 text-[var(--muted)]">
-          A digital tasbih is a counter in place of beads. It does not change the words. It keeps the number while you say SubhanAllah, Alhamdulillah, Allahu Akbar, or any other phrase you have chosen.
-        </p>
-      </header>
+      <h1 className="sr-only">Digital Tasbih for Daily Dhikr</h1>
       <Suspense fallback={<div className="h-[560px] rounded-[28px] bg-[var(--bg-elevated)]" />}>
         <CounterSlot storageKey="digital" initialDhikrId="subhanallah" title="Digital Tasbih" />
       </Suspense>
+      <p className="text-[var(--muted)]">
+        A digital tasbih is a counter in place of beads. It does not change the words. It keeps the number while you say SubhanAllah, Alhamdulillah, Allahu Akbar, or any other phrase you have chosen.
+      </p>
       <section className="space-y-3">
         <h2 className="font-display text-3xl">How it differs from a bead tasbih</h2>
         <p>Beads give you a physical stop every 33. A digital tasbih gives you a target, a progress mark, and a count that is still there if you lock the phone. People who travel, or who miscount when they are tired, often use both: fingers or beads when they can, and a counter when they cannot.</p>

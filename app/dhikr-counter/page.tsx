@@ -61,17 +61,9 @@ export default function Page() {
   return (
     <>
       <main className="bg-white dark:bg-gray-900">
-        {/* H1 — VERY IMPORTANT FOR SEO */}
-        <section className="max-w-5xl mx-auto px-4 pt-8 text-center">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-300">
-            Online Dhikr Counter
-          </h1>
-          <p className="space-y-4 text-gray-700 dark:text-gray-300">Dieser Dhikr Zähler hilft Ihnen, Dhikr online zu zählen – kostenlos und ohne Anmeldung.
-</p>
-        </section>
+        <h1 className="sr-only">Online Dhikr Counter</h1>
 
-        {/* TOOL — CENTERED & ELEGANT */}
-        <section aria-label="Dhikr Counter Tool" className="py-8">
+        <section aria-label="Dhikr Counter Tool" className="py-6">
           <div className="max-w-lg mx-auto px-4">
             <Suspense fallback={<div className="h-[560px] rounded-[28px] bg-[var(--bg-elevated)]" />}>
               <CounterSlot storageKey="dhikr" initialDhikrId="subhanallah" title="Dhikr Counter" />

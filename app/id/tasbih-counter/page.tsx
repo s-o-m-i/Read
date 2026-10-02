@@ -72,36 +72,23 @@ export default function Page() {
   return (
     <>
       <main className="bg-white dark:bg-gray-900">
-        {/* Language Switcher */}
-        <div className="max-w-5xl mx-auto px-4 pt-4 text-right">
-          <div className="lang-switcher text-sm">
-            <Link
-              href="/tasbih-counter"
-              className="text-emerald-600 hover:underline"
-            >
-              EN
-            </Link>{" "}
-            |{" "}
-            <Link
-              href="/id/tasbih-counter"
-              className="text-emerald-600 hover:underline font-semibold"
-            >
-              ID
-            </Link>
+        <h1 className="sr-only">Tasbih Digital Online Gratis</h1>
+
+        <section aria-label="Alat Tasbih Counter" className="py-6">
+          <DhikrCounter storageKey="tasbih" initialDhikrId="subhanallah" title="Tasbih Digital" />
+        </section>
+
+        {/* CONTENT SECTION */}
+        <section className="max-w-5xl mx-auto px-4 py-12 space-y-10 text-gray-700 dark:text-gray-300">
+          <div className="text-right text-sm">
+            <Link href="/tasbih-counter" className="text-emerald-600 hover:underline">EN</Link>
+            {" | "}
+            <Link href="/id/tasbih-counter" className="text-emerald-600 hover:underline font-semibold">ID</Link>
           </div>
-        </div>
-
-        {/* H1 — VERY IMPORTANT FOR SEO */}
-        <section className="max-w-5xl mx-auto px-4 pt-4 text-center">
-          <h1 className="text-3xl font-bold text-gray-900 dark:text-gray-300">
-              Tasbih Digital Online Gratis
-          </h1>
-          <p className="mt-4 text-lg text-gray-600 dark:text-gray-400">
-            Counter dzikir sederhana untuk membantu Anda berdzikir dengan fokus.
-  Tanpa aplikasi. Tanpa login. Langsung digunakan.
-
+          <p>
+            Counter dzikir sederhana untuk membantu Anda berdzikir dengan fokus. Tanpa aplikasi. Tanpa login. Langsung digunakan.
           </p>
-          <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">
+          <p className="text-sm">
             <Link href="/id/dzikir-pagi" className="underline">Dzikir pagi</Link>
             {" · "}
             <Link href="/id/dzikir-pagi-sesuai-sunnah" className="underline">Dzikir pagi sesuai sunnah</Link>
@@ -110,15 +97,6 @@ export default function Page() {
             {" · "}
             <Link href="/id/zikir-subuh" className="underline">Zikir Subuh</Link>
           </p>
-        </section>
-
-        {/* TOOL — FULL WIDTH */}
-        <section aria-label="Alat Tasbih Counter" className="mt-6">
-          <DhikrCounter storageKey="tasbih" initialDhikrId="subhanallah" title="Tasbih Digital" />
-        </section>
-
-        {/* CONTENT SECTION */}
-        <section className="max-w-5xl mx-auto px-4 py-12 space-y-10 text-gray-700 dark:text-gray-300">
           <h2 className="text-2xl font-semibold">
   Apakah Tasbih Digital Diperbolehkan?
 </h2>

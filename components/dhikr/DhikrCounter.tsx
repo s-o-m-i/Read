@@ -589,7 +589,7 @@ export default function DhikrCounter({
             document.body,
           )
         : face}
-      <p className="mt-3 text-center text-xs text-[var(--muted)]">Your count stays on this device.</p>
+      <p className="sr-only">Your count stays on this device.</p>
       <dialog ref={dialogRef} className="rounded-2xl bg-[var(--bg-elevated)] p-6 text-[var(--ink)] backdrop:bg-black/50">
         <p className="font-display text-2xl">Reset this count?</p>
         <p className="mt-2 text-sm text-[var(--muted)]">This round returns to zero on this device. Your lifetime total stays.</p>
