@@ -113,6 +113,13 @@ body[data-focus="true"] iframe[src*="doubleclick"] {
   pointer-events: none !important;
 }
 
+.focus-scene {
+  --scene-ink: #f4f1ea;
+  --scene-muted: #9aa3b5;
+  --scene-gold: #e2b340;
+  --scene-ring: #3c465c;
+}
+
 .counter-scene {
   --scene-ink: #1c2333;
   --scene-muted: #8d93a3;

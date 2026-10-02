@@ -9,10 +9,11 @@ import {
   ChevronDown,
   Crosshair,
   LayoutGrid,
+  Infinity,
   Maximize2,
-  Minimize2,
   Minus,
   Moon,
+  MoreHorizontal,
   Plus,
   RotateCcw,
   Search,
@@ -41,6 +42,7 @@ import { useTheme } from "@/components/ThemeProvider";
 import { playComplete, playTap, speakArabic, vibrateTap } from "./feedback";
 
 const PRESETS = [33, 99, 100, 300, 500, 1000] as const;
+const MANUAL_TARGETS = [33, 66, 99] as const;
 
 const SUNNAH = [
   { id: "subhanallah", target: 33, label: "SubhanAllah" },
@@ -110,6 +112,7 @@ export default function DhikrCounter({
   const [editing, setEditing] = useState(false);
   const [editValue, setEditValue] = useState("");
   const [customTarget, setCustomTarget] = useState("");
+  const [targetEditor, setTargetEditor] = useState(false);
   const [notice, setNotice] = useState("");
   const dialogRef = useRef<HTMLDialogElement>(null);
   const advanceTimer = useRef<number | null>(null);
@@ -444,7 +447,7 @@ export default function DhikrCounter({
 
   const daily = inspirationForToday();
   const face = (
-    <div className={`counter-scene relative overflow-hidden ${focusMode ? "flex min-h-[100dvh] w-full flex-col" : hero ? "flex min-h-[100dvh] w-full items-center" : "rounded-[32px] shadow-[0_24px_60px_rgba(90,62,20,0.12)]"}`}>
+    <div className={`counter-scene relative overflow-hidden ${hero ? "flex min-h-[100dvh] w-full items-center" : "rounded-[32px] shadow-[0_24px_60px_rgba(90,62,20,0.12)]"}`}>
       <MosqueBackdrop />
       <button
         type="button"
@@ -455,7 +458,7 @@ export default function DhikrCounter({
         <BookOpen size={14} />
         <span className="text-[10px] font-semibold tracking-wide [writing-mode:vertical-rl] rotate-180">Inspiration</span>
       </button>
-      <div className={`relative z-10 mx-auto flex w-full max-w-[420px] flex-col ${focusMode ? "min-h-[100dvh] justify-center px-4 py-6" : hero ? "min-h-[100dvh] justify-center px-4 pb-8 pt-24" : "px-3 pb-4 pt-3"}`}>
+      <div className={`relative z-10 mx-auto flex w-full max-w-[420px] flex-col ${hero ? "min-h-[100dvh] justify-center px-4 pb-8 pt-24" : "px-3 pb-4 pt-3"}`}>
         <div className="flex items-center justify-center gap-2">
           <IconButton label="Choose dhikr" pressed={pickerOpen} onClick={() => setPickerOpen(true)}>
             <LayoutGrid size={18} />
@@ -469,8 +472,8 @@ export default function DhikrCounter({
           <IconButton label={store.settings.sound ? "Turn sound off" : "Turn sound on"} onClick={() => updateStore((draft) => { draft.settings.sound = !draft.settings.sound; })}>
             {store.settings.sound ? <Volume2 size={18} /> : <VolumeX size={18} />}
           </IconButton>
-          <IconButton label={focusMode ? "Exit focus mode" : "Focus mode"} pressed={focusMode} onClick={toggleFocus}>
-            {focusMode ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
+          <IconButton label="Focus mode" onClick={toggleFocus}>
+            <Maximize2 size={18} />
           </IconButton>
         </div>
 
@@ -539,10 +542,44 @@ export default function DhikrCounter({
         </div>
 
         <div className="mx-auto mt-5 flex items-center gap-2">
-          <ModeButton active={mode === "free"} label="Free" onClick={() => setMode("free")} />
+          <ModeButton active={mode === "free"} label="Manual" onClick={() => setMode("free")} />
           <ModeButton active={mode === "sunnah"} label="Sunnah" onClick={() => setMode("sunnah")} />
-          <ModeButton active={mode === "routine"} label="Routine" onClick={() => setMode("routine")} />
+          <ModeButton active={mode === "routine"} label="Routines" onClick={() => setMode("routine")} />
         </div>
+
+        {mode === "free" && (
+          <div className="mt-3">
+            <div className="flex items-center justify-center gap-2">
+              {MANUAL_TARGETS.map((preset) => (
+                <button key={preset} type="button" aria-pressed={target === preset} className={targetChipClass(target === preset)} onClick={() => { setTargetEditor(false); setTarget(preset); }}>
+                  {preset}
+                </button>
+              ))}
+              <button type="button" aria-label="Unlimited" aria-pressed={target === null} className={targetChipClass(target === null)} onClick={() => { setTargetEditor(false); setTarget(null); }}>
+                <Infinity size={16} />
+              </button>
+              <button type="button" aria-label="Custom target" aria-pressed={targetEditor || (target !== null && !MANUAL_TARGETS.includes(target as 33 | 66 | 99))} className={targetChipClass(targetEditor || (target !== null && !MANUAL_TARGETS.includes(target as 33 | 66 | 99)))} onClick={() => setTargetEditor((open) => !open)}>
+                <MoreHorizontal size={16} />
+              </button>
+            </div>
+            {targetEditor && (
+              <form
+                className="mx-auto mt-2 flex w-fit items-center gap-2"
+                onSubmit={(event) => {
+                  event.preventDefault();
+                  const parsed = Number.parseInt(customTarget, 10);
+                  if (!parsed || parsed < 1) return;
+                  setTarget(parsed);
+                  setCustomTarget("");
+                  setTargetEditor(false);
+                }}
+              >
+                <input aria-label="Custom target" inputMode="numeric" value={customTarget} onChange={(event) => setCustomTarget(event.target.value)} className="w-24 rounded-full border border-[var(--scene-ring)] bg-[var(--scene-soft)] px-3 py-1.5 text-center text-sm text-[var(--scene-ink)] outline-none" placeholder="Custom" />
+                <button type="submit" className="text-sm font-semibold text-[var(--scene-gold-deep)]">Set</button>
+              </form>
+            )}
+          </div>
+        )}
 
         {steps.length > 0 && (
           <div className={`mt-4 flex items-start px-2 ${mode === "routine" ? "justify-start overflow-x-auto" : "justify-center"}`}>
@@ -577,7 +614,7 @@ export default function DhikrCounter({
             {sheet === "target" && (
               <div>
                 <SheetTitle title="Count target" onClose={() => setSheet(null)} />
-                <p className="mt-1 text-xs text-[var(--scene-muted)]">A custom target uses Free mode. Sunnah keeps 33, 33, then 34.</p>
+                <p className="mt-1 text-xs text-[var(--scene-muted)]">A custom target uses Manual. Sunnah keeps 33, 33, then 34.</p>
                 <div className="mt-3 flex flex-wrap gap-2">
                   {PRESETS.map((preset) => (
                     <button key={preset} type="button" className="rounded-full bg-[var(--scene-soft)] px-3 py-1.5 text-sm" onClick={() => setTarget(preset)}>
@@ -645,8 +682,40 @@ export default function DhikrCounter({
     <section className={hero && !focusMode ? "dhikr-counter hero-bleed -mt-[4.3125rem] w-full" : "dhikr-counter mx-auto w-full max-w-[440px]"} aria-label={title}>
       {focusMode && typeof document !== "undefined"
         ? createPortal(
-            <div className="fixed inset-0 z-[80] overflow-auto" role="dialog" aria-label="Focus mode">
-              {face}
+            <div className="focus-scene fixed inset-0 z-[80] flex min-h-[100dvh] flex-col bg-[#070b14] text-[var(--scene-ink)]" role="dialog" aria-label="Focus mode">
+              <div className="flex justify-end px-4 pt-[max(1rem,env(safe-area-inset-top))]">
+                <button type="button" onClick={toggleFocus} className="inline-flex items-center gap-2 rounded-full bg-white/10 px-4 py-2 text-sm font-medium text-white">
+                  <X size={16} />
+                  Exit Focus
+                </button>
+              </div>
+              <div className="flex flex-1 flex-col items-center justify-center px-6">
+                <div className="relative">
+                  <CountRing progress={target ? progress : 0} />
+                  <div className="absolute inset-0 flex flex-col items-center justify-center">
+                    <p className="sr-only" aria-live="polite">
+                      {dhikr.transliteration}, count {count}
+                      {target ? ` of ${target}` : ""}
+                    </p>
+                    <p className="font-display text-7xl font-semibold leading-none tabular-nums text-white">{count}</p>
+                    {target !== null && <p className="mt-1 text-lg text-[var(--scene-muted)]">/ {target}</p>}
+                  </div>
+                </div>
+                <p className="mt-8 text-3xl font-semibold text-[var(--scene-gold)]">{dhikr.transliteration}</p>
+                <p className={`font-arabic mt-2 text-white/75 ${longArabic ? "text-lg leading-loose" : "text-2xl"}`} dir="rtl" lang="ar">{dhikr.arabic}</p>
+                <div className="mt-10 flex items-center justify-center gap-6">
+                  <button type="button" className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white active:scale-95" onClick={decrement} aria-label="Decrease count">
+                    <Minus size={20} />
+                  </button>
+                  <button type="button" className="flex h-[84px] w-[84px] items-center justify-center rounded-full bg-[var(--scene-gold)] text-[#1c2333] shadow-[0_0_36px_rgba(226,179,64,0.45)] active:scale-95" onClick={increment} aria-label={`Increase ${dhikr.transliteration}`}>
+                    <Plus size={36} strokeWidth={2.4} />
+                  </button>
+                  <button type="button" className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white active:scale-95" onClick={() => dialogRef.current?.showModal()} aria-label="Reset count">
+                    <RotateCcw size={18} />
+                  </button>
+                </div>
+              </div>
+              <p className="pb-[max(1.5rem,env(safe-area-inset-bottom))] text-center text-sm tracking-wide text-white/40">Stay with the words.</p>
             </div>,
             document.body,
           )
@@ -874,6 +943,10 @@ function IconButton({ label, pressed, onClick, children }: { label: string; pres
       {children}
     </button>
   );
+}
+
+function targetChipClass(active: boolean) {
+  return `flex h-9 min-w-9 items-center justify-center rounded-full px-3 text-sm font-semibold shadow-[0_4px_12px_rgba(80,60,20,0.08)] ${active ? "bg-[var(--scene-gold)] text-[#1c2333]" : "bg-[var(--scene-soft)] text-[var(--scene-gold-deep)]"}`;
 }
 
 function ModeButton({ active, label, onClick }: { active: boolean; label: string; onClick: () => void }) {
