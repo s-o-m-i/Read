@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useTheme } from "./ThemeProvider";
 
@@ -13,11 +13,13 @@ const links = [
   ["/asmaul-husna", "99 Names"],
   ["/guides", "Guides"],
   ["/blog", "Blog"],
+  ["/contact", "Contact"],
 ];
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
   const pathname = usePathname();
+  const router = useRouter();
   const [open, setOpen] = useState(false);
   const [pastHero, setPastHero] = useState(false);
 
@@ -71,7 +73,17 @@ export default function Navbar() {
         <ul className="absolute inset-x-0 top-full z-40 max-h-[calc(100dvh-4.5rem)] space-y-1 overflow-auto border-t border-[var(--line)] bg-[var(--bg)] px-4 py-3 shadow-[0_16px_40px_rgba(20,36,28,0.12)] lg:hidden">
           {links.map(([href, label]) => (
             <li key={href}>
-              <Link href={href} className="block rounded-xl px-2 py-3" onClick={() => setOpen(false)}>{label}</Link>
+              <Link
+                href={href}
+                className="block rounded-xl px-2 py-3"
+                onClick={(event) => {
+                  event.preventDefault();
+                  setOpen(false);
+                  router.push(href);
+                }}
+              >
+                {label}
+              </Link>
             </li>
           ))}
         </ul>

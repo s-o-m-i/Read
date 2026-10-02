@@ -233,6 +233,17 @@ export const KEYWORD_MAP: KeywordEntry[] = [
     h1: "Zikir Subuh",
     h2: ["Setelah salam Subuh", "Lanjut ke dzikir pagi"],
   },
+  {
+    path: "/about",
+    primary: "free online tasbih counter",
+    secondary: ["digital tasbih", "dhikr counter", "istighfar counter", "durood counter", "zikr counter"],
+    intent: "Learn what Tasbih Hub is and which free counters it offers",
+    title: "About Tasbih Hub | Free Online Tasbih & Dhikr Counter",
+    description:
+      "Tasbih Hub is a free online tasbih counter for dhikr, istighfar, and durood. No account. Your count stays on this device. Made by Muhammad Suleman.",
+    h1: "About Tasbih Hub",
+    h2: ["What Tasbih Hub is", "Free counters and guides", "How the digital tasbih works"],
+  },
 ];
 
 export function getKeywordEntry(path: string) {
