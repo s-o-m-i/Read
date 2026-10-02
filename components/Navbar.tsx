@@ -68,7 +68,7 @@ export default function Navbar() {
         </div>
       </nav>
       {open && (
-        <ul className="space-y-1 border-t border-[var(--line)] px-4 py-3 lg:hidden">
+        <ul className="absolute inset-x-0 top-full z-40 max-h-[calc(100dvh-4.5rem)] space-y-1 overflow-auto border-t border-[var(--line)] bg-[var(--bg)] px-4 py-3 shadow-[0_16px_40px_rgba(20,36,28,0.12)] lg:hidden">
           {links.map(([href, label]) => (
             <li key={href}>
               <Link href={href} className="block rounded-xl px-2 py-3" onClick={() => setOpen(false)}>{label}</Link>
