@@ -11,9 +11,10 @@ type Props = {
   initialDhikrId: string;
   title: string;
   enableKeyboard?: boolean;
+  hero?: boolean;
 };
 
-export default function CounterSlot({ storageKey, initialDhikrId, title, enableKeyboard = true }: Props) {
+export default function CounterSlot({ storageKey, initialDhikrId, title, enableKeyboard = true, hero = false }: Props) {
   const params = useSearchParams();
   const query = params.get("dhikr");
   const selected = query && getDhikr(query) ? query : initialDhikrId;
@@ -28,5 +29,5 @@ export default function CounterSlot({ storageKey, initialDhikrId, title, enableK
     });
   }, [query, storageKey]);
 
-  return <DhikrCounter storageKey={storageKey} initialDhikrId={selected} title={title} enableKeyboard={enableKeyboard} />;
+  return <DhikrCounter storageKey={storageKey} initialDhikrId={selected} title={title} enableKeyboard={enableKeyboard} hero={hero} />;
 }

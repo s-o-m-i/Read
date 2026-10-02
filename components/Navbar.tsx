@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 import { useTheme } from "./ThemeProvider";
 
 const links = [
@@ -16,10 +17,30 @@ const links = [
 
 export default function Navbar() {
   const { theme, toggleTheme } = useTheme();
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
+  const [pastHero, setPastHero] = useState(false);
+
+  useEffect(() => {
+    const update = () => {
+      const hero = document.querySelector(".hero-bleed");
+      if (!hero) {
+        setPastHero(false);
+        return;
+      }
+      setPastHero(hero.getBoundingClientRect().bottom <= 72);
+    };
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", update);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", update);
+    };
+  }, [pathname]);
 
   return (
-    <header className="sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--bg)]/90 backdrop-blur">
+    <header className={`sticky top-0 z-40 border-b border-[var(--line)] bg-[var(--bg)]/90 backdrop-blur ${pastHero || open ? "nav-solid" : ""}`}>
       <nav className="mx-auto flex max-w-6xl items-center justify-between gap-4 px-4 py-3" aria-label="Primary">
         <Link href="/" className="flex items-center gap-2">
           <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[var(--bg-elevated)] shadow-sm">

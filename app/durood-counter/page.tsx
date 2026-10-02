@@ -63,10 +63,8 @@ export default function DuroodPage() {
       <main className="bg-white dark:bg-gray-900">
         <h1 className="sr-only">Free Online Durood Counter – Digital Durood Sharif Tool</h1>
 
-        <section aria-label="Durood Counter Tool" className="py-6">
-          <div className="max-w-lg mx-auto px-4">
-            <DhikrCounter storageKey="durood" initialDhikrId="salawat" title="Durood Counter" />
-          </div>
+        <section aria-label="Durood Counter Tool">
+          <DhikrCounter storageKey="durood" initialDhikrId="salawat" title="Durood Counter" hero />
         </section>
         <section className="mx-auto max-w-3xl px-4 pb-8" aria-label="Salawat routine">
           <h2 className="mb-4 text-center text-2xl font-semibold text-gray-900 dark:text-gray-100">Salawat routine</h2>

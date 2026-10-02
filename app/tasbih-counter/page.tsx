@@ -68,10 +68,8 @@ export default function Page() {
       <main>
         <h1 className="sr-only">Free Online Tasbih Counter – Digital Tasbih Tool</h1>
 
-        <section aria-label="Tasbih Counter Tool" className="py-6">
-          <div className="max-w-lg mx-auto px-4">
-            <DhikrCounter storageKey="tasbih" initialDhikrId="subhanallah" title="Tasbih Counter" />
-          </div>
+        <section aria-label="Tasbih Counter Tool">
+          <DhikrCounter storageKey="tasbih" initialDhikrId="subhanallah" title="Tasbih Counter" hero />
         </section>
 
         {/* CONTENT SECTION */}

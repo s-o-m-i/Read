@@ -62,10 +62,8 @@ export default function Page() {
       <main className="bg-white dark:bg-gray-900">
         <h1 className="sr-only">Free Online Zikr Counter – Simple Islamic Remembrance Tool</h1>
 
-        <section aria-label="Zikr Counter Tool" className="py-6">
-          <div className="max-w-lg mx-auto px-4">
-            <DhikrCounter storageKey="zikr" initialDhikrId="subhanallah" title="Zikr Counter" />
-          </div>
+        <section aria-label="Zikr Counter Tool">
+          <DhikrCounter storageKey="zikr" initialDhikrId="subhanallah" title="Zikr Counter" hero />
         </section>
 
         {/* CONTENT SECTION */}

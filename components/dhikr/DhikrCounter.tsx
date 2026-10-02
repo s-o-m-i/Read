@@ -22,6 +22,7 @@ import {
   X,
 } from "lucide-react";
 import { DHIKR_CATALOG, getDhikr } from "@/lib/dhikr/catalog";
+import { inspirationForToday } from "@/lib/dhikr/inspiration";
 import { getRoutine, ROUTINES } from "@/lib/dhikr/routines";
 import type { DhikrItem } from "@/lib/dhikr/types";
 import {
@@ -47,7 +48,7 @@ const SUNNAH = [
   { id: "allahu-akbar", target: 34, label: "Allahu Akbar" },
 ] as const;
 
-type Sheet = "target" | "routine" | "insights" | "inspiration" | null;
+type Sheet = "target" | "routine" | "insights" | null;
 
 function lookupDhikr(id: string, custom: DhikrItem[] | undefined) {
   return getDhikr(id) ?? custom?.find((item) => item.id === id);
@@ -59,6 +60,7 @@ type Props = {
   title?: string;
   enableKeyboard?: boolean;
   showLibraryLink?: boolean;
+  hero?: boolean;
 };
 
 function resolveMode(bucket: CounterBucket | undefined, initialDhikrId: string): CounterMode {
@@ -75,6 +77,7 @@ export default function DhikrCounter({
   initialDhikrId = "subhanallah",
   title = "Tasbih Counter",
   enableKeyboard = true,
+  hero = false,
 }: Props) {
   const store = useSyncExternalStore(subscribeStore, getStore, getServerStore);
   const bucket = store.counters[storageKey];
@@ -97,6 +100,7 @@ export default function DhikrCounter({
 
   const [sheet, setSheet] = useState<Sheet>(null);
   const [pickerOpen, setPickerOpen] = useState(false);
+  const [inspirationOpen, setInspirationOpen] = useState(false);
   const [customOpen, setCustomOpen] = useState(false);
   const [dhikrQuery, setDhikrQuery] = useState("");
   const [customName, setCustomName] = useState("");
@@ -255,10 +259,11 @@ export default function DhikrCounter({
     if (!enableKeyboard) return;
     const onKey = (event: KeyboardEvent) => {
       const eventTarget = event.target as HTMLElement | null;
-      if (pickerOpen || customOpen) {
+      if (pickerOpen || customOpen || inspirationOpen) {
         if (event.key === "Escape") {
           setCustomOpen(false);
           if (!customOpen) setPickerOpen(false);
+          setInspirationOpen(false);
         }
         return;
       }
@@ -275,7 +280,7 @@ export default function DhikrCounter({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [enableKeyboard, focusMode, pickerOpen, customOpen]);
+  }, [enableKeyboard, focusMode, pickerOpen, customOpen, inspirationOpen]);
 
   function setMode(next: CounterMode) {
     clearAdvance();
@@ -416,10 +421,20 @@ export default function DhikrCounter({
     if (!started) setNotice("Speech is not available in this browser.");
   }
 
+  const daily = inspirationForToday();
   const face = (
-    <div className={`counter-scene relative overflow-hidden ${focusMode ? "flex min-h-[100dvh] flex-col" : "rounded-[32px] shadow-[0_24px_60px_rgba(90,62,20,0.12)]"}`}>
+    <div className={`counter-scene relative overflow-hidden ${focusMode ? "flex min-h-[100dvh] w-full flex-col" : hero ? "flex min-h-[100dvh] w-full items-center" : "rounded-[32px] shadow-[0_24px_60px_rgba(90,62,20,0.12)]"}`}>
       <MosqueBackdrop />
-      <div className={`relative z-10 mx-auto flex w-full max-w-[420px] flex-col ${focusMode ? "min-h-[100dvh] px-4 py-5" : "px-3 pb-4 pt-3"}`}>
+      <button
+        type="button"
+        className="absolute left-0 top-1/2 z-20 flex -translate-y-1/2 items-center gap-1 rounded-r-2xl bg-[var(--scene-card)] py-3 pl-1.5 pr-2 text-[var(--scene-gold-deep)] shadow-[0_8px_20px_rgba(80,60,20,0.12)]"
+        onClick={() => setInspirationOpen(true)}
+        aria-expanded={inspirationOpen}
+      >
+        <BookOpen size={14} />
+        <span className="text-[10px] font-semibold tracking-wide [writing-mode:vertical-rl] rotate-180">Inspiration</span>
+      </button>
+      <div className={`relative z-10 mx-auto flex w-full max-w-[420px] flex-col ${focusMode ? "min-h-[100dvh] justify-center px-4 py-6" : hero ? "min-h-[100dvh] justify-center px-4 pb-8 pt-24" : "px-3 pb-4 pt-3"}`}>
         <div className="flex items-center justify-center gap-2">
           <IconButton label="Choose dhikr" pressed={pickerOpen} onClick={() => setPickerOpen(true)}>
             <LayoutGrid size={18} />
@@ -437,16 +452,6 @@ export default function DhikrCounter({
             {focusMode ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
           </IconButton>
         </div>
-
-        <button
-          type="button"
-          className="absolute left-0 top-[38%] z-20 flex items-center gap-1 rounded-r-2xl bg-[var(--scene-card)] py-3 pl-1.5 pr-2 text-[var(--scene-gold-deep)] shadow-[0_8px_20px_rgba(80,60,20,0.12)]"
-          onClick={() => toggleSheet("inspiration")}
-          aria-expanded={sheet === "inspiration"}
-        >
-          <BookOpen size={14} />
-          <span className="text-[10px] font-semibold tracking-wide [writing-mode:vertical-rl] rotate-180">Inspiration</span>
-        </button>
 
         <div className="relative mx-auto mt-6">
           <CountRing progress={target ? progress : 0} />
@@ -609,14 +614,6 @@ export default function DhikrCounter({
                 </div>
               </div>
             )}
-            {sheet === "inspiration" && (
-              <div>
-                <SheetTitle title={dhikr.transliteration} onClose={() => setSheet(null)} />
-                <p className="font-arabic mt-3 text-center text-3xl leading-relaxed" dir="rtl" lang="ar">{dhikr.arabic}</p>
-                <p className="mt-3 text-sm">{dhikr.translation}</p>
-                <p className="mt-2 text-xs text-[var(--scene-muted)]">{dhikr.source}</p>
-              </div>
-            )}
           </div>
         )}
       </div>
@@ -624,7 +621,7 @@ export default function DhikrCounter({
   );
 
   return (
-    <section className="dhikr-counter mx-auto w-full max-w-[440px]" aria-label={title}>
+    <section className={hero && !focusMode ? "dhikr-counter hero-bleed -mt-[4.3125rem] w-full" : "dhikr-counter mx-auto w-full max-w-[440px]"} aria-label={title}>
       {focusMode && typeof document !== "undefined"
         ? createPortal(
             <div className="fixed inset-0 z-[80] overflow-auto" role="dialog" aria-label="Focus mode">
@@ -634,6 +631,32 @@ export default function DhikrCounter({
           )
         : face}
       <p className="sr-only">Your count stays on this device.</p>
+      {inspirationOpen && typeof document !== "undefined"
+        ? createPortal(
+            <div className="fixed inset-0 z-[100]" onClick={() => setInspirationOpen(false)}>
+              <aside
+                role="dialog"
+                aria-label="Inspiration"
+                className="inspiration-drawer flex h-full w-[min(100%,380px)] flex-col overflow-auto bg-white text-[#1c2333] shadow-[8px_0_32px_rgba(40,28,10,0.08)]"
+                onClick={(event) => event.stopPropagation()}
+              >
+                <div className="flex items-center justify-between px-5 pt-5">
+                  <p className="text-lg font-semibold">Inspiration</p>
+                  <button type="button" aria-label="Close inspiration" className="flex h-9 w-9 items-center justify-center rounded-full text-[#8b93a3]" onClick={() => setInspirationOpen(false)}>
+                    <X size={18} />
+                  </button>
+                </div>
+                <p className="font-arabic px-5 pt-1 text-center text-[1.65rem] leading-relaxed text-[#c6a04a]" dir="rtl" lang="ar">بِسْمِ اللَّهِ الرَّحْمَٰنِ الرَّحِيمِ</p>
+                <div className="space-y-5 px-5 py-6">
+                  <InspirationBlock label="This remembrance" arabic={dhikr.arabic} english={dhikr.translation} source={dhikr.source} note="The phrase on your counter. Say it slowly, and keep the meaning with the words." />
+                  <InspirationBlock label="Hadith of the day" arabic={daily.hadith.arabic} english={daily.hadith.english} source={daily.hadith.source} note={daily.hadith.note} />
+                  <InspirationBlock label="Quranic reminder" arabic={daily.quran.arabic} english={daily.quran.english} source={daily.quran.source} note={daily.quran.note} />
+                </div>
+              </aside>
+            </div>,
+            document.body,
+          )
+        : null}
       {pickerOpen && typeof document !== "undefined"
         ? createPortal(
             <div className="fixed inset-0 z-[100] flex items-end justify-center bg-black/45 p-3 sm:items-center" onClick={() => setPickerOpen(false)}>
@@ -775,10 +798,25 @@ function CountRing({ progress }: { progress: number }) {
   );
 }
 
-function MosqueBackdrop() {
+function InspirationBlock({ label, arabic, english, source, note }: { label: string; arabic: string; english: string; source: string; note?: string }) {
   return (
-    <svg className="pointer-events-none absolute inset-x-0 bottom-[8%] h-[46%] w-full text-[#c4a574]" viewBox="0 0 360 180" preserveAspectRatio="xMidYMax meet" aria-hidden>
-      <g fill="currentColor" opacity="0.22">
+    <section>
+      <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#c6a04a]">{label}</p>
+      <div className="mt-2 rounded-xl border border-[#efe6d6] px-4 py-4">
+        <p className="font-arabic text-center text-xl leading-loose text-[#1c2333]" dir="rtl" lang="ar">{arabic}</p>
+        <p className="mt-3 text-center text-sm leading-relaxed text-[#5c6675]">&ldquo;{english}&rdquo;</p>
+        {note ? <p className="mt-2 text-center text-xs leading-relaxed text-[#8b93a3]">{note}</p> : null}
+        <p className="mt-3 text-center text-xs text-[#c6a04a]">— {source}</p>
+      </div>
+    </section>
+  );
+}
+
+function MosqueBackdrop() {
+  const skylineId = `skyline${useId().replace(/:/g, "")}`;
+  return (
+    <svg className="pointer-events-none absolute inset-x-0 bottom-0 h-[48%] w-full text-[#c4a574]" viewBox="0 0 1080 180" preserveAspectRatio="xMidYMax slice" aria-hidden>
+      <g id={skylineId} fill="currentColor" opacity="0.2">
         <path d="M0 128c48-22 86-8 128 2s62 10 104-6 78-4 128 12v44H0z" />
         <rect x="22" y="78" width="8" height="58" rx="1" />
         <path d="M18 78h16l-8-18z" />
@@ -797,6 +835,8 @@ function MosqueBackdrop() {
         <path d="M288 84h16l-8-16z" />
         <rect x="288" y="76" width="16" height="4" rx="1" />
       </g>
+      <use href={`#${skylineId}`} x="360" />
+      <use href={`#${skylineId}`} x="720" />
     </svg>
   );
 }

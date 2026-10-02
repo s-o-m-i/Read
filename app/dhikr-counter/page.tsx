@@ -63,12 +63,10 @@ export default function Page() {
       <main className="bg-white dark:bg-gray-900">
         <h1 className="sr-only">Online Dhikr Counter</h1>
 
-        <section aria-label="Dhikr Counter Tool" className="py-6">
-          <div className="max-w-lg mx-auto px-4">
-            <Suspense fallback={<div className="h-[560px] rounded-[28px] bg-[var(--bg-elevated)]" />}>
-              <CounterSlot storageKey="dhikr" initialDhikrId="subhanallah" title="Dhikr Counter" />
-            </Suspense>
-          </div>
+        <section aria-label="Dhikr Counter Tool">
+          <Suspense fallback={<div className="h-[calc(100dvh-4.75rem)] bg-[var(--bg)]" />}>
+            <CounterSlot storageKey="dhikr" initialDhikrId="subhanallah" title="Dhikr Counter" hero />
+          </Suspense>
         </section>
 
         {/* CONTENT SECTION */}

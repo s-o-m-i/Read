@@ -150,10 +150,26 @@ main .counter-scene :is(h2, h3, h4) {
   color: inherit;
 }
 
+@keyframes inspiration-drawer-in {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(0); }
+}
+
+.inspiration-drawer {
+  animation: inspiration-drawer-in 0.22s ease-out;
+}
+
+body:has(.hero-bleed) > header:not(.nav-solid) {
+  background: transparent;
+  border-bottom-color: transparent;
+  backdrop-filter: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   .dhikr-counter *,
   .dhikr-counter *::before,
-  .dhikr-counter *::after {
+  .dhikr-counter *::after,
+  .inspiration-drawer {
     animation: none !important;
     transition: none !important;
   }
