@@ -1,4 +1,6 @@
 import Link from "next/link";
+import { Instagram } from "lucide-react";
+import { SITE_EMAIL, SITE_INSTAGRAM, SITE_OWNER } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -6,7 +8,12 @@ export default function Footer() {
       <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-2 lg:grid-cols-4">
         <div>
           <h2 className="font-display text-2xl">Tasbih Hub</h2>
-          <p className="mt-2 text-sm text-[var(--muted)]">A digital companion for daily dhikr. Counts stay on this device.</p>
+          <p className="mt-2 text-sm text-[var(--muted)]">A digital companion for daily dhikr. Counts stay on this device. Made by {SITE_OWNER}.</p>
+          <a href={`mailto:${SITE_EMAIL}`} className="mt-3 block text-sm underline">{SITE_EMAIL}</a>
+          <a href={SITE_INSTAGRAM} className="mt-2 inline-flex items-center gap-2 text-sm" rel="me noopener noreferrer" target="_blank">
+            <Instagram size={16} />
+            Instagram
+          </a>
         </div>
         <div>
           <h2 className="font-semibold">Practice</h2>

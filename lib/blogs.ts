@@ -192,7 +192,7 @@ export const blogs = [
 
       <br>
 
-      <p><strong>About the Author:</strong> Suleman Altaf writes about Islamic spirituality, daily worship, and living faith in the modern world. He is the creator of Tasbih Hub, a free platform for tasbih, dhikr, istighfar, and durood counters.</p>
+      <p><strong>About the Author:</strong> Muhammad Suleman writes about Islamic spirituality, daily worship, and living faith in the modern world. He is the creator of Tasbih Hub, a free platform for tasbih, dhikr, istighfar, and durood counters.</p>
     `,
   },
   {
@@ -678,7 +678,7 @@ export const blogs = [
 
       <br>
 
-      <p><strong>About the Author:</strong> Suleman Altaf writes about Islamic spirituality, consistency in worship, and navigating faith in the modern world. He is the creator of Tasbih Hub, a simple platform focused on helping Muslims stay mindful in daily remembrance.</p>
+      <p><strong>About the Author:</strong> Muhammad Suleman writes about Islamic spirituality, consistency in worship, and navigating faith in the modern world. He is the creator of Tasbih Hub, a simple platform focused on helping Muslims stay mindful in daily remembrance.</p>
     `,
   },
   {

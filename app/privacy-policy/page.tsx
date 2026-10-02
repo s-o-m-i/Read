@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/content/LegalPage";
 import { SITE_URL } from "@/lib/i18n/locales";
+import { SITE_EMAIL, SITE_OWNER } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Privacy Policy | Tasbih Hub",
@@ -22,6 +23,9 @@ export default function PrivacyPolicy() {
         </p>
         <p>
           If analytics or ads are enabled, those providers may collect technical data such as a cookie identifier and the page you opened. See the <a href="/cookie-policy">Cookie Policy</a> for the categories.
+        </p>
+        <p>
+          The contact form sends the name, email, subject, and message you type to {SITE_OWNER} at {SITE_EMAIL}. FormSubmit delivers that message. It is not linked to the dhikr count stored in this browser.
         </p>
       </section>
       <section className="space-y-3">
@@ -61,7 +65,7 @@ export default function PrivacyPolicy() {
       <section className="space-y-3">
         <h2>Contact</h2>
         <p>
-          Questions: <a href="mailto:info@tasbihhub.com">info@tasbihhub.com</a>.
+          Questions: <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>. {SITE_OWNER} reads that address.
         </p>
       </section>
     </LegalPage>

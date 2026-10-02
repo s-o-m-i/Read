@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/content/LegalPage";
 import { SITE_URL } from "@/lib/i18n/locales";
+import { SITE_EMAIL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Disclaimer | Tasbih Hub",
@@ -39,7 +40,7 @@ export default function DisclaimerPage() {
       <section className="space-y-3">
         <h2>Accuracy and availability</h2>
         <p>
-          We work to keep Arabic, transliteration, and translations careful. A mistake can still appear. If you find one, write to <a href="mailto:info@tasbihhub.com">info@tasbihhub.com</a>. The site is provided as available. Counts can be lost if you clear the browser, change devices, or use a private window. There is no cross-device backup.
+          We work to keep Arabic, transliteration, and translations careful. A mistake can still appear. If you find one, write to <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>. The site is provided as available. Counts can be lost if you clear the browser, change devices, or use a private window. There is no cross-device backup.
         </p>
       </section>
 

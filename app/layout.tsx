@@ -8,6 +8,7 @@ import { ThemeProvider } from "@/components/ThemeProvider";
 import JsonLd from "@/components/seo/JsonLd";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { SITE_URL } from "@/lib/i18n/locales";
+import { SITE_EMAIL, SITE_INSTAGRAM, SITE_OWNER } from "@/lib/site";
 
 const outfit = Outfit({
   variable: "--font-outfit",
@@ -64,7 +65,13 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Tasbih Hub",
               url: SITE_URL,
-              email: "info@tasbihhub.com",
+              email: SITE_EMAIL,
+              founder: {
+                "@type": "Person",
+                name: SITE_OWNER,
+                email: SITE_EMAIL,
+                sameAs: [SITE_INSTAGRAM],
+              },
             },
             {
               "@context": "https://schema.org",

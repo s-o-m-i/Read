@@ -110,10 +110,11 @@ export default function AboutPage() {
 
         <h2 className="text-2xl font-semibold">Connect With Us</h2>
         <p>
-          We are committed to improving your online zikr experience. For
-          questions, feedback, or suggestions, visit our{" "}
+          Tasbih Hub is made by Muhammad Suleman. For questions, a correction, or a suggestion, write to{" "}
+          <a href="mailto:sulemandevofficial@gmail.com" className="text-emerald-600 hover:underline">sulemandevofficial@gmail.com</a>{" "}
+          or use the{" "}
           <Link href="/contact" className="text-emerald-600 hover:underline">
-            Contact page
+            contact page
           </Link>.
         </p>
       </section>

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/content/LegalPage";
 import { SITE_URL } from "@/lib/i18n/locales";
+import { SITE_EMAIL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Terms of Service | Tasbih Hub",
@@ -58,7 +59,7 @@ export default function TermsOfService() {
       <section className="space-y-3">
         <h2>Contact</h2>
         <p>
-          Questions: <a href="mailto:info@tasbihhub.com">info@tasbihhub.com</a>.
+          Questions: <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>.
         </p>
       </section>
     </LegalPage>

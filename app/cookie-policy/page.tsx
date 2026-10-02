@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import LegalPage from "@/components/content/LegalPage";
 import { SITE_URL } from "@/lib/i18n/locales";
+import { SITE_EMAIL } from "@/lib/site";
 
 export const metadata: Metadata = {
   title: "Cookie Policy | Tasbih Hub",
@@ -101,7 +102,7 @@ export default function CookiePolicyPage() {
       <section className="space-y-3">
         <h2>Contact</h2>
         <p>
-          Questions about cookies or on-device storage: <a href="mailto:info@tasbihhub.com">info@tasbihhub.com</a>.
+          Questions about cookies or on-device storage: <a href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>.
         </p>
       </section>
     </LegalPage>
