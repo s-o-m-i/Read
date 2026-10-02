@@ -65,6 +65,11 @@ main :is(h1, h2, h3, h4) {
   letter-spacing: -0.02em;
 }
 
+main a.card-on-green,
+main a.card-on-green :is(h2, h3, p, span) {
+  color: #f7f3ea;
+}
+
 main :is(p, li, dd, blockquote, figcaption) {
   color: var(--muted);
 }

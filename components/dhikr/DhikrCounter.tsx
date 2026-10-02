@@ -6,6 +6,7 @@ import {
   BarChart3,
   BookOpen,
   Check,
+  ChevronDown,
   Crosshair,
   LayoutGrid,
   Maximize2,
@@ -14,9 +15,11 @@ import {
   Moon,
   Plus,
   RotateCcw,
+  Search,
   Sun,
   Volume2,
   VolumeX,
+  X,
 } from "lucide-react";
 import { DHIKR_CATALOG, getDhikr } from "@/lib/dhikr/catalog";
 import { getRoutine, ROUTINES } from "@/lib/dhikr/routines";
@@ -34,10 +37,9 @@ import {
   type CounterMode,
 } from "@/lib/storage/dhikrStore";
 import { useTheme } from "@/components/ThemeProvider";
-import { playComplete, playTap, vibrateTap } from "./feedback";
+import { playComplete, playTap, speakArabic, vibrateTap } from "./feedback";
 
 const PRESETS = [33, 99, 100, 300, 500, 1000] as const;
-const QUICK_IDS = ["subhanallah", "alhamdulillah", "allahu-akbar", "la-ilaha-illallah", "astaghfirullah", "salawat", "subhanallahi-wa-bihamdihi", "hasbiyallah"];
 
 const SUNNAH = [
   { id: "subhanallah", target: 33, label: "SubhanAllah" },
@@ -45,7 +47,11 @@ const SUNNAH = [
   { id: "allahu-akbar", target: 34, label: "Allahu Akbar" },
 ] as const;
 
-type Sheet = "dhikr" | "target" | "routine" | "insights" | "inspiration" | null;
+type Sheet = "target" | "routine" | "insights" | "inspiration" | null;
+
+function lookupDhikr(id: string, custom: DhikrItem[] | undefined) {
+  return getDhikr(id) ?? custom?.find((item) => item.id === id);
+}
 
 type Props = {
   storageKey?: string;
@@ -78,7 +84,7 @@ export default function DhikrCounter({
   const routineStepIndex = Math.min(bucket?.cycleIndex ?? 0, Math.max(0, routine.steps.length - 1));
   const sunnahStep = SUNNAH[cycleIndex] ?? SUNNAH[0];
   const guidedId = mode === "sunnah" ? sunnahStep.id : mode === "routine" ? routine.steps[routineStepIndex]?.dhikrId : null;
-  const dhikr = (guidedId ? getDhikr(guidedId) : getDhikr(bucket?.dhikrId ?? initialDhikrId)) ?? getDhikr(initialDhikrId)!;
+  const dhikr = (guidedId ? lookupDhikr(guidedId, store.customDhikr) : lookupDhikr(bucket?.dhikrId ?? initialDhikrId, store.customDhikr)) ?? getDhikr(initialDhikrId)!;
   const target: number | null = mode === "sunnah"
     ? sunnahStep.target
     : mode === "routine"
@@ -90,6 +96,12 @@ export default function DhikrCounter({
   const { theme, toggleTheme } = useTheme();
 
   const [sheet, setSheet] = useState<Sheet>(null);
+  const [pickerOpen, setPickerOpen] = useState(false);
+  const [customOpen, setCustomOpen] = useState(false);
+  const [dhikrQuery, setDhikrQuery] = useState("");
+  const [customName, setCustomName] = useState("");
+  const [customArabic, setCustomArabic] = useState("");
+  const [speakingId, setSpeakingId] = useState("");
   const [focusMode, setFocusMode] = useState(false);
   const [editing, setEditing] = useState(false);
   const [editValue, setEditValue] = useState("");
@@ -243,6 +255,13 @@ export default function DhikrCounter({
     if (!enableKeyboard) return;
     const onKey = (event: KeyboardEvent) => {
       const eventTarget = event.target as HTMLElement | null;
+      if (pickerOpen || customOpen) {
+        if (event.key === "Escape") {
+          setCustomOpen(false);
+          if (!customOpen) setPickerOpen(false);
+        }
+        return;
+      }
       if (eventTarget && (eventTarget.tagName === "INPUT" || eventTarget.tagName === "TEXTAREA" || eventTarget.isContentEditable)) return;
       if (event.key === " " || event.key === "Enter") {
         event.preventDefault();
@@ -256,7 +275,7 @@ export default function DhikrCounter({
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
-  }, [enableKeyboard, focusMode]);
+  }, [enableKeyboard, focusMode, pickerOpen, customOpen]);
 
   function setMode(next: CounterMode) {
     clearAdvance();
@@ -295,6 +314,29 @@ export default function DhikrCounter({
       current.target = item.recommendedCount ?? 33;
     });
     setSheet(null);
+    setPickerOpen(false);
+    setCustomOpen(false);
+  }
+
+  function saveCustomDhikr() {
+    const name = customName.trim();
+    const arabic = customArabic.trim();
+    if (!name) return;
+    const item: DhikrItem = {
+      id: `custom-${crypto.randomUUID()}`,
+      arabic: arabic || name,
+      transliteration: name,
+      translation: name,
+      recommendedCount: 33,
+      categories: ["general"],
+      source: "Saved on this device",
+    };
+    updateStore((draft) => {
+      draft.customDhikr = [item, ...(draft.customDhikr ?? [])].slice(0, 40);
+    });
+    setCustomName("");
+    setCustomArabic("");
+    chooseDhikr(item);
   }
 
   function chooseRoutine(routineId: string) {
@@ -360,12 +402,26 @@ export default function DhikrCounter({
   });
   const weekMax = Math.max(1, ...week.map((day) => day.value));
 
+  const phraseQuery = dhikrQuery.trim().toLowerCase();
+  const phraseLibrary = [...(store.customDhikr ?? []), ...DHIKR_CATALOG].filter((item) => {
+    if (!phraseQuery) return true;
+    return `${item.transliteration} ${item.translation} ${item.arabic}`.toLowerCase().includes(phraseQuery);
+  });
+
+  function playPhrase(item: DhikrItem) {
+    const spoken = /[\u0600-\u06FF]/.test(item.arabic) ? item.arabic : item.transliteration;
+    const started = speakArabic(spoken);
+    setSpeakingId(item.id);
+    window.setTimeout(() => setSpeakingId((current) => (current === item.id ? "" : current)), 2400);
+    if (!started) setNotice("Speech is not available in this browser.");
+  }
+
   const face = (
     <div className={`counter-scene relative overflow-hidden ${focusMode ? "flex min-h-[100dvh] flex-col" : "rounded-[32px] shadow-[0_24px_60px_rgba(90,62,20,0.12)]"}`}>
       <MosqueBackdrop />
       <div className={`relative z-10 mx-auto flex w-full max-w-[420px] flex-col ${focusMode ? "min-h-[100dvh] px-4 py-5" : "px-3 pb-4 pt-3"}`}>
         <div className="flex items-center justify-center gap-2">
-          <IconButton label="Choose dhikr" pressed={sheet === "dhikr"} onClick={() => toggleSheet("dhikr")}>
+          <IconButton label="Choose dhikr" pressed={pickerOpen} onClick={() => setPickerOpen(true)}>
             <LayoutGrid size={18} />
           </IconButton>
           <IconButton label="Set target" pressed={sheet === "target"} onClick={() => toggleSheet("target")}>
@@ -434,6 +490,12 @@ export default function DhikrCounter({
           <p className={`font-arabic mt-1 text-[var(--scene-ink)] ${longArabic ? "text-lg leading-loose" : "text-2xl leading-relaxed"}`} dir="rtl" lang="ar">
             {dhikr.arabic}
           </p>
+          {mode === "free" && (
+            <button type="button" className="scene-muted mx-auto mt-2 inline-flex items-center gap-1 text-sm" onClick={() => setPickerOpen(true)}>
+              Tap to change
+              <ChevronDown size={16} />
+            </button>
+          )}
           {mode === "free" && reached && <p className="scene-gold mt-1 text-sm font-medium">Target complete</p>}
           {notice && <p className="scene-gold mt-1 text-sm font-medium" role="status">{notice}</p>}
         </div>
@@ -486,27 +548,6 @@ export default function DhikrCounter({
 
         {sheet && (
           <div className="absolute inset-x-3 bottom-3 z-30 max-h-[70%] overflow-auto rounded-3xl bg-[var(--scene-card)] p-4 text-[var(--scene-ink)] shadow-[0_16px_40px_rgba(40,28,10,0.18)]">
-            {sheet === "dhikr" && (
-              <div>
-                <SheetTitle title="Choose a dhikr" onClose={() => setSheet(null)} />
-                <ul className="mt-3 max-h-64 space-y-1 overflow-auto">
-                  {DHIKR_CATALOG.filter((item) => QUICK_IDS.includes(item.id) || item.slug).map((item) => (
-                    <li key={item.id}>
-                      <button type="button" className={`flex w-full items-center justify-between gap-3 rounded-2xl px-3 py-2 text-left ${item.id === dhikr.id && mode === "free" ? "ring-2 ring-[var(--scene-gold)]" : ""}`} onClick={() => chooseDhikr(item)}>
-                        <span>
-                          <span className="block text-sm font-semibold">{item.transliteration}</span>
-                          <span className="block text-xs text-[var(--scene-muted)]">{item.translation}</span>
-                        </span>
-                        <span className="font-arabic text-xl" dir="rtl" lang="ar">{item.arabic.length > 28 ? "" : item.arabic}</span>
-                      </button>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-3 flex gap-2 text-sm">
-                  <Toggle label="Vibration" checked={store.settings.vibration} onClick={() => updateStore((draft) => { draft.settings.vibration = !draft.settings.vibration; })} />
-                </div>
-              </div>
-            )}
             {sheet === "target" && (
               <div>
                 <SheetTitle title="Count target" onClose={() => setSheet(null)} />
@@ -563,6 +604,9 @@ export default function DhikrCounter({
                     </div>
                   ))}
                 </div>
+                <div className="mt-4">
+                  <Toggle label="Vibration" checked={store.settings.vibration} onClick={() => updateStore((draft) => { draft.settings.vibration = !draft.settings.vibration; })} />
+                </div>
               </div>
             )}
             {sheet === "inspiration" && (
@@ -590,6 +634,94 @@ export default function DhikrCounter({
           )
         : face}
       <p className="sr-only">Your count stays on this device.</p>
+      {pickerOpen && typeof document !== "undefined"
+        ? createPortal(
+            <div className="fixed inset-0 z-[100] flex items-end justify-center bg-black/45 p-3 sm:items-center" onClick={() => setPickerOpen(false)}>
+              <div role="dialog" aria-label="Select Dhikr" className="flex max-h-[min(680px,90dvh)] w-full max-w-md flex-col overflow-hidden rounded-[28px] bg-white text-[#1c2333] shadow-2xl" onClick={(event) => event.stopPropagation()}>
+                <div className="flex items-start justify-between gap-3 px-5 pt-5">
+                  <div>
+                    <p className="text-2xl font-semibold">Select Dhikr</p>
+                    <p className="mt-1 text-sm text-[#8b93a3]">Choose a dhikr to start your count</p>
+                  </div>
+                  <button type="button" className="flex h-9 w-9 items-center justify-center rounded-full text-[#8b93a3]" aria-label="Close" onClick={() => setPickerOpen(false)}>
+                    <X size={18} />
+                  </button>
+                </div>
+                <div className="px-5 pt-4">
+                  <label className="flex items-center gap-2 rounded-2xl bg-[#f4f6fa] px-3 py-2.5">
+                    <Search size={16} className="text-[#8b93a3]" />
+                    <input value={dhikrQuery} onChange={(event) => setDhikrQuery(event.target.value)} placeholder="Search dhikr..." aria-label="Search dhikr" className="w-full bg-transparent text-sm outline-none" />
+                  </label>
+                </div>
+                <ul className="mt-2 flex-1 space-y-1 overflow-auto px-3 py-2">
+                  {phraseLibrary.map((item) => (
+                    <li key={item.id}>
+                      <div className={`flex items-center gap-2 rounded-2xl px-2 py-2 ${item.id === dhikr.id ? "bg-[#fbf6ea]" : ""}`}>
+                        <button type="button" className="min-w-0 flex-1 px-2 py-1 text-left" onClick={() => chooseDhikr(item)}>
+                          <span className="block font-semibold">{item.transliteration}</span>
+                          <span className="mt-0.5 block text-sm text-[#c6a04a]">{item.translation}</span>
+                        </button>
+                        <button
+                          type="button"
+                          aria-label={`Play ${item.transliteration} in Arabic`}
+                          aria-pressed={speakingId === item.id}
+                          className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${speakingId === item.id ? "bg-[#c6a04a] text-white" : "text-[#c6a04a]"}`}
+                          onClick={() => playPhrase(item)}
+                        >
+                          <Volume2 size={18} />
+                        </button>
+                      </div>
+                    </li>
+                  ))}
+                  {phraseLibrary.length === 0 && <li className="px-3 py-6 text-center text-sm text-[#8b93a3]">No matching dhikr.</li>}
+                </ul>
+                <div className="border-t border-[#f0e6d4] p-4">
+                  <button type="button" className="flex w-full items-center justify-center gap-2 rounded-2xl border border-dashed border-[#c6a04a] px-4 py-3 font-semibold text-[#c6a04a]" onClick={() => setCustomOpen(true)}>
+                    <Plus size={16} />
+                    Add Custom Dhikr
+                  </button>
+                </div>
+              </div>
+            </div>,
+            document.body,
+          )
+        : null}
+      {customOpen && typeof document !== "undefined"
+        ? createPortal(
+            <div className="fixed inset-0 z-[110] flex items-end justify-center bg-black/50 p-4 sm:items-center" onClick={() => setCustomOpen(false)}>
+              <form
+                role="dialog"
+                aria-label="Add Custom Dhikr"
+                className="w-full max-w-md rounded-[28px] bg-white p-5 text-[#1c2333] shadow-2xl"
+                onClick={(event) => event.stopPropagation()}
+                onSubmit={(event) => {
+                  event.preventDefault();
+                  saveCustomDhikr();
+                }}
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <p className="text-xl font-semibold">Add Custom Dhikr</p>
+                  <button type="button" aria-label="Close" className="flex h-9 w-9 items-center justify-center rounded-full text-[#8b93a3]" onClick={() => setCustomOpen(false)}>
+                    <X size={18} />
+                  </button>
+                </div>
+                <label className="mt-5 block text-sm font-medium">
+                  Name of Dhikr
+                  <input required value={customName} onChange={(event) => setCustomName(event.target.value)} placeholder="eg, Ya Rahman" className="mt-2 w-full rounded-2xl border border-[#e6ebf2] bg-[#f7f9fc] px-4 py-3 outline-none" />
+                </label>
+                <label className="mt-4 block text-sm font-medium">
+                  Arabic Text (Optional)
+                  <input value={customArabic} onChange={(event) => setCustomArabic(event.target.value)} placeholder="يَا رَحْمَٰنُ" dir="rtl" lang="ar" className="font-arabic mt-2 w-full rounded-2xl border border-[#e6ebf2] bg-[#f7f9fc] px-4 py-3 text-right outline-none" />
+                </label>
+                <div className="mt-5 grid grid-cols-2 gap-3">
+                  <button type="button" className="rounded-2xl bg-[#eef2f6] px-4 py-3 font-semibold text-[#5c6778]" onClick={() => setCustomOpen(false)}>Cancel</button>
+                  <button type="submit" className="rounded-2xl bg-[#c6a04a] px-4 py-3 font-semibold text-white">Save</button>
+                </div>
+              </form>
+            </div>,
+            document.body,
+          )
+        : null}
       <dialog ref={dialogRef} className="rounded-2xl bg-[var(--bg-elevated)] p-6 text-[var(--ink)] backdrop:bg-black/50">
         <p className="font-display text-2xl">Reset this count?</p>
         <p className="mt-2 text-sm text-[var(--muted)]">This round returns to zero on this device. Your lifetime total stays.</p>

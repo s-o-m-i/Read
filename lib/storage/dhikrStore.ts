@@ -1,3 +1,5 @@
+import type { DhikrItem } from "../dhikr/types";
+
 export const STORAGE_KEY = "tasbihhub.store";
 export const STORE_VERSION = 1;
 
@@ -41,6 +43,7 @@ export type DhikrStore = {
   version: number;
   settings: DhikrSettings;
   counters: Record<string, CounterBucket>;
+  customDhikr: DhikrItem[];
   sessions: CompletedSession[];
   activeRoutines: Record<string, ActiveRoutine>;
   stats: {
@@ -60,6 +63,7 @@ export const EMPTY_STORE: DhikrStore = {
     showTranslation: false,
   },
   counters: {},
+  customDhikr: [],
   sessions: [],
   activeRoutines: {},
   stats: {
@@ -149,6 +153,7 @@ function normalize(input: Partial<DhikrStore> | null): DhikrStore {
     version: STORE_VERSION,
     settings: { ...base.settings, ...input.settings },
     counters: input.counters ?? {},
+    customDhikr: Array.isArray(input.customDhikr) ? input.customDhikr.slice(0, 40) : [],
     sessions: Array.isArray(input.sessions) ? input.sessions.slice(0, 40) : [],
     activeRoutines: input.activeRoutines ?? {},
     stats: {

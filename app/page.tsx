@@ -96,7 +96,7 @@ export default function HomePage() {
         </ul>
       </section>
       <section className="mx-auto mt-14 grid max-w-5xl gap-4 px-4 md:grid-cols-3">
-        <Link href="/dhikr" className="rounded-3xl bg-[var(--green)] p-6 text-[#f7f3ea]">
+        <Link href="/dhikr" className="card-on-green rounded-3xl bg-[var(--green)] p-6">
           <h2 className="font-display text-3xl">Dhikr library</h2>
           <p className="mt-2 text-sm text-[#f7f3ea]/80">Search phrases by time of day, with Arabic, meaning, and a count.</p>
         </Link>
