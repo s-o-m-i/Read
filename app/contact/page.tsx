@@ -47,7 +47,8 @@ const faqs = [
   },
 ];
 
-export default function ContactPage() {
+export default async function ContactPage({ searchParams }: { searchParams: Promise<{ sent?: string }> }) {
+  const { sent } = await searchParams;
   return (
     <article className="mx-auto max-w-5xl px-4 py-8">
       <JsonLd
@@ -100,7 +101,7 @@ export default function ContactPage() {
             </ul>
           </section>
         </div>
-        <ContactForm />
+        <ContactForm sent={sent === "1"} />
       </div>
 
       <div className="mt-12">

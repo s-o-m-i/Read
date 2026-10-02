@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import { SITE_EMAIL, SITE_OWNER } from "@/lib/site";
 
 const SUBJECTS = [
@@ -11,16 +11,18 @@ const SUBJECTS = [
   "Something else",
 ] as const;
 
-type Status = "idle" | "sending" | "sent" | "mail";
-
-export default function ContactForm() {
+export default function ContactForm({ sent = false }: { sent?: boolean }) {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [subject, setSubject] = useState<(typeof SUBJECTS)[number]>(SUBJECTS[0]);
   const [message, setMessage] = useState("");
   const [honey, setHoney] = useState("");
   const [errors, setErrors] = useState<Record<string, string>>({});
-  const [status, setStatus] = useState<Status>("idle");
+  const [nextUrl, setNextUrl] = useState("https://tasbihhub.com/contact?sent=1");
+
+  useEffect(() => {
+    setNextUrl(`${window.location.origin}/contact?sent=1`);
+  }, []);
 
   function validate() {
     const next: Record<string, string> = {};
@@ -30,68 +32,28 @@ export default function ContactForm() {
     return next;
   }
 
-  function openMailApp() {
-    const body = `Name: ${name.trim()}\nEmail: ${email.trim()}\n\n${message.trim()}`;
-    const href = `mailto:${SITE_EMAIL}?subject=${encodeURIComponent(`Tasbih Hub: ${subject}`)}&body=${encodeURIComponent(body)}`;
-    window.location.href = href;
-    setStatus("mail");
-  }
-
-  async function onSubmit(event: FormEvent) {
-    event.preventDefault();
+  function onSubmit(event: FormEvent) {
     const next = validate();
     setErrors(next);
-    if (Object.keys(next).length) return;
-    if (honey) {
-      setStatus("sent");
-      return;
-    }
-    setStatus("sending");
-    try {
-      const response = await fetch(`https://formsubmit.co/ajax/${SITE_EMAIL}`, {
-        method: "POST",
-        headers: { "Content-Type": "application/json", Accept: "application/json" },
-        body: JSON.stringify({
-          name: name.trim(),
-          email: email.trim(),
-          subject,
-          message: message.trim(),
-          _subject: `Tasbih Hub: ${subject}`,
-          _template: "table",
-          _captcha: "false",
-          _replyto: email.trim(),
-        }),
-      });
-      const data = (await response.json()) as { success?: string | boolean };
-      if (!response.ok || data.success === false || data.success === "false") {
-        openMailApp();
-        return;
-      }
-      setStatus("sent");
-      setName("");
-      setEmail("");
-      setMessage("");
-    } catch {
-      openMailApp();
-    }
+    if (Object.keys(next).length || honey) event.preventDefault();
   }
 
-  if (status === "sent") {
+  if (sent) {
     return (
       <div className="rounded-3xl border border-[var(--line)] bg-[var(--bg-elevated)] p-6" role="status">
         <h2 className="font-display text-2xl">Message sent</h2>
         <p className="mt-2">
           {SITE_OWNER} will read it at {SITE_EMAIL}. Your dhikr count was not included.
         </p>
-        <button type="button" className="mt-4 text-sm font-semibold text-[var(--green)] underline" onClick={() => setStatus("idle")}>
+        <a href="/contact" className="mt-4 inline-block text-sm font-semibold text-[var(--green)] underline">
           Send another message
-        </button>
+        </a>
       </div>
     );
   }
 
   return (
-    <form onSubmit={onSubmit} noValidate className="rounded-3xl border border-[var(--line)] bg-[var(--bg-elevated)] p-5 sm:p-6">
+    <form action={`https://formsubmit.co/${SITE_EMAIL}`} method="POST" onSubmit={onSubmit} noValidate className="rounded-3xl border border-[var(--line)] bg-[var(--bg-elevated)] p-5 sm:p-6">
       <h2 className="font-display text-2xl">Send a message</h2>
       <p className="mt-1 text-sm">It goes to {SITE_OWNER} at {SITE_EMAIL}.</p>
       <div className="mt-5 space-y-4">
@@ -149,22 +111,14 @@ export default function ContactForm() {
           />
           {errors.message && <span id="contact-message-error" className="mt-1 block text-xs text-red-700 dark:text-red-300">{errors.message}</span>}
         </label>
-        <label className="absolute -left-[9999px]" aria-hidden="true">
-          Company
-          <input tabIndex={-1} autoComplete="off" value={honey} onChange={(event) => setHoney(event.target.value)} />
-        </label>
-        <button
-          type="submit"
-          disabled={status === "sending"}
-          className="w-full rounded-full bg-[var(--green)] px-4 py-3 text-sm font-semibold text-[#f7f3ea] disabled:opacity-60"
-        >
-          {status === "sending" ? "Sending…" : "Send message"}
+        <input type="hidden" name="_subject" value={`Tasbih Hub: ${subject}`} />
+        <input type="hidden" name="_template" value="table" />
+        <input type="hidden" name="_captcha" value="false" />
+        <input type="hidden" name="_next" value={nextUrl} />
+        <input type="text" name="_honey" value={honey} onChange={(event) => setHoney(event.target.value)} className="hidden" tabIndex={-1} autoComplete="off" aria-hidden="true" />
+        <button type="submit" className="w-full rounded-full bg-[var(--green)] px-4 py-3 text-sm font-semibold text-[#f7f3ea]">
+          Send message
         </button>
-        {status === "mail" && (
-          <p role="status">
-            If your mail app did not open, write directly to <a className="underline" href={`mailto:${SITE_EMAIL}`}>{SITE_EMAIL}</a>.
-          </p>
-        )}
       </div>
     </form>
   );
