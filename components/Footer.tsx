@@ -1,52 +1,93 @@
+import Image from "next/image";
 import Link from "next/link";
-import { Instagram } from "lucide-react";
+import { Instagram, Mail } from "lucide-react";
 import { SITE_EMAIL, SITE_INSTAGRAM, SITE_OWNER } from "@/lib/site";
+
+const columns = [
+  {
+    title: "Practice",
+    links: [
+      ["/tasbih-counter", "Tasbih counter"],
+      ["/dhikr-counter", "Dhikr counter"],
+      ["/istighfar-counter", "Istighfar counter"],
+      ["/durood-counter", "Durood counter"],
+      ["/morning-adhkar", "Morning adhkar"],
+      ["/dhikr-after-salah", "Dhikr after salah"],
+    ],
+  },
+  {
+    title: "Learn",
+    links: [
+      ["/dhikr-in-islam", "Dhikr in Islam"],
+      ["/adhkar", "Daily adhkar"],
+      ["/evening-adhkar", "Evening adhkar"],
+      ["/dhikr-before-sleep", "Dhikr before sleep"],
+      ["/guides", "Guides"],
+    ],
+  },
+  {
+    title: "Read",
+    links: [
+      ["/about", "About"],
+      ["/dhikr", "Dhikr library"],
+      ["/asmaul-husna", "99 Names"],
+      ["/blog", "Blog"],
+      ["/contact", "Contact"],
+    ],
+  },
+  {
+    title: "Legal",
+    links: [
+      ["/privacy-policy", "Privacy Policy"],
+      ["/terms-of-service", "Terms"],
+      ["/cookie-policy", "Cookies"],
+      ["/disclaimer", "Disclaimer"],
+    ],
+  },
+];
 
 export default function Footer() {
   return (
-    <footer className="mt-8 border-t border-[var(--line)] bg-[var(--bg-elevated)]">
-      <div className="mx-auto grid max-w-6xl gap-8 px-4 py-10 sm:grid-cols-2 lg:grid-cols-4">
-        <div>
-          <h2 className="font-display text-2xl">Tasbih Hub</h2>
-          <p className="mt-2 text-sm text-[var(--muted)]">A digital companion for daily dhikr. Counts stay on this device. Made by {SITE_OWNER}.</p>
-          <a href={`mailto:${SITE_EMAIL}`} className="mt-3 block text-sm underline">{SITE_EMAIL}</a>
-          <a href={SITE_INSTAGRAM} className="mt-2 inline-flex items-center gap-2 text-sm" rel="me noopener noreferrer" target="_blank">
-            <Instagram size={16} />
-            Instagram
-          </a>
+    <footer className="relative mt-8 overflow-hidden bg-[#071832] text-[#e9edf3]">
+      <div aria-hidden className="geo-pattern pointer-events-none absolute inset-0 opacity-[0.07]" />
+      <div className="relative mx-auto grid max-w-7xl grid-cols-2 gap-x-6 gap-y-10 px-4 py-14 sm:px-6 md:grid-cols-4 lg:grid-cols-12 lg:gap-8 lg:px-8 lg:py-16">
+        <div className="col-span-2 md:col-span-4 lg:col-span-4">
+          <Link href="/" className="inline-flex items-center gap-3">
+            <span className="flex h-11 w-11 items-center justify-center rounded-full bg-[#fcfaf5]">
+              <Image src="/images/tasbih.png" alt="" width={28} height={28} />
+            </span>
+            <span className="font-display text-2xl text-white">Tasbih Hub</span>
+          </Link>
+          <p className="mt-4 max-w-sm text-sm leading-6 text-[#c3cbd8]">A digital companion for daily dhikr. Counts stay on this device. Made by {SITE_OWNER}.</p>
+          <div className="mt-5 flex flex-col gap-2 text-sm">
+            <a href={`mailto:${SITE_EMAIL}`} className="inline-flex items-center gap-2 text-[#e3c77f] hover:text-white">
+              <Mail size={16} aria-hidden />
+              {SITE_EMAIL}
+            </a>
+            <a href={SITE_INSTAGRAM} className="inline-flex items-center gap-2 text-[#e3c77f] hover:text-white" rel="me noopener noreferrer" target="_blank">
+              <Instagram size={16} aria-hidden />
+              Instagram
+            </a>
+          </div>
         </div>
-        <div>
-          <h2 className="font-semibold">Practice</h2>
-          <ul className="mt-3 space-y-2 text-sm">
-            <li><Link href="/tasbih-counter">Tasbih counter</Link></li>
-            <li><Link href="/dhikr-counter">Dhikr counter</Link></li>
-            <li><Link href="/istighfar-counter">Istighfar counter</Link></li>
-            <li><Link href="/durood-counter">Durood counter</Link></li>
-            <li><Link href="/morning-adhkar">Morning adhkar</Link></li>
-            <li><Link href="/dhikr-after-salah">Dhikr after salah</Link></li>
-          </ul>
-        </div>
-        <div>
-          <h2 className="font-semibold">Read</h2>
-          <ul className="mt-3 space-y-2 text-sm">
-            <li><Link href="/about">About</Link></li>
-            <li><Link href="/dhikr">Dhikr library</Link></li>
-            <li><Link href="/asmaul-husna">99 Names</Link></li>
-            <li><Link href="/blog">Blog</Link></li>
-            <li><Link href="/contact">Contact</Link></li>
-          </ul>
-        </div>
-        <div>
-          <h2 className="text-sm font-semibold uppercase tracking-wide text-[var(--gold)]">Legal</h2>
-          <ul className="mt-3 space-y-2 text-sm">
-            <li><Link href="/privacy-policy">Privacy Policy</Link></li>
-            <li><Link href="/terms-of-service">Terms</Link></li>
-            <li><Link href="/cookie-policy">Cookies</Link></li>
-            <li><Link href="/disclaimer">Disclaimer</Link></li>
-          </ul>
-        </div>
+        {columns.map((column) => (
+          <nav key={column.title} aria-label={column.title} className="lg:col-span-2">
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[#e3c77f]">{column.title}</p>
+            <ul className="mt-4 space-y-2.5 text-sm">
+              {column.links.map(([href, label]) => (
+                <li key={href}>
+                  <Link href={href} className="text-[#c3cbd8] transition-colors hover:text-white">{label}</Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+        ))}
       </div>
-      <p className="px-4 pb-8 text-center text-sm text-[var(--muted)]">© {new Date().getFullYear()} Tasbih Hub. Your progress is stored locally on this device.</p>
+      <div className="relative border-t border-white/10">
+        <p className="mx-auto max-w-7xl px-4 py-6 text-center text-sm text-[#9aa6b8] sm:px-6 lg:px-8">
+          © {new Date().getFullYear()} Tasbih Hub. Your progress is stored locally on this device.
+        </p>
+      </div>
     </footer>
   );
 }

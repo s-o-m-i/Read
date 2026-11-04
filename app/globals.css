@@ -7,29 +7,54 @@
   --color-primary-dark: #3b82f6;
 }
 :root {
-  --background: #f4efe4;
-  --foreground: #14241c;
-  --bg: #f4efe4;
-  --bg-elevated: #fffdf8;
-  --ink: #14241c;
-  --muted: #5c6b62;
+  --background: #f7f3e9;
+  --foreground: #0e1a2b;
+  --bg: #f7f3e9;
+  --bg-elevated: #fcfaf5;
+  --band: #f0e9da;
+  --ink: #0e1a2b;
+  --muted: #4a5668;
   --green: #0e3b2e;
   --green-2: #1d6a4f;
+  --sage: #3d6b57;
   --gold: #a68445;
-  --line: #e4d8c4;
+  --gold-soft: #c9a961;
+  --line: #e5dccb;
+  --navy: #0b2545;
+  --navy-deep: #071832;
+  --brand: #0b2545;
+  --brand-contrast: #fcfaf5;
 }
 
 .dark {
-  --background: #0c1411;
-  --foreground: #f6f1e6;
-  --bg: #0c1411;
-  --bg-elevated: #16211c;
-  --ink: #f6f1e6;
-  --muted: #c5d0c8;
+  --background: #081120;
+  --foreground: #f2eee4;
+  --bg: #081120;
+  --bg-elevated: #0e1b30;
+  --band: #0b1628;
+  --ink: #f2eee4;
+  --muted: #b4bfce;
   --green: #d4b36a;
   --green-2: #8fd0b4;
+  --sage: #8cc3a8;
   --gold: #d4b36a;
-  --line: #2c3b34;
+  --gold-soft: #d4b36a;
+  --line: #1e2f4a;
+  --navy: #10284a;
+  --navy-deep: #050c19;
+  --brand: #e3c77f;
+  --brand-contrast: #071832;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+:where(a, button, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 3px;
 }
 
 @theme inline {
@@ -76,6 +101,69 @@ main .band-on-green :is(h2, p) {
 
 main :is(p, li, dd, blockquote, figcaption) {
   color: var(--muted);
+}
+
+/* The rules above are unlayered, so they beat Tailwind text utilities. These helpers opt out. */
+main .ink {
+  color: var(--ink);
+}
+
+main .eyebrow {
+  color: var(--sage);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+main .subhead {
+  color: var(--sage);
+}
+
+main .on-navy {
+  color: #eef1f6;
+}
+
+main .on-navy :is(h1, h2, h3, h4, p, li, dd, dt, span, figcaption, strong, th, td) {
+  color: inherit;
+}
+
+main .on-navy .dim {
+  color: rgba(238, 241, 246, 0.78);
+}
+
+main .on-navy .gold {
+  color: #e3c77f;
+}
+
+main .on-navy a:not(.btn) {
+  color: #e3c77f;
+}
+
+main .on-navy .eyebrow {
+  color: #e3c77f;
+}
+
+.geo-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%23C9A961' stroke-width='1'%3E%3Crect x='20' y='20' width='24' height='24'/%3E%3Crect x='20' y='20' width='24' height='24' transform='rotate(45 32 32)'/%3E%3Ccircle cx='32' cy='32' r='5'/%3E%3Cpath d='M0 32h8M56 32h8M32 0v8M32 56v8'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 64px 64px;
+}
+
+.geo-pattern-light {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cg fill='none' stroke='%230B2545' stroke-opacity='0.09' stroke-width='1'%3E%3Crect x='20' y='20' width='24' height='24'/%3E%3Crect x='20' y='20' width='24' height='24' transform='rotate(45 32 32)'/%3E%3Ccircle cx='32' cy='32' r='5'/%3E%3Cpath d='M0 32h8M56 32h8M32 0v8M32 56v8'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: 64px 64px;
+}
+
+.dark .geo-pattern-light {
+  filter: invert(1);
+}
+
+.no-scrollbar {
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
 }
 
 main :is(.bg-white, .bg-gray-50, .bg-gray-800, .bg-gray-900):not(main) {

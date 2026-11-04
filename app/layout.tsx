@@ -34,8 +34,8 @@ export const metadata: Metadata = {
   title: "Tasbih Hub",
   description: "Free online tasbih, istighfar, dhikr, and durood counters. Simple, mobile-friendly Islamic tools to track your daily zikr.",
   icons: {
-    icon: "/favicon.png",
-    apple: "/favicon.png",
+    icon: "/favicon.ico",
+    apple: "/images/tasbih.png",
   },
 };
 
@@ -59,29 +59,41 @@ export default function RootLayout({
       </head>
       <body className="antialiased flex flex-col min-h-screen">
         <JsonLd
-          data={[
-            {
-              "@context": "https://schema.org",
-              "@type": "Organization",
-              name: "Tasbih Hub",
-              url: SITE_URL,
-              email: SITE_EMAIL,
-              founder: {
-                "@type": "Person",
-                name: SITE_OWNER,
+          data={{
+            "@context": "https://schema.org",
+            "@graph": [
+              {
+                "@type": "Organization",
+                "@id": `${SITE_URL}/#organization`,
+                name: "Tasbih Hub",
+                url: SITE_URL,
+                logo: {
+                  "@type": "ImageObject",
+                  url: `${SITE_URL}/images/tasbih.png`,
+                  width: 512,
+                  height: 512,
+                },
                 email: SITE_EMAIL,
                 sameAs: [SITE_INSTAGRAM],
+                founder: {
+                  "@type": "Person",
+                  name: SITE_OWNER,
+                  email: SITE_EMAIL,
+                  sameAs: [SITE_INSTAGRAM],
+                },
               },
-            },
-            {
-              "@context": "https://schema.org",
-              "@type": "WebSite",
-              name: "Tasbih Hub",
-              url: SITE_URL,
-            },
-          ]}
+              {
+                "@type": "WebSite",
+                "@id": `${SITE_URL}/#website`,
+                name: "Tasbih Hub",
+                url: SITE_URL,
+                inLanguage: "en",
+                publisher: { "@id": `${SITE_URL}/#organization` },
+              },
+            ],
+          }}
         />
-        <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID || ""} />
+        {process.env.NEXT_PUBLIC_GA_ID ? <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA_ID} /> : null}
         <ThemeProvider>
           <a href="#main" className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[90] focus:rounded-full focus:bg-[var(--bg-elevated)] focus:px-4 focus:py-2">
             Skip to content

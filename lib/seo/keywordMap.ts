@@ -15,14 +15,37 @@ export type KeywordEntry = {
 export const KEYWORD_MAP: KeywordEntry[] = [
   {
     path: "/",
-    primary: "online tasbih counter",
-    secondary: ["digital dhikr", "free tasbih counter", "dhikr counter"],
-    intent: "Use a free digital counter for daily dhikr",
-    title: "Free Online Tasbih Counter & Digital Dhikr | Tasbih Hub",
+    primary: "tasbih",
+    secondary: [
+      "tasbeeh",
+      "tasbih counter",
+      "online tasbih",
+      "tasbih online",
+      "digital tasbih counter",
+      "dhikr counter",
+      "misbaha",
+      "Islamic prayer beads",
+      "Tasbih meaning",
+      "Tasbih after Salah",
+    ],
+    intent: "Learn the meaning of tasbih and count dhikr with a free online counter",
+    title: "Tasbih – Meaning, Islamic Guide & Online Tasbih Counter",
     description:
-      "Count tasbih, dhikr, istighfar and durood online with a free digital counter. No login or app required. Your progress stays on your device.",
-    h1: "Free Online Tasbih Counter & Digital Dhikr",
-    h2: ["Popular dhikr", "Quick start routines", "Your dhikr today"],
+      "Explore Tasbih, its meaning and significance in Islam. Use our free online Tasbih counter for Dhikr, discover Islamic prayer beads and learn authentic daily adhkar.",
+    h1: "Tasbih: Meaning, Islamic Significance and Free Online Counter",
+    h2: [
+      "Free Online Tasbih Counter",
+      "What Is Tasbih?",
+      "The Islamic Significance of Tasbih",
+      "History of Tasbih and Islamic Prayer Beads",
+      "Different Types of Tasbih",
+      "Tasbih After Salah",
+      "Tasbih, Tasbeeh, Misbaha and Subha: What Is the Difference?",
+      "How to Use an Online Tasbih Counter",
+      "Explore More About Tasbih and Dhikr",
+      "Frequently Asked Questions About Tasbih",
+      "Make Dhikr Part of Your Daily Life",
+    ],
   },
   {
     path: "/tasbih-counter",
@@ -253,16 +276,18 @@ export function getKeywordEntry(path: string) {
 export function pageMetadata(path: string, extra?: Metadata): Metadata {
   const entry = getKeywordEntry(path);
   if (!entry) return extra ?? {};
+  const url = path === "/" ? SITE_URL : `${SITE_URL}${path}`;
   return {
     title: entry.title,
     description: entry.description,
     keywords: [entry.primary, ...entry.secondary],
-    alternates: { canonical: `${SITE_URL}${path === "/" ? "" : path}` },
+    alternates: { canonical: url },
     openGraph: {
       title: entry.title,
       description: entry.description,
-      url: `${SITE_URL}${path === "/" ? "" : path}`,
+      url,
       siteName: "Tasbih Hub",
+      locale: "en_US",
       type: "website",
     },
     twitter: {
