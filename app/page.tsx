@@ -82,7 +82,7 @@ const phrases = [
     body: "An expression affirming Allah's greatness above everything.",
   },
   {
-    href: "/dhikr/astaghfirullah",
+    href: "/istighfar-counter",
     name: "Astaghfirullah",
     arabic: "أَسْتَغْفِرُ اللَّهَ",
     meaning: "I seek forgiveness from Allah.",
