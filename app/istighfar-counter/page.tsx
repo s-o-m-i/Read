@@ -1,6 +1,4 @@
-import Link from "next/link";
 import DhikrCounter from "@/components/dhikr/DhikrCounter";
-import RoutinePlayer from "@/components/dhikr/RoutinePlayer";
 import IstighfarArticle from "@/components/content/IstighfarArticle";
 import { pageMetadata } from "@/lib/seo/keywordMap";
 import { SITE_URL } from "@/lib/i18n/locales";
@@ -39,22 +37,6 @@ export default function IstighfarPage() {
 
       <section id="istighfar-counter" aria-label="Istighfar Counter Tool">
         <DhikrCounter storageKey="istighfar" initialDhikrId="astaghfirullah" title="Istighfar Counter" hero />
-      </section>
-
-      <section className="mx-auto max-w-3xl px-4 pb-8" aria-label="Istighfar routine">
-        <h2 className="mb-4 text-center text-2xl font-semibold text-gray-900 dark:text-gray-100">Istighfar routine</h2>
-        <p className="mb-4 text-center text-sm text-gray-600 dark:text-gray-300">
-          One hundred short istighfar, then Sayyid al-Istighfar once. Read the wording on{" "}
-          <Link className="text-emerald-700 underline" href="/dhikr/astaghfirullah">
-            Astaghfirullah
-          </Link>{" "}
-          and{" "}
-          <Link className="text-emerald-700 underline" href="/dhikr/sayyid-al-istighfar">
-            Sayyid al-Istighfar
-          </Link>
-          .
-        </p>
-        <RoutinePlayer routineId="istighfar" />
       </section>
 
       <IstighfarArticle />

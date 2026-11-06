@@ -278,7 +278,7 @@ export default function IstighfarArticle() {
               The same hadith mentions a great reward for the one who says it with firm faith during the day and dies before evening, or says it at night and dies before morning. That statement belongs to the Prophet’s words as recorded in Bukhari. We do not add to it, and we do not present the dua as a charm or as a promise we ourselves issue. It is said with belief in Allah.
             </p>
             <p className="mt-4 text-[1.05rem] leading-8">
-              Use the short Astaghfirullah when you want a counted repetition. Say Sayyidul Istighfar slowly, usually once, especially in the morning or evening. The Istighfar routine under the counter follows that pattern: one hundred short Istighfar, then this dua once.
+              Use the short Astaghfirullah when you want a counted repetition. Say Sayyidul Istighfar slowly, usually once, especially in the morning or evening. A common pattern is one hundred short Istighfar, then this dua once.
             </p>
           </div>
         </Container>
