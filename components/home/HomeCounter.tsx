@@ -14,6 +14,28 @@ export default function HomeCounter() {
   }, []);
 
   useEffect(() => {
+    const isCounterLink = (href: string | null) => {
+      if (!href) return false;
+      try {
+        const url = new URL(href, window.location.origin);
+        return (url.pathname === "/" || url.pathname === "") && url.hash === "#counter";
+      } catch {
+        return href === "#counter" || href === "/#counter";
+      }
+    };
+
+    const onClick = (event: MouseEvent) => {
+      const link = (event.target as HTMLElement | null)?.closest("a[href]");
+      if (!link || !isCounterLink(link.getAttribute("href"))) return;
+      event.preventDefault();
+      setExpanded(true);
+    };
+
+    document.addEventListener("click", onClick);
+    return () => document.removeEventListener("click", onClick);
+  }, []);
+
+  useEffect(() => {
     if (!expanded) return;
     const previous = document.body.style.overflow;
     document.body.style.overflow = "hidden";
