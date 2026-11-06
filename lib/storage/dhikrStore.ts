@@ -5,6 +5,11 @@ export const STORE_VERSION = 1;
 
 export type CounterMode = "free" | "sunnah" | "routine";
 
+export type PhraseProgress = {
+  count: number;
+  target: number | null;
+};
+
 export type CounterBucket = {
   count: number;
   target: number | null;
@@ -12,6 +17,7 @@ export type CounterBucket = {
   mode?: CounterMode;
   cycleIndex?: number;
   routineId?: string;
+  phrases?: Record<string, PhraseProgress>;
 };
 
 export type CompletedSession = {
@@ -255,4 +261,30 @@ export function ensureCounter(draft: DhikrStore, key: string, dhikrId: string, t
     draft.counters[key] = { count: 0, target, dhikrId };
   }
   return draft.counters[key];
+}
+
+export function syncPhraseProgress(bucket: CounterBucket) {
+  if (!bucket.dhikrId) return;
+  bucket.phrases = bucket.phrases ?? {};
+  bucket.phrases[bucket.dhikrId] = {
+    count: bucket.count,
+    target: bucket.target,
+  };
+}
+
+export function switchPhrase(bucket: CounterBucket, dhikrId: string, fallbackTarget: number | null) {
+  if (bucket.dhikrId === dhikrId) {
+    bucket.phrases = bucket.phrases ?? {};
+    const saved = bucket.phrases[dhikrId];
+    if (saved) {
+      bucket.count = saved.count;
+      bucket.target = saved.target;
+    }
+    return;
+  }
+  syncPhraseProgress(bucket);
+  const saved = bucket.phrases?.[dhikrId];
+  bucket.dhikrId = dhikrId;
+  bucket.count = saved?.count ?? 0;
+  bucket.target = saved?.target ?? fallbackTarget;
 }

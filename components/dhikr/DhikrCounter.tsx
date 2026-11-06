@@ -34,6 +34,8 @@ import {
   getServerStore,
   getStore,
   subscribeStore,
+  switchPhrase,
+  syncPhraseProgress,
   todayTotal,
   touchStats,
   updateStore,
@@ -162,6 +164,8 @@ export default function DhikrCounter({
     updateStore((draft) => {
       ensureCounter(draft, storageKey, initialDhikrId, 33);
       mutator(draft);
+      const current = draft.counters[storageKey];
+      if (current.mode === "free") syncPhraseProgress(current);
       if (delta) touchStats(draft, delta);
     });
     if (delta > 0) {
@@ -314,9 +318,11 @@ export default function DhikrCounter({
     setEditing(false);
     commit((draft) => {
       const current = draft.counters[storageKey];
+      if (current.mode === "free") syncPhraseProgress(current);
       current.mode = next;
       if (next === "sunnah") {
-        const index = Math.min(current.cycleIndex ?? 0, SUNNAH.length - 1);
+        const fromPhrase = SUNNAH.findIndex((step) => step.id === current.dhikrId);
+        const index = fromPhrase >= 0 ? fromPhrase : Math.min(current.cycleIndex ?? 0, SUNNAH.length - 1);
         current.cycleIndex = index;
         current.dhikrId = SUNNAH[index].id;
         current.target = SUNNAH[index].target;
@@ -340,10 +346,10 @@ export default function DhikrCounter({
     clearAdvance();
     commit((draft) => {
       const current = draft.counters[storageKey];
+      switchPhrase(current, item.id, item.recommendedCount ?? 33);
       current.mode = "free";
-      current.dhikrId = item.id;
-      current.count = 0;
-      current.target = item.recommendedCount ?? 33;
+      const sunnahIndex = SUNNAH.findIndex((step) => step.id === item.id);
+      if (sunnahIndex >= 0) current.cycleIndex = sunnahIndex;
     });
     setSheet(null);
     setPickerOpen(false);
@@ -376,6 +382,7 @@ export default function DhikrCounter({
     clearAdvance();
     commit((draft) => {
       const current = draft.counters[storageKey];
+      if (current.mode === "free") syncPhraseProgress(current);
       current.mode = "routine";
       current.routineId = active.id;
       current.cycleIndex = 0;
@@ -858,8 +865,9 @@ export default function DhikrCounter({
             onClick={() => {
               clearAdvance();
               updateStore((draft) => {
-                ensureCounter(draft, storageKey, dhikr.id);
-                draft.counters[storageKey].count = 0;
+                const current = ensureCounter(draft, storageKey, dhikr.id);
+                current.count = 0;
+                if (current.mode === "free") syncPhraseProgress(current);
               });
               dialogRef.current?.close();
             }}
