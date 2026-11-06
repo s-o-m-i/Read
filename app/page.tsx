@@ -340,7 +340,7 @@ export default function HomePage() {
             <p className="ink mt-6 font-medium">Start your remembrance whenever and wherever you choose.</p>
             <div className="mt-6 flex flex-col items-start gap-4 sm:flex-row sm:items-center">
               <ButtonLink href="#counter" icon={<ArrowRight size={16} />}>Open Tasbih Counter</ButtonLink>
-              <Link href="#counter" className={`${textLink} text-sm`}>Open the dedicated tasbih counter page</Link>
+              <a href="#counter" className={`${textLink} text-sm`}>Open the dedicated tasbih counter page</a>
             </div>
           </div>
           <div className="lg:col-span-7">

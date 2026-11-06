@@ -16,11 +16,13 @@ export default function HomeCounter() {
   useEffect(() => {
     const isCounterLink = (href: string | null) => {
       if (!href) return false;
+      const normalized = href.trim();
+      if (normalized === "#counter" || normalized === "/#counter") return true;
       try {
-        const url = new URL(href, window.location.origin);
-        return (url.pathname === "/" || url.pathname === "") && url.hash === "#counter";
+        const url = new URL(normalized, window.location.href);
+        return url.hash === "#counter" && (url.pathname === "/" || url.pathname === "");
       } catch {
-        return href === "#counter" || href === "/#counter";
+        return false;
       }
     };
 
@@ -28,11 +30,12 @@ export default function HomeCounter() {
       const link = (event.target as HTMLElement | null)?.closest("a[href]");
       if (!link || !isCounterLink(link.getAttribute("href"))) return;
       event.preventDefault();
+      event.stopPropagation();
       setExpanded(true);
     };
 
-    document.addEventListener("click", onClick);
-    return () => document.removeEventListener("click", onClick);
+    document.addEventListener("click", onClick, true);
+    return () => document.removeEventListener("click", onClick, true);
   }, []);
 
   useEffect(() => {
