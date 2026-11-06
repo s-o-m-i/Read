@@ -94,7 +94,7 @@ export const blogs = [
       <p>Allah says:</p>
       <p><em>"Those who believe and whose hearts find rest in the remembrance of Allah. Verily, in the remembrance of Allah do hearts find rest." (Quran 13:28)</em></p>
 
-      <p>Dhikr brings peace to the heart — and a healthy body makes it easier to show up for that remembrance consistently. Use a <a href="/dhikr-counter" class="text-emerald-600">dhikr counter</a> or <a href="/tasbih-counter" class="text-emerald-600">tasbih counter</a> to build a daily habit of remembrance alongside your physical routines. Both disciplines — caring for the body and nourishing the soul — reinforce each other.</p>
+      <p>Dhikr brings peace to the heart — and a healthy body makes it easier to show up for that remembrance consistently. Use a <a href="/#counter" class="text-emerald-600">dhikr counter</a> or <a href="/#counter" class="text-emerald-600">tasbih counter</a> to build a daily habit of remembrance alongside your physical routines. Both disciplines — caring for the body and nourishing the soul — reinforce each other.</p>
 
       <br>
 
@@ -299,7 +299,7 @@ export const blogs = [
         <li><strong>Use a digital counter:</strong> Track your daily istighfar using an <a href="/istighfar-counter" class="text-emerald-600">online istighfar counter</a> to stay motivated.</li>
       </ul>
 
-      <p>Many Muslims also use a <a href="/online-tasbih-counter" class="text-emerald-600">tasbih counter</a> or <a href="/dhikr-counter" class="text-emerald-600">dhikr counter</a> to count their daily zikr and istighfar easily on their phone or computer.</p>
+      <p>Many Muslims also use a <a href="/#counter" class="text-emerald-600">tasbih counter</a> or <a href="/#counter" class="text-emerald-600">dhikr counter</a> to count their daily zikr and istighfar easily on their phone or computer.</p>
 
       <br>
 
@@ -364,7 +364,7 @@ export const blogs = [
 
       <p>Start today by saying Astaghfirullah 100 times. To make it easier, use Tasbih Hub's free <a href="/istighfar-counter" class="text-emerald-600">istighfar counter</a> to track your progress and stay consistent.</p>
 
-      <p>You can also explore our other Islamic tools like the <a href="/durood-counter" class="text-emerald-600">durood counter</a> for sending blessings upon the Prophet (ﷺ) and the <a href="/dhikr-counter" class="text-emerald-600">dhikr counter</a> for your daily remembrance.</p>
+      <p>You can also explore our other Islamic tools like the <a href="/durood-counter" class="text-emerald-600">durood counter</a> for sending blessings upon the Prophet (ﷺ) and the <a href="/#counter" class="text-emerald-600">dhikr counter</a> for your daily remembrance.</p>
 
       <br>
 
@@ -469,7 +469,7 @@ export const blogs = [
         <li><strong>Use a digital counter:</strong> Track your daily Durood using a <a href="/durood-counter" class="text-emerald-600">durood counter</a> to stay motivated and consistent.</li>
       </ul>
 
-      <p>Many Muslims also use a <a href="/online-tasbih-counter" class="text-emerald-600">tasbih counter</a> or <a href="/dhikr-counter" class="text-emerald-600">dhikr counter</a> to count their daily zikr and Durood Sharif easily on their phone or computer.</p>
+      <p>Many Muslims also use a <a href="/#counter" class="text-emerald-600">tasbih counter</a> or <a href="/#counter" class="text-emerald-600">dhikr counter</a> to count their daily zikr and Durood Sharif easily on their phone or computer.</p>
 
       <br>
 
@@ -534,7 +534,7 @@ export const blogs = [
 
       <p>Start today by reciting Durood Sharif 100 times. To make it easier, use Tasbih Hub's free <a href="/durood-counter" class="text-emerald-600">durood counter</a> to track your progress and stay consistent.</p>
 
-      <p>You can also explore our other Islamic tools like the <a href="/istighfar-counter" class="text-emerald-600">istighfar counter</a> for seeking forgiveness and the <a href="/dhikr-counter" class="text-emerald-600">dhikr counter</a> for your daily remembrance.</p>
+      <p>You can also explore our other Islamic tools like the <a href="/istighfar-counter" class="text-emerald-600">istighfar counter</a> for seeking forgiveness and the <a href="/#counter" class="text-emerald-600">dhikr counter</a> for your daily remembrance.</p>
 
       <br>
 
@@ -1012,7 +1012,7 @@ export const blogs = [
 
       <p>A digital tasbih counter removes the friction between your intention and action. It lets you count accurately so your mind stays with the meaning. It fits into modern life without compromising ancient practices. It makes worship accessible to those for whom traditional methods are difficult.</p>
 
-      <p>If you're considering making the switch, or if you already use a <a href="/tasbih-counter">digital tasbih counter</a>, know that you're in line with both tradition and wisdom. You're also in good company—millions of mindful Muslims worldwide are using these tools to deepen their spiritual practice.</p>
+      <p>If you're considering making the switch, or if you already use a <a href="/#counter">digital tasbih counter</a>, know that you're in line with both tradition and wisdom. You're also in good company—millions of mindful Muslims worldwide are using these tools to deepen their spiritual practice.</p>
 
       <p>The technology matters less than the intention. But when technology serves intention, transformation happens.</p>
 
@@ -1231,7 +1231,7 @@ export const blogs = [
 
       <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Daily Dhikr Routine for Ramadan</h3>
 
-      <p>Incorporate these into your daily practice with a <a href="/tasbih-counter" class="text-emerald-600">tasbih counter</a> to track your progress:</p>
+      <p>Incorporate these into your daily practice with a <a href="/#counter" class="text-emerald-600">tasbih counter</a> to track your progress:</p>
 
       <table class="w-full border-collapse border border-gray-300 dark:border-gray-600 my-6">
         <thead class="bg-emerald-100 dark:bg-emerald-900">
@@ -1418,7 +1418,7 @@ export const blogs = [
       <p><strong>A:</strong> The core reading—Quran and duas—is the same. However, women may include books specifically addressing women's spiritual journeys and Islamic knowledge for women. Both benefit equally from Seerah, tafsir, and Islamic self-development books.</p>
 
       <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Q: What tasbih to read in Ramadan?</h3>
-      <p><strong>A:</strong> The core tasbih (dhikr) is: Subhanallah, Alhamdulillah, Allahu Akbar. But also prioritize Istighfar (Astaghfirullaah) and the specific Laylatul Qadr dua, especially in the last 10 nights. Use a <a href="/tasbih-counter" class="text-emerald-600">digital tasbih counter</a> to track your daily dhikr easily.</p>
+      <p><strong>A:</strong> The core tasbih (dhikr) is: Subhanallah, Alhamdulillah, Allahu Akbar. But also prioritize Istighfar (Astaghfirullaah) and the specific Laylatul Qadr dua, especially in the last 10 nights. Use a <a href="/#counter" class="text-emerald-600">digital tasbih counter</a> to track your daily dhikr easily.</p>
 
       <h3 class="text-xl md:text-2xl font-semibold leading-relaxed mt-6 mb-3">Q: How do I prepare spiritually for Ramadan before it starts?</h3>
       <p><strong>A:</strong> Begin reading Islamic books on Ramadan's virtues now. Study the recommended duas. Mentally prepare your Ramadan reading schedule. Consider what you specifically want to accomplish. Set realistic, sincere goals.</p>
@@ -1488,7 +1488,7 @@ export const blogs = [
         <li>👨‍👩‍👧 Tell your family about your Ramadan reading goals</li>
         <li>🤝 Find a study partner or join a Quran circle</li>
         <li>📱 Download a Quran app if it helps you stay consistent</li>
-        <li>💚 Use our <a href="/dhikr-counter" class="text-emerald-600">dhikr counter</a> and <a href="/tasbih-counter" class="text-emerald-600">tasbih counter</a> to track your daily remembrance</li>
+        <li>💚 Use our <a href="/#counter" class="text-emerald-600">dhikr counter</a> and <a href="/#counter" class="text-emerald-600">tasbih counter</a> to track your daily remembrance</li>
       </ul>
 
       <p>Make the sincere intention now: <em>"Allahumma barak lana fi Ramadan wa-rinal-khaira fee hadha ash-shahr."</em> (O Allah, bless us in Ramadan and show us the good in this month.)</p>
@@ -1507,7 +1507,7 @@ export const blogs = [
 
       <br>
 
-      <p><strong>Ready to transform your Ramadan?</strong> Start tracking your daily dhikr, duas, and Quranic reading with our spiritual tools. Our <a href="/tasbih-counter" class="text-emerald-600">tasbih counter</a>, <a href="/dhikr-counter" class="text-emerald-600">dhikr counter</a>, <a href="/istighfar-counter" class="text-emerald-600">istighfar counter</a>, and <a href="/durood-counter" class="text-emerald-600">durood counter</a> help you stay consistent and measure your spiritual progress throughout Ramadan.</p>
+      <p><strong>Ready to transform your Ramadan?</strong> Start tracking your daily dhikr, duas, and Quranic reading with our spiritual tools. Our <a href="/#counter" class="text-emerald-600">tasbih counter</a>, <a href="/#counter" class="text-emerald-600">dhikr counter</a>, <a href="/istighfar-counter" class="text-emerald-600">istighfar counter</a>, and <a href="/durood-counter" class="text-emerald-600">durood counter</a> help you stay consistent and measure your spiritual progress throughout Ramadan.</p>
 
       <p>This month is your opportunity. Seize it with both hands and a sincere heart.</p>
     `,
@@ -1748,7 +1748,7 @@ export const blogs = [
         </tbody>
       </table>
 
-      <p><strong>Pro Tip:</strong> Use digital counters for each dhikr. Our <a href="/tasbih-counter" class="text-emerald-600">tasbih counter</a>, <a href="/dhikr-counter" class="text-emerald-600">dhikr counter</a>, and <a href="/istighfar-counter" class="text-emerald-600">istighfar counter</a> help you track your remembrance easily without distraction.</p>
+      <p><strong>Pro Tip:</strong> Use digital counters for each dhikr. Our <a href="/#counter" class="text-emerald-600">tasbih counter</a>, <a href="/#counter" class="text-emerald-600">dhikr counter</a>, and <a href="/istighfar-counter" class="text-emerald-600">istighfar counter</a> help you track your remembrance easily without distraction.</p>
 
       <br>
 
@@ -1838,7 +1838,7 @@ export const blogs = [
 
       <p>Start now. Prepare your heart. Learn this dua. Create space in your last ten nights. Commit to standing before Allah with sincere intention.</p>
 
-      <p>Use our <a href="/tasbih-counter" class="text-emerald-600">tasbih counter</a> and <a href="/dhikr-counter" class="text-emerald-600">dhikr counter</a> to track your nightly worship. Build momentum. Make it real.</p>
+      <p>Use our <a href="/#counter" class="text-emerald-600">tasbih counter</a> and <a href="/#counter" class="text-emerald-600">dhikr counter</a> to track your nightly worship. Build momentum. Make it real.</p>
 
       <p class="italic border-t-2 border-emerald-600 pt-4 mt-8 text-center"><em>O Allah, grant us the ability to witness Laylatul Qadr with sincere hearts and focused minds. Forgive our past, protect our future, and make us among those who find this blessed night and benefit from its incomparable mercy. May the angels greet us during our worship. May our duas reach Your throne. May our tears of repentance become rivers of forgiveness. And may You draw us closer to You with every prayer, every dua, every moment of remembrance during this sacred month. Ameen, ameen, ameen.</em></p>
     `,

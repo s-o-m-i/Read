@@ -4,6 +4,7 @@ module.exports = {
   generateRobotsTxt: true,
   changefreq: "weekly",
   priority: 0.8,
+  exclude: ["/tasbih-counter", "/digital-tasbih", "/dhikr-counter", "/zikr-counter"],
   transform: async (config, path) => {
     const isHome = path === "/" || path === "";
     return {

@@ -35,7 +35,7 @@ export default function BeforeSleepPage() {
           <li><TextLink href="/evening-adhkar">Evening adhkar</TextLink></li>
           <li><TextLink href="/dhikr-after-waking">What to say when you wake</TextLink></li>
           <li><TextLink href="/dhikr/ayat-al-kursi">Ayat al-Kursi</TextLink></li>
-          <li><TextLink href="/tasbih-counter">Tasbih counter</TextLink></li>
+          <li><TextLink href="/#counter">Tasbih counter</TextLink></li>
         </ul>
       </section>
       <FaqList items={sleepFaqs} />

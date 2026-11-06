@@ -274,7 +274,7 @@ export default async function AsmaulHusnaDetailPage({ params }: { params: Promis
                 const targetCount = dhikrVar?.count || 100;
                 return (
                   <Link
-                    href={`/tasbih-counter?name=Ya ${dhikrName}&target=${targetCount}`}
+                    href="/#counter"
                     className="px-8 py-4 bg-emerald-600 hover:bg-emerald-700 text-white font-bold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-3"
                   >
                     <span className="text-2xl">📿</span>
@@ -426,7 +426,7 @@ export default async function AsmaulHusnaDetailPage({ params }: { params: Promis
           </p>
           <div className="flex flex-wrap items-center justify-center gap-3">
             <Link
-              href="/tasbih-counter"
+              href="/#counter"
               className="px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium transition-all"
             >
               Tasbih Counter
@@ -438,7 +438,7 @@ export default async function AsmaulHusnaDetailPage({ params }: { params: Promis
               Istighfar Counter
             </Link>
             <Link
-              href="/dhikr-counter"
+              href="/#counter"
               className="px-5 py-2 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition-all"
             >
               Dhikr Counter

@@ -293,7 +293,7 @@ export default function DhikrInIslamPage() {
           <div className="mt-6 bg-emerald-100 dark:bg-emerald-900/20 border border-emerald-400 dark:border-emerald-600 p-4 rounded">
             <p className="text-emerald-900 dark:text-emerald-300">
               <strong>💡 Tip:</strong> Use our{" "}
-              <Link href="/tasbih-counter" className="text-emerald-700 dark:text-emerald-200 underline font-semibold">
+              <Link href="/#counter" className="text-emerald-700 dark:text-emerald-200 underline font-semibold">
                 Tasbih Counter
               </Link>
               {" "}to track your dhikr after salah effortlessly.
@@ -488,7 +488,7 @@ export default function DhikrInIslamPage() {
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               <Link
-                href="/tasbih-counter"
+                href="/#counter"
                 className="inline-block bg-emerald-600 hover:bg-emerald-700 text-white px-4 py-2 rounded transition"
               >
                 Tasbih Counter
@@ -500,7 +500,7 @@ export default function DhikrInIslamPage() {
                 Istighfar Counter
               </Link>
               <Link
-                href="/dhikr-counter"
+                href="/#counter"
                 className="inline-block bg-amber-600 hover:bg-amber-700 text-white px-4 py-2 rounded transition"
               >
                 Dhikr Counter
@@ -625,7 +625,7 @@ export default function DhikrInIslamPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-4 mt-6">
             <Link
-              href="/tasbih-counter"
+              href="/#counter"
               className="bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-3 rounded-lg font-semibold transition"
             >
               Start Tasbih Counter
@@ -665,7 +665,7 @@ export default function DhikrInIslamPage() {
             <p className="text-sm text-gray-600 dark:text-gray-400">Complete practices and duas for maximum spiritual growth in Ramadan</p>
           </Link>
           <Link
-            href="/tasbih-counter"
+            href="/#counter"
             className="block p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:shadow-md transition"
           >
             <h3 className="font-semibold text-amber-600 mb-2">Digital Tasbih Counter</h3>

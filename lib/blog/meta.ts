@@ -18,7 +18,7 @@ type Extra = {
 const extras: Record<string, Extra> = {
   "islamic-perspective-body-health": {
     category: "Islamic Remembrance",
-    tool: "/dhikr-counter",
+    tool: "/#counter",
     related: ["how-small-acts-of-dhikr-transform-the-heart", "benefits-of-istighfar"],
   },
   "1000-istighfar-ramadan": {
@@ -38,12 +38,12 @@ const extras: Record<string, Extra> = {
   },
   "how-small-acts-of-dhikr-transform-the-heart": {
     category: "Dhikr",
-    tool: "/dhikr-counter",
+    tool: "/#counter",
     related: ["benefits-of-istighfar", "digital-tasbih-counter-why-switching"],
   },
   "digital-tasbih-counter-why-switching": {
     category: "Tasbih",
-    tool: "/tasbih-counter",
+    tool: "/#counter",
     related: ["how-small-acts-of-dhikr-transform-the-heart", "benefits-of-durood-sharif"],
   },
   "what-to-read-in-ramadan": {
@@ -53,7 +53,7 @@ const extras: Record<string, Extra> = {
   },
   "laylatul-qadr-dua": {
     category: "Ramadan",
-    tool: "/dhikr-counter",
+    tool: "/#counter",
     related: ["what-to-read-in-ramadan", "1000-istighfar-ramadan"],
   },
   "eid-ul-adha-comprehensive-guide": {
@@ -88,7 +88,7 @@ export function withHeadingIds(html: string) {
 export function blogExtra(slug: string): Extra {
   return extras[slug] ?? {
     category: "Islamic Remembrance",
-    tool: "/tasbih-counter",
+    tool: "/#counter",
     related: ["benefits-of-istighfar", "how-small-acts-of-dhikr-transform-the-heart"],
   };
 }

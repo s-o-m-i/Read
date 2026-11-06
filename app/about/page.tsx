@@ -10,24 +10,9 @@ export const metadata = pageMetadata("/about");
 
 const tools = [
   {
-    href: "/tasbih-counter",
+    href: "/#counter",
     title: "Online tasbih counter",
     text: "Count SubhanAllah, Alhamdulillah, Allahu Akbar, and any other phrase. Set 33, 66, 99, or your own target.",
-  },
-  {
-    href: "/digital-tasbih",
-    title: "Digital tasbih",
-    text: "The same count in the browser, with a ring, a target, and a reset that only clears this round.",
-  },
-  {
-    href: "/dhikr-counter",
-    title: "Dhikr counter",
-    text: "A general remembrance counter for the phrases in the library, including a custom dhikr you add yourself.",
-  },
-  {
-    href: "/zikr-counter",
-    title: "Zikr counter",
-    text: "Zikr and dhikr are two spellings of the same practice. This page is the same kind of free counter.",
   },
   {
     href: "/istighfar-counter",
@@ -162,10 +147,10 @@ export default function AboutPage() {
       <section className="mx-auto mt-8 max-w-3xl rounded-3xl border border-[var(--line)] bg-[var(--bg-elevated)] p-6 text-center">
         <h2 className="font-display text-3xl">What Tasbih Hub is</h2>
         <p className="mt-3">
-          Tasbih is the counted remembrance of Allah: phrases such as SubhanAllah, Alhamdulillah, and Allahu Akbar, often in sets of 33, 99, or 100. Tasbih Hub is the digital form of that count. It is not a course, a fatwa service, or a social network. You open the <Link href="/tasbih-counter" className="underline">tasbih counter</Link>, say the words, and tap once for each repetition.
+          Tasbih is the counted remembrance of Allah: phrases such as SubhanAllah, Alhamdulillah, and Allahu Akbar, often in sets of 33, 99, or 100. Tasbih Hub is the digital form of that count. It is not a course, a fatwa service, or a social network. You open the <Link href="/#counter" className="underline">tasbih counter</Link>, say the words, and tap once for each repetition.
         </p>
         <p className="mt-3">
-          Dhikr and zikr are two spellings of the same practice. The <Link href="/dhikr-counter" className="underline">dhikr counter</Link> and the <Link href="/zikr-counter" className="underline">zikr counter</Link> are the same kind of tool. Istighfar and durood have their own pages so a search for those counts lands on the right phrase.
+          Dhikr and zikr are two spellings of the same practice. The <Link href="/#counter" className="underline">dhikr counter</Link> and the <Link href="/#counter" className="underline">zikr counter</Link> are the same kind of tool. Istighfar and durood have their own pages so a search for those counts lands on the right phrase.
         </p>
       </section>
 
@@ -242,7 +227,7 @@ export default function AboutPage() {
           Open the free tasbih counter and begin with the phrase already on the screen, or change it before the first tap.
         </p>
         <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
-          <Link href="/tasbih-counter" className="rounded-full bg-[#f7f3ea] px-5 py-3 text-sm font-semibold text-[var(--green)]">Open the tasbih counter</Link>
+          <Link href="/#counter" className="rounded-full bg-[#f7f3ea] px-5 py-3 text-sm font-semibold text-[var(--green)]">Open the tasbih counter</Link>
           <Link href="/contact" className="rounded-full border border-[#f7f3ea] px-5 py-3 text-sm font-semibold text-[#f7f3ea]">Contact</Link>
         </div>
       </section>

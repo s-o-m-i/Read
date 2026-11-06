@@ -21,7 +21,7 @@ export const GUIDES: Guide[] = [
       { href: "/dhikr-after-salah", label: "Dhikr after salah" },
       { href: "/morning-adhkar", label: "Morning adhkar" },
       { href: "/evening-adhkar", label: "Evening adhkar" },
-      { href: "/tasbih-counter", label: "Tasbih counter" },
+      { href: "/#counter", label: "Tasbih counter" },
       { href: "/dhikr", label: "Dhikr library" },
     ],
   },

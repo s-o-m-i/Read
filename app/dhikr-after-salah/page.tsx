@@ -33,8 +33,7 @@ export default function AfterSalahPage() {
       <section className="space-y-3">
         <h2 className="font-display text-3xl">Keep counting</h2>
         <ul className="list-disc space-y-2 pl-5">
-          <li><TextLink href="/tasbih-counter">Online tasbih counter</TextLink> for a free session.</li>
-          <li><TextLink href="/dhikr-counter">Dhikr counter</TextLink> if you want to choose another phrase.</li>
+          <li><TextLink href="/#counter">Online tasbih counter</TextLink> for a free session.</li>
           <li><TextLink href="/istighfar-counter">Istighfar counter</TextLink> for a longer forgiveness count later in the day.</li>
           <li><TextLink href="/dhikr/subhanallah">SubhanAllah</TextLink>, <TextLink href="/dhikr/alhamdulillah">Alhamdulillah</TextLink>, and <TextLink href="/dhikr/allahu-akbar">Allahu Akbar</TextLink>.</li>
           <li><TextLink href="/morning-adhkar">Morning adhkar</TextLink> after Fajr, once the post-prayer dhikr is done.</li>

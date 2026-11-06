@@ -114,7 +114,7 @@ export default function EidUlAdhaPage() {
           </p>
           <div className="grid md:grid-cols-3 gap-4">
             <Link
-              href="/tasbih-counter"
+              href="/#counter"
               className="p-4 rounded-lg border border-emerald-200 dark:border-emerald-800
                          hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition"
             >
@@ -124,7 +124,7 @@ export default function EidUlAdhaPage() {
               </p>
             </Link>
             <Link
-              href="/dhikr-counter"
+              href="/#counter"
               className="p-4 rounded-lg border border-emerald-200 dark:border-emerald-800
                          hover:bg-emerald-50 dark:hover:bg-emerald-900/20 transition"
             >

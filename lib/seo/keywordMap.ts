@@ -48,50 +48,6 @@ export const KEYWORD_MAP: KeywordEntry[] = [
     ],
   },
   {
-    path: "/tasbih-counter",
-    primary: "online tasbih counter",
-    secondary: ["digital tasbeeh", "tasbih counter free", "subhanallah counter"],
-    intent: "Open a dedicated online tasbih counter",
-    title: "Online Tasbih Counter – Free Digital Tasbeeh | Tasbih Hub",
-    description:
-      "Use a free online tasbih counter to count SubhanAllah, Alhamdulillah, Allahu Akbar and other dhikr. Mobile-friendly, private and easy to use.",
-    h1: "Free Online Tasbih Counter",
-    h2: ["What is a digital tasbih?", "How to use the counter"],
-  },
-  {
-    path: "/digital-tasbih",
-    primary: "digital tasbih",
-    secondary: ["digital tasbeeh", "tasbih app online", "electronic tasbih"],
-    intent: "Understand and use a digital tasbih",
-    title: "Digital Tasbih – Free Online Tasbeeh Counter | Tasbih Hub",
-    description:
-      "A digital tasbih for counting dhikr in your browser. Choose a phrase, set a goal, and keep your count on this device. No account required.",
-    h1: "Digital Tasbih for Daily Dhikr",
-    h2: ["How a digital tasbih works", "When people use it"],
-  },
-  {
-    path: "/dhikr-counter",
-    primary: "online dhikr counter",
-    secondary: ["dhikr counter", "digital dhikr counter", "count dhikr"],
-    intent: "Count dhikr online",
-    title: "Online Dhikr Counter – Count Remembrance Free | Tasbih Hub",
-    description:
-      "Count dhikr online with Arabic, transliteration and meaning. Set a target, use focus mode, and keep your count privately on this device.",
-    h1: "Online Dhikr Counter",
-    h2: ["Choose a dhikr", "Count with a target"],
-  },
-  {
-    path: "/zikr-counter",
-    primary: "online zikr counter",
-    secondary: ["zikr counter", "tasbeeh counter", "count zikr"],
-    intent: "Count zikr, the same practice searched with the zikr spelling",
-    title: "Online Zikr Counter – Free Digital Remembrance | Tasbih Hub",
-    description:
-      "A free online zikr counter for daily remembrance. Zikr and dhikr are the same practice. Count privately in your browser, with no login.",
-    h1: "Online Zikr Counter",
-    h2: ["Zikr and dhikr", "How to count zikr"],
-  },
-  {
     path: "/istighfar-counter",
     primary: "istighfar counter",
     secondary: ["astaghfirullah counter", "istighfar online", "count istighfar"],

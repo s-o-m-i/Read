@@ -166,7 +166,7 @@ export default function AsmaulHusnaPage() {
                 <span className="text-emerald-600 dark:text-emerald-400 font-bold text-lg min-w-fit">1.</span>
                 <div>
                   <strong>Daily Recitation:</strong> Dedicate time each day to recite one or more names of Allah. Many scholars recommend reciting each name 33, 99, or 100 times daily. Our 
-                  <Link href="/tasbih-counter" className="text-emerald-600 hover:text-emerald-700 dark:hover:text-emerald-400 underline ml-1">digital tasbih counter</Link>
+                  <Link href="/#counter" className="text-emerald-600 hover:text-emerald-700 dark:hover:text-emerald-400 underline ml-1">digital tasbih counter</Link>
                   {" "}helps you track your recitations accurately.
                 </div>
               </li>
@@ -222,13 +222,13 @@ export default function AsmaulHusnaPage() {
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link
-            href="/tasbih-counter"
+            href="/#counter"
             className="px-6 py-3 bg-emerald-600 hover:bg-emerald-700 text-white rounded-lg font-medium transition shadow-md"
           >
             📿 Tasbih Counter
           </Link>
           <Link
-            href="/dhikr-counter"
+            href="/#counter"
             className="px-6 py-3 bg-purple-600 hover:bg-purple-700 text-white rounded-lg font-medium transition shadow-md"
           >
             📿 Dhikr Counter

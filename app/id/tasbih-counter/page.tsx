@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     canonical: "https://tasbihhub.com/id/tasbih-counter",
     languages: {
       id: "https://tasbihhub.com/id/tasbih-counter",
-      en: "https://tasbihhub.com/tasbih-counter",
-      "x-default": "https://tasbihhub.com/tasbih-counter",
+      en: "https://tasbihhub.com/",
+      "x-default": "https://tasbihhub.com/",
     },
   },
 };
@@ -81,7 +81,7 @@ export default function Page() {
         {/* CONTENT SECTION */}
         <section className="max-w-5xl mx-auto px-4 py-12 space-y-10 text-gray-700 dark:text-gray-300">
           <div className="text-right text-sm">
-            <Link href="/tasbih-counter" className="text-emerald-600 hover:underline">EN</Link>
+            <Link href="/" className="text-emerald-600 hover:underline">EN</Link>
             {" | "}
             <Link href="/id/tasbih-counter" className="text-emerald-600 hover:underline font-semibold">ID</Link>
           </div>
@@ -192,7 +192,7 @@ export default function Page() {
               </li>
               <li>
                 <Link
-                  href="/id/dhikr-counter"
+                  href="/"
                   className="text-emerald-600 font-semibold"
                 >
                   Dhikr Counter

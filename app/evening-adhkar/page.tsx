@@ -48,7 +48,7 @@ export default function EveningAdhkarPage() {
           <li><TextLink href="/morning-adhkar">Morning adhkar</TextLink></li>
           <li><TextLink href="/dhikr-before-sleep">Dhikr before sleep</TextLink></li>
           <li><TextLink href="/dhikr-after-salah">Dhikr after salah</TextLink></li>
-          <li><TextLink href="/dhikr-counter">Dhikr counter</TextLink></li>
+          <li><TextLink href="/#counter">Dhikr counter</TextLink></li>
           <li><TextLink href="/id/dzikir-petang">Dzikir petang</TextLink></li>
         </ul>
       </section>

@@ -134,7 +134,7 @@ export default function DuroodPage() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/tasbih-counter"
+                  href="/#counter"
                   className="text-emerald-600 hover:underline font-semibold"
                 >
                   Tasbih Counter
@@ -150,7 +150,7 @@ export default function DuroodPage() {
               </li>
               <li>
                 <Link
-                  href="/dhikr-counter"
+                  href="/#counter"
                   className="text-emerald-600 hover:underline font-semibold"
                 >
                   Dhikr Counter

@@ -96,7 +96,7 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
             <ul className="mt-3 space-y-2 text-sm">
               <li><Link href="/dhikr" className="underline">Dhikr library</Link> for the Arabic, meaning, and count of a phrase.</li>
               <li><Link href="/disclaimer" className="underline">Disclaimer</Link> on wording, sources, and what the site does not claim.</li>
-              <li><Link href="/tasbih-counter" className="underline">Tasbih counter</Link> if the question is about counting.</li>
+              <li><Link href="/#counter" className="underline">Tasbih counter</Link> if the question is about counting.</li>
               <li><Link href="/privacy-policy" className="underline">Privacy policy</Link> for what stays on the device.</li>
             </ul>
           </section>

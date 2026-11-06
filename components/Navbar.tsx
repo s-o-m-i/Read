@@ -9,7 +9,7 @@ import { useTheme } from "./ThemeProvider";
 
 const links = [
   ["/about", "About"],
-  ["/tasbih-counter", "Tasbih"],
+  ["/#counter", "Tasbih"],
   ["/dhikr", "Dhikr"],
   ["/adhkar", "Adhkar"],
   ["/asmaul-husna", "99 Names"],
@@ -43,7 +43,11 @@ export default function Navbar() {
     };
   }, [pathname]);
 
-  const isActive = (href: string) => pathname === href || pathname.startsWith(`${href}/`);
+  const isActive = (href: string) => {
+    const path = href.split("#")[0] || "/";
+    if (path === "/") return pathname === "/";
+    return pathname === path || pathname.startsWith(`${path}/`);
+  };
   const ThemeIcon = theme === "dark" ? Sun : Moon;
 
   return (
@@ -78,7 +82,7 @@ export default function Navbar() {
             <ThemeIcon size={17} />
           </button>
           <Link
-            href="/tasbih-counter"
+            href="/#counter"
             className="hidden min-h-10 items-center gap-1.5 rounded-full bg-[var(--brand)] px-4 text-sm font-semibold text-[var(--brand-contrast)] shadow-[0_8px_20px_-10px_rgba(11,37,69,0.6)] sm:inline-flex"
           >
             Open counter
@@ -118,12 +122,12 @@ export default function Navbar() {
             ))}
           </ul>
           <Link
-            href="/tasbih-counter"
+            href="/#counter"
             className="mt-4 flex min-h-12 items-center justify-center gap-2 rounded-full bg-[var(--brand)] text-sm font-semibold text-[var(--brand-contrast)] sm:hidden"
             onClick={(event) => {
               event.preventDefault();
               setOpen(false);
-              router.push("/tasbih-counter");
+              router.push("/#counter");
             }}
           >
             Open counter

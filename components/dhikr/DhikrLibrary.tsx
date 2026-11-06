@@ -65,7 +65,7 @@ export default function DhikrLibrary() {
             <p className="mt-3 text-sm">Recommended count: {item.recommendedCount ?? "Once, or as you are able"}</p>
             <p className="text-sm text-[var(--muted)]">{item.categories.map((entry) => CATEGORY_LABELS[entry]).join(" · ")}</p>
             <p className="mt-1 text-sm text-[var(--muted)]">{item.source}</p>
-            <Link href={`/dhikr-counter?dhikr=${item.id}`} className="mt-4 inline-flex rounded-full bg-[var(--green)] px-4 py-2 text-sm text-[#f7f3ea] dark:text-[#14241c]">
+            <Link href="/#counter" className="mt-4 inline-flex rounded-full bg-[var(--green)] px-4 py-2 text-sm text-[#f7f3ea] dark:text-[#14241c]">
               Count this dhikr
             </Link>
           </li>

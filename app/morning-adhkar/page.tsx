@@ -45,7 +45,7 @@ export default function MorningAdhkarPage() {
         <RoutinePlayer routineId="morning-adhkar" />
         <p>
           <Link href="/morning-adhkar#routine" className="sr-only">Morning routine</Link>
-          Prefer a free count instead? Use the <TextLink href="/dhikr-counter">dhikr counter</TextLink> or the <TextLink href="/tasbih-counter">tasbih counter</TextLink>.
+          Prefer a free count instead? Use the <TextLink href="/#counter">tasbih counter</TextLink>.
         </p>
       </section>
       <section className="space-y-3">

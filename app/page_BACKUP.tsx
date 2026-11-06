@@ -95,7 +95,7 @@ export default function HomePage() {
                 <IslamicToolCard
                   title="Tasbih Counter"
                   description="Count tasbeeh, zikr, and dhikr easily."
-                  href="/tasbih-counter"
+                  href="/#counter"
                   icon="📿"
                   gradient="from-emerald-500/10 to-teal-500/10"
                   darkGradient="dark:from-emerald-600/20 dark:to-teal-600/20"
@@ -113,7 +113,7 @@ export default function HomePage() {
                 <IslamicToolCard
                   title="Dhikr Counter"
                   description="Simple dhikr counter for all types."
-                  href="/dhikr-counter"
+                  href="/#counter"
                   icon="🌙"
                   gradient="from-purple-500/10 to-pink-500/10"
                   darkGradient="dark:from-purple-600/20 dark:to-pink-600/20"
@@ -140,7 +140,7 @@ export default function HomePage() {
                 <IslamicToolCard
                   title="Zikr Counter"
                   description="General zikr counter for any dhikr."
-                  href="/zikr-counter"
+                  href="/#counter"
                   icon="💫"
                   gradient="from-indigo-500/10 to-violet-500/10"
                   darkGradient="dark:from-indigo-600/20 dark:to-violet-600/20"

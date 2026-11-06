@@ -55,7 +55,7 @@ export default function DzikirPagiPage() {
           <li><Link href="/id/tasbih-counter">Tasbih digital</Link></li>
           <li><Link href="/id/dzikir-petang">Dzikir petang</Link></li>
           <li><Link href="/id/zikir-subuh">Zikir Subuh</Link></li>
-          <li><Link href="/dhikr-counter">Dhikr counter</Link></li>
+          <li><Link href="/#counter">Dhikr counter</Link></li>
         </ul>
       </section>
       <FaqList

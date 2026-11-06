@@ -53,7 +53,7 @@ export default function RamadanDhikrGuide() {
           </p>
           <div className="pt-4">
             <Link
-              href="/tasbih-counter"
+              href="/#counter"
               className="inline-block bg-white text-emerald-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
             >
               Start Your Dhikr Practice Now
@@ -167,7 +167,7 @@ export default function RamadanDhikrGuide() {
             </p>
             <p className="mt-3 text-sm italic">
               💡 <strong>Pro Tip:</strong> Use our{" "}
-              <Link href="/tasbih-counter" className="text-emerald-600 hover:underline">
+              <Link href="/#counter" className="text-emerald-600 hover:underline">
                 digital tasbih counter
               </Link>{" "}
               to track your recitations easily.
@@ -279,7 +279,7 @@ export default function RamadanDhikrGuide() {
               </ul>
               <p className="text-xs italic mt-2 text-gray-600 dark:text-gray-400">
                 Total: ~110 repetitions. Use our{" "}
-                <Link href="/zikr-counter" className="text-emerald-600 hover:underline">
+                <Link href="/#counter" className="text-emerald-600 hover:underline">
                   dhikr counter
                 </Link>{" "}
                 to track easily.
@@ -580,7 +580,7 @@ export default function RamadanDhikrGuide() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Link
-              href="/tasbih-counter"
+              href="/#counter"
               className="inline-block bg-emerald-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-emerald-700 transition-colors"
             >
               Tasbih Counter

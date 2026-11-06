@@ -399,7 +399,7 @@ export default function IstighfarPage() {
               </Link>
 
               <Link
-                href="/tasbih-counter"
+                href="/#counter"
                 className="group p-4 bg-gradient-to-br from-emerald-50 to-emerald-100 dark:from-emerald-900/30 dark:to-emerald-800/30 rounded-lg hover:shadow-md transition-all duration-200 hover:scale-105"
               >
                 <div className="flex items-start gap-3">
@@ -476,7 +476,7 @@ export default function IstighfarPage() {
               Other Digital Zikr Counters
             </h2>
             <p className="text-gray-700 dark:text-gray-300 mb-4">
-              Combine istighfar with other forms of remembrance. Try our <Link href="/tasbih-counter" className="text-emerald-600 hover:underline font-semibold">tasbih counter</Link> for general zikr or the <Link href="/durood-counter" className="text-emerald-600 hover:underline font-semibold">Durood Counter</Link> for sending blessings upon the Prophet (ﷺ).
+              Combine istighfar with other forms of remembrance. Try our <Link href="/#counter" className="text-emerald-600 hover:underline font-semibold">tasbih counter</Link> for general zikr or the <Link href="/durood-counter" className="text-emerald-600 hover:underline font-semibold">Durood Counter</Link> for sending blessings upon the Prophet (ﷺ).
             </p>
           </div>
 
@@ -492,7 +492,7 @@ export default function IstighfarPage() {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/online-tasbih-counter"
+                  href="/#counter"
                   className="text-emerald-600 font-semibold"
                 >
                   Tasbih Counter
@@ -500,7 +500,7 @@ export default function IstighfarPage() {
               </li>
               <li>
                 <Link
-                  href="/dhikr-counter"
+                  href="/#counter"
                   className="text-emerald-600 font-semibold"
                 >
                   Dhikr Counter

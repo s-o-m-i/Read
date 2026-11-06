@@ -7,8 +7,7 @@ const columns = [
   {
     title: "Practice",
     links: [
-      ["/tasbih-counter", "Tasbih counter"],
-      ["/dhikr-counter", "Dhikr counter"],
+      ["/#counter", "Tasbih counter"],
       ["/istighfar-counter", "Istighfar counter"],
       ["/durood-counter", "Durood counter"],
       ["/morning-adhkar", "Morning adhkar"],

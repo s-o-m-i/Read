@@ -27,7 +27,7 @@ export default function AfterWakingPage() {
       <section className="space-y-4">
         <h2 className="font-display text-3xl">A two-step start</h2>
         <RoutinePlayer routineId="after-waking" />
-        <p>When you finish, continue with the <TextLink href="/morning-adhkar">morning adhkar</TextLink>. If you only need a counter, open the <TextLink href="/tasbih-counter">tasbih counter</TextLink> or the <TextLink href="/dhikr-counter">dhikr counter</TextLink>.</p>
+        <p>When you finish, continue with the <TextLink href="/morning-adhkar">morning adhkar</TextLink>. If you only need a counter, open the <TextLink href="/#counter">tasbih counter</TextLink>.</p>
       </section>
       <FaqList items={wakingFaqs} />
     </PageShell>

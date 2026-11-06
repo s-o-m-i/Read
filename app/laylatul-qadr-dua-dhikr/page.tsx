@@ -57,7 +57,7 @@ export default function LaylatulQadrDuaDhikr() {
           </p>
           <div className="pt-4">
             <Link
-              href="/dhikr-counter"
+              href="/#counter"
               className="inline-block bg-white text-green-600 font-semibold px-6 py-3 rounded-lg hover:bg-gray-100 transition-colors shadow-lg"
             >
               Start Your Laylatul Qadr Dhikr Now
@@ -339,7 +339,7 @@ export default function LaylatulQadrDuaDhikr() {
             </p>
             <p className="mt-3 text-sm italic">
               💡 <strong>Tip:</strong> Track your dua count using our{" "}
-              <Link href="/dhikr-counter" className="text-green-600 hover:underline">
+              <Link href="/#counter" className="text-green-600 hover:underline">
                 dhikr counter
               </Link>
               .
@@ -476,7 +476,7 @@ export default function LaylatulQadrDuaDhikr() {
               </ul>
               <p className="text-xs italic mt-3 text-gray-600 dark:text-gray-400">
                 Use our{" "}
-                <Link href="/zikr-counter" className="text-green-600 hover:underline">
+                <Link href="/#counter" className="text-green-600 hover:underline">
                   dhikr counter
                 </Link>{" "}
                 to track all recitations.
@@ -863,13 +863,13 @@ export default function LaylatulQadrDuaDhikr() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
             <Link
-              href="/dhikr-counter"
+              href="/#counter"
               className="inline-block bg-green-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
             >
               Dhikr Counter
             </Link>
             <Link
-              href="/tasbih-counter"
+              href="/#counter"
               className="inline-block bg-green-600 text-white font-semibold px-6 py-3 rounded-lg hover:bg-green-700 transition-colors"
             >
               Tasbih Counter

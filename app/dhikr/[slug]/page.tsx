@@ -61,7 +61,7 @@ export default async function DhikrDetailPage({ params }: { params: Promise<{ sl
         <p className="text-sm text-[var(--muted)]">Source note: {dhikr.source}. Recommended count: {dhikr.recommendedCount ?? "once"}.</p>
       </section>
       <p>
-        <Link href={`/dhikr-counter?dhikr=${dhikr.id}`} className="inline-flex rounded-full bg-[var(--green)] px-5 py-3 text-[#f7f3ea] dark:text-[#14241c]">
+        <Link href="/#counter" className="inline-flex rounded-full bg-[var(--green)] px-5 py-3 text-[#f7f3ea] dark:text-[#14241c]">
           Count this dhikr
         </Link>
       </p>
@@ -74,7 +74,7 @@ export default async function DhikrDetailPage({ params }: { params: Promise<{ sl
             return <li key={id}><TextLink href={`/dhikr/${related.slug}`}>{related.transliteration}</TextLink></li>;
           })}
           <li><TextLink href="/dhikr-after-salah">Dhikr after salah</TextLink></li>
-          <li><TextLink href="/tasbih-counter">Tasbih counter</TextLink></li>
+          <li><TextLink href="/#counter">Tasbih counter</TextLink></li>
         </ul>
       </section>
       <FaqList items={article.faqs} />
