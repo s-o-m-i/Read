@@ -32,7 +32,7 @@ export const KEYWORD_MAP: KeywordEntry[] = [
     title: "Tasbih – Meaning, Islamic Guide & Online Tasbih Counter",
     description:
       "Explore Tasbih, its meaning and significance in Islam. Use our free online Tasbih counter for Dhikr, discover Islamic prayer beads and learn authentic daily adhkar.",
-    h1: "Tasbih: Meaning, Islamic Significance and Free Online Counter",
+    h1: "Free Online Tasbih Counter for Daily Dhikr",
     h2: [
       "Free Online Tasbih Counter",
       "What Is Tasbih?",

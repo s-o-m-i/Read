@@ -293,8 +293,11 @@ export default function HomePage() {
               TasbihHub
             </span>
             <h1 id="hero-title" className="mt-5 font-display text-[2.15rem] leading-[1.08] sm:text-5xl lg:text-[2.85rem] xl:text-[3.35rem]">
-              Tasbih: Meaning, Islamic Significance and Free Online Counter
+              Free Online Tasbih Counter for Daily Dhikr
             </h1>
+            <p className="ink mt-5 max-w-2xl text-[1.05rem] leading-8 sm:text-lg">
+              Count SubhanAllah, Alhamdulillah, Astaghfirullah and other forms of Dhikr with a free online Tasbih counter. Choose your preferred phrase, set a target and keep track of your daily remembrance.
+            </p>
           </div>
 
           <div id="counter" className="scroll-mt-24 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center">

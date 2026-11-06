@@ -532,12 +532,16 @@ export default function DhikrCounter({
           <p className={`font-arabic mt-1 text-[var(--scene-ink)] ${longArabic ? "text-lg leading-loose" : "text-2xl leading-relaxed"}`} dir="rtl" lang="ar">
             {dhikr.arabic}
           </p>
-          {mode === "free" && (
-            <button type="button" className="scene-muted mx-auto mt-2 inline-flex items-center gap-1 text-sm" onClick={() => setPickerOpen(true)}>
-              Tap to change
-              <ChevronDown size={16} />
-            </button>
-          )}
+          <button
+            type="button"
+            className="scene-gold mx-auto mt-2 inline-flex items-center gap-1 text-sm font-medium"
+            onClick={() => setPickerOpen(true)}
+            aria-haspopup="dialog"
+            aria-expanded={pickerOpen}
+          >
+            Tap to change
+            <ChevronDown size={16} />
+          </button>
           {mode === "free" && reached && <p className="scene-gold mt-1 text-sm font-medium">Target complete</p>}
           {notice && <p className="scene-gold mt-1 text-sm font-medium" role="status">{notice}</p>}
         </div>
@@ -722,6 +726,16 @@ export default function DhikrCounter({
                 </div>
                 <p className="mt-8 text-3xl font-semibold text-[var(--scene-gold)]">{dhikr.transliteration}</p>
                 <p className={`font-arabic mt-2 text-white/75 ${longArabic ? "text-lg leading-loose" : "text-2xl"}`} dir="rtl" lang="ar">{dhikr.arabic}</p>
+                <button
+                  type="button"
+                  className="mt-3 inline-flex items-center gap-1 text-sm font-medium text-[var(--scene-gold)]"
+                  onClick={() => setPickerOpen(true)}
+                  aria-haspopup="dialog"
+                  aria-expanded={pickerOpen}
+                >
+                  Tap to change
+                  <ChevronDown size={16} />
+                </button>
                 <div className="mt-10 flex items-center justify-center gap-6">
                   <button type="button" className="flex h-12 w-12 items-center justify-center rounded-full bg-white/10 text-white active:scale-95" onClick={decrement} aria-label="Decrease count">
                     <Minus size={20} />
