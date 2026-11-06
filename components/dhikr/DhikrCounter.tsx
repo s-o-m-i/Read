@@ -67,6 +67,8 @@ type Props = {
   enableKeyboard?: boolean;
   showLibraryLink?: boolean;
   hero?: boolean;
+  expanded?: boolean;
+  onExpandedChange?: (expanded: boolean) => void;
 };
 
 function resolveMode(bucket: CounterBucket | undefined, initialDhikrId: string): CounterMode {
@@ -84,7 +86,10 @@ export default function DhikrCounter({
   title = "Tasbih Counter",
   enableKeyboard = true,
   hero = false,
+  expanded = false,
+  onExpandedChange,
 }: Props) {
+  const sceneHero = hero || expanded;
   const store = useSyncExternalStore(subscribeStore, getStore, getServerStore);
   const bucket = store.counters[storageKey];
   const mode = resolveMode(bucket, initialDhikrId);
@@ -304,6 +309,10 @@ export default function DhikrCounter({
   }
 
   function toggleFullscreen() {
+    if (onExpandedChange) {
+      onExpandedChange(!expanded);
+      return;
+    }
     if (document.fullscreenElement) {
       void document.exitFullscreen().catch(() => {});
       return;
@@ -457,7 +466,7 @@ export default function DhikrCounter({
 
   const daily = inspirationForToday();
   const face = (
-    <div className={`counter-scene relative overflow-hidden ${hero ? "flex min-h-[100dvh] w-full items-center" : "rounded-[32px] shadow-[0_24px_60px_rgba(90,62,20,0.12)]"}`}>
+    <div className={`counter-scene relative overflow-hidden ${sceneHero ? "flex min-h-[100dvh] w-full items-center" : "rounded-[32px] shadow-[0_24px_60px_rgba(90,62,20,0.12)]"}`}>
       <MosqueBackdrop />
       <button
         type="button"
@@ -468,7 +477,7 @@ export default function DhikrCounter({
         <BookOpen size={14} />
         <span className="text-[10px] font-semibold tracking-wide [writing-mode:vertical-rl] rotate-180">Inspiration</span>
       </button>
-      <div className={`relative z-10 mx-auto flex w-full max-w-[420px] flex-col ${hero ? "min-h-[100dvh] justify-center px-4 pb-8 pt-24" : "px-3 pb-4 pt-3"}`}>
+      <div className={`relative z-10 mx-auto flex w-full max-w-[420px] flex-col ${sceneHero ? "min-h-[100dvh] justify-center px-4 pb-8 pt-24" : "px-3 pb-4 pt-3"}`}>
         <div className="flex items-center justify-center gap-2">
           <IconButton label="Choose dhikr" pressed={pickerOpen} onClick={() => setPickerOpen(true)}>
             <LayoutGrid size={18} />
@@ -485,8 +494,12 @@ export default function DhikrCounter({
           <IconButton label={focusMode ? "Exit focus mode" : "Focus mode"} pressed={focusMode} onClick={toggleFocus}>
             <Focus size={18} />
           </IconButton>
-          <IconButton label={fullscreen ? "Exit full screen" : "Full screen"} pressed={fullscreen} onClick={toggleFullscreen}>
-            {fullscreen ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
+          <IconButton
+            label={onExpandedChange ? (expanded ? "Exit expanded view" : "Expand counter") : fullscreen ? "Exit full screen" : "Full screen"}
+            pressed={onExpandedChange ? expanded : fullscreen}
+            onClick={toggleFullscreen}
+          >
+            {(onExpandedChange ? expanded : fullscreen) ? <Minimize2 size={18} /> : <Maximize2 size={18} />}
           </IconButton>
         </div>
 
@@ -702,7 +715,7 @@ export default function DhikrCounter({
   );
 
   return (
-    <section className={hero && !focusMode ? "dhikr-counter hero-bleed -mt-[4.3125rem] w-full" : "dhikr-counter mx-auto w-full max-w-[440px]"} aria-label={title}>
+    <section className={sceneHero && !focusMode ? (expanded ? "dhikr-counter hero-bleed h-[100dvh] w-full" : "dhikr-counter hero-bleed -mt-[4.3125rem] w-full") : "dhikr-counter mx-auto w-full max-w-[440px]"} aria-label={title}>
       {focusMode && typeof document !== "undefined"
         ? createPortal(
             <div className="focus-scene fixed inset-0 z-[80] flex min-h-[100dvh] flex-col bg-[#070b14] text-[var(--scene-ink)]" role="dialog" aria-label="Focus mode">

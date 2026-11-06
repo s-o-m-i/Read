@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Suspense, type ReactNode } from "react";
+import { type ReactNode } from "react";
 import {
   Activity,
   ArrowRight,
@@ -24,8 +24,8 @@ import {
   Sunrise,
   Target,
 } from "lucide-react";
-import DhikrCounter from "@/components/dhikr/DhikrCounter";
 import DailyDashboard from "@/components/dhikr/DailyDashboard";
+import HomeCounter from "@/components/home/HomeCounter";
 import JsonLd from "@/components/seo/JsonLd";
 import FaqAccordion from "@/components/home/FaqAccordion";
 import ScrollRail from "@/components/home/ScrollRail";
@@ -300,16 +300,7 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div id="counter" className="scroll-mt-24 lg:col-start-2 lg:row-span-2 lg:row-start-1 lg:self-center">
-            <div className="relative mx-auto w-full max-w-[464px] rounded-[2.4rem] bg-[var(--navy)] p-2.5 shadow-[0_40px_80px_-30px_rgba(7,24,50,0.55)] sm:p-3">
-              <div aria-hidden className="geo-pattern pointer-events-none absolute inset-0 rounded-[2.4rem] opacity-[0.22]" />
-              <div className="relative">
-                <Suspense fallback={<div className="mx-auto h-[640px] max-w-[440px] rounded-[32px] bg-[var(--bg-elevated)]" />}>
-                  <DhikrCounter storageKey="home" initialDhikrId="subhanallah" title="Tasbih Counter" />
-                </Suspense>
-              </div>
-            </div>
-          </div>
+          <HomeCounter />
 
           <div className="lg:col-start-1 lg:row-start-2 lg:self-start">
             <p className="ink max-w-2xl text-[1.05rem] leading-8 sm:text-lg">
